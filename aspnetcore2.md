@@ -1,9 +1,8 @@
 # Product Post
-```
-Header:
+## Header
 Content-Type: application/json
-
-Body:
+## Body
+```
 {
     "Name" : "Pálinka",
     "UnitPrice" : 4000,
