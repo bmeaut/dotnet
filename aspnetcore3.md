@@ -15,3 +15,17 @@ private async Task WriteAsJsonAsync(
     await context.Response.WriteAsync(json);
 }
 ```
+## UseApiExceptionHandler
+
+```csharp
+public static class ApiExceptionHandlerExtensions
+{
+    public static IApplicationBuilder UseApiExceptionHandler(this IApplicationBuilder app)
+    {
+        return app.UseWhen(
+            ctx => ctx.Request.Path.HasValue 
+                   && ctx.Request.Path.StartsWithSegments(new PathString("/api")),
+            b => b.UseMiddleware<ApiExceptionHandlerMiddleware>());
+    }
+}
+```
