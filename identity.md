@@ -1,4 +1,9 @@
 ## Register user test
+### Header
+```
+Content-Type: application/json
+```
+### Body
 ```json
 {
     "UserName" : "John Doe",
