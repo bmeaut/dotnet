@@ -6,7 +6,7 @@ Content-Type: application/json
 ### Body
 ```json
 {
-    "UserName" : "John Doe",
+    "UserName" : "dotnetrox",
     "Email" : "foo@bar.com",
     "Password" : "Admin123."
 }
