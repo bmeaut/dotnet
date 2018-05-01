@@ -64,10 +64,10 @@ Utolsó módosítás: 2017.05.18. (csak véglegesítés)
     *   saját LINQ provider **20**
 *   explicit kölcsönös kizárás helyett _ConcurretBag/ConcurrentQueue/ConcurrentStack/ConcurrentDictionary_ használata olyan rétegben, ahol párhuzamos hozzáférés valóban előfordul **\[5\]**
 *   lock-free algoritmus implementálása és használata (könyvtári implementáció felhasználása nélkül, Interlocked függvények használatával) **\[10\]**
-*   unit tesztek készítése  **\[5-12\]**
-  *   minimum 10 függvényhez **5**
-  *   a unit tesztekben a mock objektumok injektálása **+3**
-  *   EF Core memória-adatbázis használata teszteléshez **+4**
+* unit tesztek készítése  **\[5-12\]**
+  * minimum 10 függvényhez **5**
+  * a unit tesztekben a mock objektumok injektálása **+3**
+  * EF Core memória-adatbázis használata teszteléshez **+4**
 *   XML validálás, alkalmazkodás meglévő XML formátumhoz pl. publikus webes sémához (RSS, opml) **\[7\]**
 *   Optimista konkurenciakezelés **\[5-15\]**
 *   ütközésdetektálás és automatikus ütközésfeloldás **5**
