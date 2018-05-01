@@ -67,6 +67,8 @@ Content-Type: application/json
  }
 
 ```
+## ROPG flow
+http://www.bubblecode.net/en/2016/01/22/understanding-oauth2/#Resource_Owner_Password_Credentials_Grant
 ## IdentityServer4 client - get access token in ROPG flow
 ```csharp
 static async Task Main(string[] args)
@@ -94,7 +96,7 @@ static async Task Main(string[] args)
      Console.ReadLine();
 }
 ```
-## IdentityServer4 client - full ROPG flow
+## IdentityServer4 client - almost full ROPG flow (no expiration handling!)
 ```csharp
  static async Task Main(string[] args)
  {
