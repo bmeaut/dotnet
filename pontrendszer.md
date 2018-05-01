@@ -11,53 +11,35 @@
 Utolsó módosítás: 2017.05.18. (csak véglegesítés)
 
 ## ASP.NET Core
-
-*   teljes HATEOAS implementáció **\[10\]**
-
-*   Web API által alapból nem támogatott HTTP ige implementálása **\[5-10\]**
-
-*   pl. GET-hez hasonló működés **5**
-*   pl. OPTIONS RFC2616 szerint **10**
-
-*   verziókezelt API **\[5-8\]**
-
-*   HTTP header alapján **+3**
-
-*   API egy részének védése felhasználó által igényelhető API kulccsal **\[7\]**
-*   cache megvalósítása E-TAG használatával **\[3\]**
-
-*   ODATA API használata a szerver-kliens kommunikációban **\[7\]**  ****(EF Core jelenleg nem támogatja)****
-*   Szerver oldali autentikáció **\[10-18\]**
-
-*   csak ASP.NET Identity **10**
-*   Identity facebook és/vagy Google, Microsoft Account támogatással **+3**
-*   Identity saját JWT token alapú autentikációval **+5**
-
-*   szerver oldali hozzáférés-szabályozás **\[2-6\]**
-    *   szerepkör alapú hozzáférés-szabályozás **2**
-    *   claim alapú hozzáférés-szabályozás **+4**
-*   külső online szolgáltatás (Twitter, Facebook, Google Maps, Bing Maps, stb.) integrálása a szerveroldali alkalmazásba klienskönyvtárral (pl. HttpClient) vagy SDK-val **\[7-10\]**
-
+*  teljes HATEOAS implementáció **\[10\]**
+*  Web API által alapból nem támogatott HTTP ige implementálása **\[5-10\]**
+   * pl. GET-hez hasonló működés **5**
+   * pl. OPTIONS RFC2616 szerint **10**
+* verziókezelt API **\[5-8\]**
+   * HTTP header alapján **+3**
+* API egy részének védése felhasználó által igényelhető API kulccsal **\[7\]**
+* cache megvalósítása E-TAG használatával **\[3\]**
+* ODATA API használata a szerver-kliens kommunikációban **\[7\]**  ****(EF Core jelenleg nem támogatja)****
+* Szerver oldali autentikáció **\[10-18\]**
+* csak ASP.NET Identity **10**
+* Identity facebook és/vagy Google, Microsoft Account támogatással **+3**
+* Identity saját JWT token alapú autentikációval **+5**
+* szerver oldali hozzáférés-szabályozás **\[2-6\]**
+    * szerepkör alapú hozzáférés-szabályozás **2**
+    * claim alapú hozzáférés-szabályozás **+4**
+* külső online szolgáltatás (Twitter, Facebook, Google Maps, Bing Maps, stb.) integrálása a szerveroldali alkalmazásba klienskönyvtárral (pl. HttpClient) vagy SDK-val **\[7-10\]**
 *   egyszerű REST API, SDK használat nélkül, egyszerű API kulcs alapú authentikáció **7**
 *   SDK-val / REST API-val, authentikációt (pl. OAuth) végrehajtva **10**
-
 *   SignalR alkalmazása valós idejű, szerver felől érkező push jellegű kommunikációra **\[7\]**
-
 *   hosztolás külső szolgáltatónál **\[5-7\]**
-
 *   Windows Azure (ingyenes App Services - WebApp szolgáltatás, de bankkártya regisztráció szükséges) **\[7\]**
 *   egyéb szolgáltató **\[5\]**
-
 *   WebHooks használata külső szolgáltatással (pl. github, slack) **\[7\]**  ******(EF Core jelenleg nem támogatja)******
-
 ## Kommunikáció, hálózatkezelés
-
-*   alacsony szintű kommunikáció (soros port,  HTTP alatt, pl. kétirányú TCP) **\[10\]**
-
-*   HTTPS kommunikáció (self-signed tanúsítvánnyal) az ASP.NET Web API és a kliens között, szemléltetés Fiddler-rel **\[7-12\]**
-
-*   csak szerver oldali tanúsítvány, hosztolás IIS-ben (nem IIS Express) **7**
-*   kliens is azonosítja magát tanúsítvánnyal a szerver felé **+5**
+* alacsony szintű kommunikáció (soros port,  HTTP alatt, pl. kétirányú TCP) **\[10\]**
+* HTTPS kommunikáció (self-signed tanúsítvánnyal) az ASP.NET Web API és a kliens között, szemléltetés Fiddler-rel **\[7-12\]**
+*  csak szerver oldali tanúsítvány, hosztolás IIS-ben (nem IIS Express) **7**
+*  kliens is azonosítja magát tanúsítvánnyal a szerver felé **+5**
 
 ## Entity Framework Core
 
