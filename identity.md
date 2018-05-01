@@ -18,7 +18,7 @@
 Content-Type: application/json
 ```
 ### Body
-```json
+```JSON
 {
     "UserName" : "dotnetrox",
     "Email" : "foo@bar.com",
