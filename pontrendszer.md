@@ -19,7 +19,7 @@ Utolsó módosítás: 2017.05.18. (csak véglegesítés)
    * HTTP header alapján **+3**
 * API egy részének védése felhasználó által igényelhető API kulccsal **\[7\]**
 * cache megvalósítása E-TAG használatával **\[3\]**
-* ODATA API használata a szerver-kliens kommunikációban **\[7\]**  ****(EF Core jelenleg nem támogatja)****
+* ~~ODATA API használata a szerver-kliens kommunikációban **\[7\]**~~  ****(EF Core jelenleg nem támogatja)****
 * Szerver oldali autentikáció **\[10-18\]**
 * csak ASP.NET Identity **10**
 * Identity facebook és/vagy Google, Microsoft Account támogatással **+3**
@@ -34,7 +34,7 @@ Utolsó módosítás: 2017.05.18. (csak véglegesítés)
 *   hosztolás külső szolgáltatónál **\[5-7\]**
 *   Windows Azure (ingyenes App Services - WebApp szolgáltatás, de bankkártya regisztráció szükséges) **\[7\]**
 *   egyéb szolgáltató **\[5\]**
-*   WebHooks használata külső szolgáltatással (pl. github, slack) **\[7\]**  ******(EF Core jelenleg nem támogatja)******
+* ~~WebHooks használata külső szolgáltatással (pl. github, slack) **\[7\]**~~  ******(EF Core jelenleg nem támogatja)******
 ## Kommunikáció, hálózatkezelés
 * alacsony szintű kommunikáció (soros port,  HTTP alatt, pl. kétirányú TCP) **\[10\]**
 * HTTPS kommunikáció (self-signed tanúsítvánnyal) az ASP.NET Web API és a kliens között, szemléltetés Fiddler-rel **\[7-12\]**
@@ -42,16 +42,16 @@ Utolsó módosítás: 2017.05.18. (csak véglegesítés)
 *  kliens is azonosítja magát tanúsítvánnyal a szerver felé **+5**
 
 ## Entity Framework Core
-*   leszármazási hierarchia leképezése Entity Framework-kel (legalább kétszintű, legalább 3 tagú hierarchia) **\[3-7\]**
-*   TPH, a diszkriminátor mező testreszabásával (saját mezőnév vagy saját értékek) **3**
-*   TPT-vel **5** **(EF Core jelenleg nem támogatja)**
-*   TPC-vel **7**** **(EF Core jelenleg nem támogatja)****
+* leszármazási hierarchia leképezése Entity Framework-kel (legalább kétszintű, legalább 3 tagú hierarchia) **\[3-7\]**
+  * TPH, a diszkriminátor mező testreszabásával (saját mezőnév vagy saját értékek) **3**
+  * ~~TPT-vel **5**~~ **(EF Core jelenleg nem támogatja)**
+  * ~~TPC-vel **7****~~ **(EF Core jelenleg nem támogatja)****
 *   MS SQL-től eltérő adatbáziskiszolgáló használata EF Core-ral (kivéve sqlite) **\[12\]**
-*   saját Code-First konvenció készítése **\[5\]**  ******(EF Core jelenleg nem támogatja)******
+*   ~~saját Code-First konvenció készítése **\[5\]**~~  ******(EF Core jelenleg nem támogatja)******
 *   saját szabályszerűség (konvenció) implementálása vagy meglevő felülbírálása reflexióval és/vagy Model API-val **\[5\]**
 *   saját többesszámosító (ScaffoldingModelFactory) - nem kell nyelvtanilag helyesnek lennie **\[7\]**
 *   saját újrapróbálkozó (execution strategy) készítése és használata tranziens adatbázishibák (pl. connection timeout) ellen **\[7\]**
-*   Table splitting vagy entity splitting **\[5\]**  ******(EF Core jelenleg nem támogatja)******
+*   ~~Table splitting vagy entity splitting **\[5\]**~~  ******(EF Core jelenleg nem támogatja)******
 *   alternatív kulcs **\[3-5\]**
 *   alternatív kulcs bevezetése valamelyik entitásban **\[3\]**      
 *   más entitás kapcsolattal hivatkozik az alternatív kulcsra **+2**
