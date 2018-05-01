@@ -5,8 +5,7 @@
 
 ## **Még nincs véglegesítve 2018. tavaszi félévre!**
 
-**Véglegesítés után csak hallgatóknak előnyös módosítások lehetnek (pl. új jogcímek).  
-**
+**Véglegesítés után csak hallgatóknak előnyös módosítások lehetnek (pl. új jogcímek).**
 
 Utolsó módosítás: 2017.05.18. (csak véglegesítés)
 
