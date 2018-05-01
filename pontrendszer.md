@@ -45,7 +45,7 @@ Utolsó módosítás: 2017.05.18. (csak véglegesítés)
 * leszármazási hierarchia leképezése Entity Framework-kel (legalább kétszintű, legalább 3 tagú hierarchia) **\[3-7\]**
   * TPH, a diszkriminátor mező testreszabásával (saját mezőnév vagy saját értékek) **3**
   * ~~TPT-vel **5**~~ **(EF Core jelenleg nem támogatja)**
-  * ~~TPC-vel **7****~~ **(EF Core jelenleg nem támogatja)****
+  * ~~TPC-vel **7**~~ ****(EF Core jelenleg nem támogatja)****
 *   MS SQL-től eltérő adatbáziskiszolgáló használata EF Core-ral (kivéve sqlite) **\[12\]**
 *   ~~saját Code-First konvenció készítése **\[5\]**~~  ******(EF Core jelenleg nem támogatja)******
 *   saját szabályszerűség (konvenció) implementálása vagy meglevő felülbírálása reflexióval és/vagy Model API-val **\[5\]**
