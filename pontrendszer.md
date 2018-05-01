@@ -86,7 +86,7 @@ Utolsó módosítás: 2017.05.18. (csak véglegesítés)
     *   néhány alap Rx operátor használata **7**
     *   két külső adatforrás integrálása **10**
 *   F# modul készítése és meghívása. Legalább az egyik legyen benne ezek közül: pattern matching, async, magasabb rendű függvény **\[7\]**
-*   külső osztálykönyvtár használata (a külső komponensért további pontszám nem adható). Nem számít ide a projekt generálásakor bekerülő, illetve a Microsoft által készített NuGet csomagok (pl. JSON.NET)**  \[7\]**
+*   külső osztálykönyvtár használata (a külső komponensért további pontszám nem adható). Nem számít ide a projekt generálásakor bekerülő, illetve a Microsoft által készített NuGet csomagok (pl. JSON.NET) **\[7\]**
 *   platformfüggetlen kódbázisú szerveralkalmazás készítése és bemutatása legalább 2 operációs rendszeren az alábbiak közül: Windows, Linux, Mac, ARM alapú OS (Raspberry Pi). **\[7\]**
 ## Konkrét funkciók
 *   meglévő, magasabb szintű hálózati protokoll implementációja (pl. BitTorrent, GNUtella) **\[20\]**
