@@ -139,3 +139,12 @@ static async Task Main(string[] args)
      Console.ReadLine();
  }
 ```
+## Register user with claim
+```javascript
+{
+    "UserName" : "dotnetGURU",
+    "Email" : "foobar@bar.com",
+    "Password" : "Admin123.",
+    "Level":"Guru"
+}
+```
