@@ -81,6 +81,7 @@ Utolsó módosítás: 2017.05.18. (csak véglegesítés)
     * legalább egy nem egyszerű típus átadása/átvétele paraméterként **7**
     * saját natív kód használata, összetett típus átadásával **12**
 * Object mapper (pl. [AutoMapper](http://automapper.org/), [QueryMutator](https://www.nuget.org/packages/QueryMutator/1.3.1)) használata DTO-k létrehozására **\[5\]**
+* logikai törlés (soft delete) globális szűrőkkel (Global Query Filter) **\[5\]**
 
 ## Kiegészítő, kapcsolódó technológiák alkalmazása
 * Beépülőkkel bővíthető alkalmazás készítése [MEF](http://msdn.microsoft.com/en-us/library/dd460648.aspx) használatával, legalább 1 pluginnel **\[10\]**
