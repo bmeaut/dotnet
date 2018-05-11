@@ -33,7 +33,7 @@ Utolsó módosítás: 2017.05.18. (csak véglegesítés)
 * hosztolás külső szolgáltatónál **\[5-7\]**
   * Windows Azure (ingyenes App Services - WebApp szolgáltatás, de bankkártya regisztráció szükséges) **\[7\]**
   * egyéb szolgáltató **\[5\]**
-* ~~WebHooks használata külső szolgáltatással (pl. github, slack) **\[7\]**~~  ******(EF Core jelenleg nem támogatja)******
+* ~~WebHooks használata külső szolgáltatással (pl. github, slack) **\[7\]**~~  ******(majd csak ASP.NET Core 2.1-től)******
 
 ## Kommunikáció, hálózatkezelés
 * alacsony szintű kommunikáció (soros port,  HTTP alatt, pl. kétirányú TCP) **\[10\]**
