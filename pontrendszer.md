@@ -17,28 +17,32 @@ Utolsó módosítás: 2017.05.18. (csak véglegesítés)
 * verziókezelt API **\[5-8\]**
    * HTTP header alapján **+3**
 * API egy részének védése felhasználó által igényelhető API kulccsal **\[7\]**
-* cache megvalósítása E-TAG használatával **\[3\]**
+* cache megvalósítása E-TAG használatával **\[3-8\]**
+  * a kliens felüküldi az E-TAG-et, szerver összeveti az adatbázisból felolvasott verzióval **3**
+  * a szerver is cache-ből olvassa ki az aktuális verziót **+5**
 * ~~ODATA API használata a szerver-kliens kommunikációban **\[7\]**~~  **(még nincs .NET Core támogatás)**
-* Szerver oldali autentikáció **\[10-18\]**
-  * csak ASP.NET Identity **10**
-  * Identity facebook és/vagy Google, Microsoft Account támogatással **+3**
-  * Identity saját JWT token alapú autentikációval **+5**
-* szerver oldali hozzáférés-szabályozás **\[2-6\]**
+* Szerver oldali autentikáció **\[7-18\]**
+  * ASP.NET Core Identity middleware-rel, süti alapú - csak webes kliens esetén! **7**
+  * token alapú, ASP.NET Core Identity + IdentityServer4 middleware-rel, nem-interaktív flow (pl. ROPG) **10**
+  * token alapú, ASP.NET Core Identity + IdentityServer4 middleware-rel, interaktív flow **15**
+  * Azure AD B2C-re (ingyenes szint) építve **15**
+  * legalább egy külső identity provider integrálása (Google login, Windows login, stb.)  **+3**
+* szerver oldali hozzáférés-szabályozás, az előbbi authentikációra építve  **\[2-6\]**
     * szerepkör alapú hozzáférés-szabályozás **2**
-    * claim alapú hozzáférés-szabályozás **+4**
+    * claim alapú hozzáférés-szabályozás **6**
 * külső online szolgáltatás (Twitter, Facebook, Google Maps, Bing Maps, stb.) integrálása a szerveroldali alkalmazásba klienskönyvtárral (pl. HttpClient) vagy SDK-val **\[7-10\]**
   * egyszerű REST API, SDK használat nélkül, egyszerű API kulcs alapú authentikáció **7**
   * SDK-val / REST API-val, authentikációt (pl. OAuth) végrehajtva **10**
-  * SignalR alkalmazása valós idejű, szerver felől érkező push jellegű kommunikációra **\[7\]**
+* SignalR Core alkalmazása valós idejű, szerver felől érkező push jellegű kommunikációra **\[7\]** **még csak rc!**
 * hosztolás külső szolgáltatónál **\[5-7\]**
-  * Windows Azure (ingyenes App Services - WebApp szolgáltatás, de bankkártya regisztráció szükséges) **\[7\]**
+  * Windows Azure (ingyenes App Services - WebApp szolgáltatás pl. Microsoft Imagine programon keresztül) **\[7\]**
   * egyéb szolgáltató **\[5\]**
 * ~~WebHooks használata külső szolgáltatással (pl. github, slack) **\[7\]**~~  **(majd csak ASP.NET Core 2.1-től)**
 
 ## Kommunikáció, hálózatkezelés
 * alacsony szintű kommunikáció (soros port,  HTTP alatt, pl. kétirányú TCP) **\[10\]**
-* HTTPS kommunikáció (self-signed tanúsítvánnyal) az ASP.NET Web API és a kliens között, szemléltetés Fiddler-rel **\[7-12\]**
-  * csak szerver oldali tanúsítvány, hosztolás IIS-ben (nem IIS Express) **7**
+* HTTPS kommunikáció (self-signed tanúsítvánnyal) az ASP.NET Web API és a kliens között, hosztolás normál, nem fejlesztői webszerverben (pl. Kestrel, Apache, nginx, nem IIS Express), szemléltetés Fiddler-rel **\[7-12\]**
+  * csak szerver oldali tanúsítvány **7**
   * kliens is azonosítja magát tanúsítvánnyal a szerver felé **+5**
 
 ## Entity Framework Core
@@ -49,9 +53,10 @@ Utolsó módosítás: 2017.05.18. (csak véglegesítés)
 * MS SQL-től eltérő adatbáziskiszolgáló használata EF Core-ral (kivéve sqlite) **\[12\]**
 * ~~saját Code-First konvenció készítése **\[5\]**~~  **(EF Core jelenleg nem támogatja)**
 * saját szabályszerűség (konvenció) implementálása vagy meglevő felülbírálása reflexióval és/vagy Model API-val **\[5\]**
-* saját többesszámosító (ScaffoldingModelFactory) - nem kell nyelvtanilag helyesnek lennie **\[7\]**
+* saját többesszámosító (IPluralizer) - nem kell nyelvtanilag helyesnek lennie **\[7\]**
 * saját újrapróbálkozó (execution strategy) készítése és használata tranziens adatbázishibák (pl. connection timeout) ellen **\[7\]**
-* ~~Table splitting vagy entity splitting **\[5\]**~~  **(EF Core jelenleg nem támogatja)**
+* Table splitting **\[5\]**
+* ~~Entity splitting **\[5\]**~~  **(EF Core jelenleg nem támogatja)**
 * alternatív kulcs **\[3-5\]**
   * alternatív kulcs bevezetése valamelyik entitásban **\[3\]**      
   * más entitás kapcsolattal hivatkozik az alternatív kulcsra **+2**
@@ -91,6 +96,7 @@ Utolsó módosítás: 2017.05.18. (csak véglegesítés)
 * F# modul készítése és meghívása. Legalább az egyik legyen benne ezek közül: pattern matching, async, magasabb rendű függvény **\[7\]**
 * külső osztálykönyvtár használata (a külső komponensért további pontszám nem adható). Nem számít ide a projekt generálásakor bekerülő, illetve a Microsoft által készített NuGet csomagok (pl. JSON.NET) **\[7\]**
 * platformfüggetlen kódbázisú szerveralkalmazás készítése és bemutatása legalább 2 operációs rendszeren az alábbiak közül: Windows, Linux, Mac, ARM alapú OS (Raspberry Pi). **\[7\]**
+
 ## Konkrét funkciók
 * meglévő, magasabb szintű hálózati protokoll implementációja (pl. BitTorrent, GNUtella) **\[20\]**
 * NET Compiler platform (Roslyn) Diagnostic Analyzer **\[3-7\]**
