@@ -2,7 +2,7 @@
 
 * Egy jogcímen csak egyszer szerezhető pont (Pl.: nem lehet 3 külső osztálykönyvtárral 21 pontot összeszedni)
 * Részpontszám nem adható, kivéve, ahol intervallum van megadva
-* Kliensoldai megoldásért nem adható pont
+* Kliensoldali megoldásért nem adható pont
 
 ## **Még nincs véglegesítve 2018. tavaszi félévre!**
 
