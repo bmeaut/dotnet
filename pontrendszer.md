@@ -1,13 +1,13 @@
 ## Pontszerzési szabályok
 
-*   Egy jogcímen csak egyszer szerezhető pont (Pl.: nem lehet 3 külső osztálykönyvtárral 21 pontot összeszedni)
-*   Részpontszám nem adható, kivéve, ahol intervallum van megadva
+* Egy jogcímen csak egyszer szerezhető pont (Pl.: nem lehet 3 külső osztálykönyvtárral 21 pontot összeszedni)
+* Részpontszám nem adható, kivéve, ahol intervallum van megadva
+* Kliensoldai megoldásért nem adható pont
 
 ## **Még nincs véglegesítve 2018. tavaszi félévre!**
 
 **Véglegesítés után csak hallgatóknak előnyös módosítások lehetnek (pl. új jogcímek).**
-
-Utolsó módosítás: 2017.05.18. (csak véglegesítés)
+Változások: lásd git history
 
 ## ASP.NET Core
 *  teljes HATEOAS implementáció **\[10\]**
@@ -33,14 +33,14 @@ Utolsó módosítás: 2017.05.18. (csak véglegesítés)
 * külső online szolgáltatás (Twitter, Facebook, Google Maps, Bing Maps, stb.) integrálása a szerveroldali alkalmazásba klienskönyvtárral (pl. HttpClient) vagy SDK-val **\[7-10\]**
   * egyszerű REST API, SDK használat nélkül, egyszerű API kulcs alapú authentikáció **7**
   * SDK-val / REST API-val, authentikációt (pl. OAuth) végrehajtva **10**
-* SignalR Core alkalmazása valós idejű, szerver felől érkező push jellegű kommunikációra **\[7\]** **még csak rc!**
+* SignalR Core alkalmazása valós idejű, szerver felől érkező push jellegű kommunikációra **\[7\]** **(még csak rc!)**
 * hosztolás külső szolgáltatónál **\[5-7\]**
   * Windows Azure (ingyenes App Services - WebApp szolgáltatás pl. Microsoft Imagine programon keresztül) **\[7\]**
   * egyéb szolgáltató **\[5\]**
 * ~~WebHooks használata külső szolgáltatással (pl. github, slack) **\[7\]**~~  **(majd csak ASP.NET Core 2.1-től)**
 
 ## Kommunikáció, hálózatkezelés
-* alacsony szintű kommunikáció (soros port,  HTTP alatt, pl. kétirányú TCP) **\[10\]**
+* alacsony szintű kommunikáció (soros port, HTTP alatt, pl. kétirányú TCP) **\[10\]**
 * HTTPS kommunikáció (self-signed tanúsítvánnyal) az ASP.NET Web API és a kliens között, hosztolás normál, nem fejlesztői webszerverben (pl. Kestrel, Apache, nginx, nem IIS Express), szemléltetés Fiddler-rel **\[7-12\]**
   * csak szerver oldali tanúsítvány **7**
   * kliens is azonosítja magát tanúsítvánnyal a szerver felé **+5**
@@ -63,6 +63,7 @@ Utolsó módosítás: 2017.05.18. (csak véglegesítés)
 * adatbázis index konfigurációja az EF modellben **\[3\]**
 * Entitások és adatbáziskontextus használata kizárólag a DAL rétegben (internal osztályok) **\[8\]**
 * HiLo elsődleges kulcs alkalmazása **\[7\]**
+* birtokolt típus (owned type) használata **\[3\]**
 
 ## .NET Core részfunkciók alkalmazása
 * kifejezésfa (ExpressionTree) értelmezése és manipulálása **\[5 - 20\]**
@@ -85,7 +86,7 @@ Utolsó módosítás: 2017.05.18. (csak véglegesítés)
 * áthívás nem felügyelt környezetbe (pl. natív Win32, natív linux) **\[7 - 12\]**
     * legalább egy nem egyszerű típus átadása/átvétele paraméterként **7**
     * saját natív kód használata, összetett típus átadásával **12**
-* Object mapper (pl. [AutoMapper](http://automapper.org/), [QueryMutator](https://www.nuget.org/packages/QueryMutator/1.3.1)) használata DTO-k létrehozására **\[5\]**
+* Object mapper (pl. [AutoMapper](http://automapper.org/), [QueryMutator](https://github.com/yugabe/QueryMutator)) használata DTO-k létrehozására **\[5\]**
 * logikai törlés (soft delete) globális szűrőkkel (Global Query Filter) **\[5\]**
 
 ## Kiegészítő, kapcsolódó technológiák alkalmazása
@@ -94,7 +95,7 @@ Utolsó módosítás: 2017.05.18. (csak véglegesítés)
     * néhány alap Rx operátor használata **7**
     * két külső adatforrás integrálása **10**
 * F# modul készítése és meghívása. Legalább az egyik legyen benne ezek közül: pattern matching, async, magasabb rendű függvény **\[7\]**
-* külső osztálykönyvtár használata (a külső komponensért további pontszám nem adható). Nem számít ide a projekt generálásakor bekerülő, illetve a Microsoft által készített NuGet csomagok (pl. JSON.NET) **\[7\]**
+* külső osztálykönyvtár használata (a külső komponensért további pontszám nem adható) szerver oldalon. Nem számít ide a projekt generálásakor bekerülő (pl. JSON.NET), illetve a Microsoft által készített, az alaptechnológiák függőségeit jelentő NuGet csomagok **\[7\]**
 * platformfüggetlen kódbázisú szerveralkalmazás készítése és bemutatása legalább 2 operációs rendszeren az alábbiak közül: Windows, Linux, Mac, ARM alapú OS (Raspberry Pi). **\[7\]**
 
 ## Konkrét funkciók
