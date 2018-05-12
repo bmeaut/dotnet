@@ -6,8 +6,9 @@
 
 ## **Még nincs véglegesítve 2018. tavaszi félévre!**
 
-**Véglegesítés után csak hallgatóknak előnyös módosítások lehetnek (pl. új jogcímek).**
-Változások: lásd git history
+**Véglegesítés után csak hallgatóknak előnyös módosítások lehetnek (pl. új jogcímek).** Változások: lásd git history
+
+Új jogcímek felvételéhez küldj pull request-et!
 
 ## ASP.NET Core
 *  teljes HATEOAS implementáció **\[10\]**
