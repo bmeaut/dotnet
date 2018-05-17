@@ -4,7 +4,7 @@
 * Részpontszám nem adható, kivéve, ahol intervallum van megadva
 * Kliensoldali megoldásért nem adható pont
 
-## **Még nincs véglegesítve 2018. tavaszi félévre!**
+## Véglegesítve 2018. tavaszi félévre! - 2018.05.17.
 
 **Véglegesítés után csak hallgatóknak előnyös módosítások lehetnek (pl. új jogcímek).** Változások: lásd git history
 
