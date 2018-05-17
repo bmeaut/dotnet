@@ -62,7 +62,6 @@
   * alternatív kulcs bevezetése valamelyik entitásban **\[3\]**      
   * más entitás kapcsolattal hivatkozik az alternatív kulcsra **+2**
 * adatbázis index konfigurációja az EF modellben **\[3\]**
-* Entitások és adatbáziskontextus használata kizárólag a DAL rétegben (internal osztályok) **\[8\]**
 * HiLo elsődleges kulcs alkalmazása **\[7\]**
 * birtokolt típus (owned type) használata **\[3\]**
 
