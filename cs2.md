@@ -17,3 +17,9 @@ public class Dog
     public override string ToString() => $"{Name} ({Age} | {AgeInDogYears}) [ID: {Id}]";
 }
 ```
+
+## AgeInDays w Elvis/Kozsó operator
+```
+private int? AgeInDays => (int?) (-DateOfBirth?.Subtract(DateTime.Now))?.Days;
+```
+
