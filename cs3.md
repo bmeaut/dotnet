@@ -9,6 +9,7 @@ public static class EnumerableExtensions
             result += sumSelector(elem);
         return result;
     }
+
     public static double Average<T>(this IEnumerable<T> source, Func<T, int> sumSelector)
     {
         var result = 0.0; // Az osztás művelet miatt double
@@ -18,8 +19,9 @@ public static class EnumerableExtensions
             elements++;
             result += sumSelector(elem);
         }
-        return result/elements;
+        return result / elements;
     }
+
     public static int Min<T>(this IEnumerable<T> source, Func<T, int> valueSelector)
     {
         int value = 0;
@@ -31,6 +33,7 @@ public static class EnumerableExtensions
         }
         return value;
     }
+
     public static int Max<T>(this IEnumerable<T> source, Func<T, int> valueSelector)
         => -source.Min(e => -valueSelector(e));
 }
