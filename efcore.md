@@ -58,7 +58,7 @@ private ILoggerFactory GetLoggerFactory()
           .GetService<ILoggerFactory>();
 }
 ```
-## SeedDatabase v2 - HIBÁS!
+# SeedDatabase v2 - HIBÁS!
 ```csharp
 //kóddarabka
 static void SeedDatabase(NorthwindContext ctx)
@@ -71,7 +71,7 @@ static void SeedDatabase(NorthwindContext ctx)
 }
 ```
 
-## SeedDatabase v3
+# SeedDatabase v3
 ```csharp
 //kóddarabka
 static void SeedDatabase(NorthwindContext ctx)
@@ -84,7 +84,7 @@ static void SeedDatabase(NorthwindContext ctx)
 }
 ```
 
-### Seeding products w HasData
+# Seeding products w HasData
 
 ```csharp
 modelBuilder.Entity<Product>()
