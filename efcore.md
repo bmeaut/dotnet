@@ -83,3 +83,12 @@ static void SeedDatabase(NorthwindContext ctx)
     ctx.SaveChanges();
 }
 ```
+
+### Seeding products w HasData
+
+```csharp
+modelBuilder.Entity<Product>()
+    .HasData(new Product { Id=1, Name = "Sör", UnitPrice = 50, CategoryId = 1 },
+             new Product { Id=2, Name = "Bor", UnitPrice = 550, CategoryId = 1 },
+             new Product { Id=3, Name = "Tej", UnitPrice = 260, CategoryId = 1 });
+```
