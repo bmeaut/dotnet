@@ -58,3 +58,28 @@ private ILoggerFactory GetLoggerFactory()
           .GetService<ILoggerFactory>();
 }
 ```
+## SeedDatabase v2 - HIBÁS!
+```csharp
+//kóddarabka
+static void SeedDatabase(NorthwindContext ctx)
+{
+    var cat_drink = new Category { Name = "Ital2" };
+    var sör2 = new Product { Name = "Sör2", UnitPrice = 50, CategoryId = cat_drink.Id };
+    ctx.Products.Add(sör2);
+    ctx.Categories.Add(cat_drink);
+    ctx.SaveChanges();
+}
+```
+
+## SeedDatabase v3
+```csharp
+//kóddarabka
+static void SeedDatabase(NorthwindContext ctx)
+{
+    var cat_drink = new Category { Name = "Ital2" };
+    var sör2 = new Product { Name = "Sör2", UnitPrice = 50, Category = cat_drink };
+    ctx.Products.Add(sör2);
+    ctx.Categories.Add(cat_drink);
+    ctx.SaveChanges();
+}
+```
