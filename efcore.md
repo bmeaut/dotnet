@@ -92,3 +92,52 @@ modelBuilder.Entity<Product>()
              new Product { Id=2, Name = "Bor", UnitPrice = 550, CategoryId = 1 },
              new Product { Id=3, Name = "Tej", UnitPrice = 260, CategoryId = 1 });
 ```
+
+# Seeding Order
+
+```csharp
+modelBuilder.Entity<Order>().HasData(
+     new Order {Id = 1, OrderDate = new DateTime(2019, 02, 01)}
+);
+
+modelBuilder.Entity<ProductOrder>().HasData(
+    new ProductOrder { Id = 1, OrderId = 1, ProductId = 1},
+    new ProductOrder { Id = 2, OrderId = 1, ProductId = 2 }
+);
+```
+
+# ShipmentRegion
+
+```csharp
+[Flags]
+public enum ShipmentRegion
+{
+    EU = 1,
+    NorthAmerica = 2,
+    Asia = 4,
+    Australia = 8
+}
+```
+
+# Seeding more products w HasData
+```csharp
+modelBuilder.Entity<Product>().HasData(
+    new Product
+    {
+         Id =1, Name = "Sör", UnitPrice = 50, CategoryId = 1,
+         ShipmentRegion = ShipmentRegion.Asia
+    },
+    new Product { Id=2, Name = "Bor", UnitPrice = 550, CategoryId = 1 },
+    new Product { Id=3, Name = "Tej", UnitPrice = 260, CategoryId = 1 },
+    new Product
+    {
+        Id = 4, Name = "Whiskey", UnitPrice = 960, CategoryId = 1,
+        ShipmentRegion = ShipmentRegion.Australia
+    },
+    new Product
+    {
+        Id = 5, Name = "Whiskey", UnitPrice = 960, CategoryId = 1,
+        ShipmentRegion = ShipmentRegion.EU | ShipmentRegion.NorthAmerica
+    }
+  );
+```
