@@ -3,6 +3,7 @@
 * Egy jogcímen csak egyszer szerezhető pont (Pl.: nem lehet 3 külső osztálykönyvtárral 21 pontot összeszedni)
 * Részpontszám nem adható, kivéve, ahol intervallum van megadva
 * Kliensoldali megoldásért nem adható pont
+* A szoftvernek egységes funkcióhalmazt kell nyújtania, különálló, egymáshoz nem kapcsolódó funkciókból álló szoftver nem elfogadható. Azaz különálló tutorialok összefércelését nem díjazzuk.
 
 ## Még nincs véglegesítve 2019. tavaszi félévre!
 
@@ -21,7 +22,9 @@
 * cache megvalósítása E-TAG használatával **\[3-8\]**
   * a kliens felüküldi az E-TAG-et, szerver összeveti az adatbázisból felolvasott verzióval **3**
   * a szerver is cache-ből olvassa ki az aktuális verziót **+5**
-* ~~ODATA API használata a szerver-kliens kommunikációban **\[7\]**~~  **(még nincs .NET Core támogatás)**
+* Az entitásmodell publikálása OData for ASP.NET Core segítségével (Microsoft.AspNetCore.OData csomag). Példahívás bemutatása a kliensben OData v4 protokollt használva.  **\[7-10\]**
+  * csak lekérdezés **\[7\]**
+  * módosítás vagy hozzáadás is **+3**
 * Szerver oldali autentikáció **\[7-18\]**
   * ASP.NET Core Identity middleware-rel, süti alapú - csak webes kliens esetén! **7**
   * token alapú, ASP.NET Core Identity + IdentityServer4 middleware-rel, nem-interaktív flow (pl. ROPG) **10**
@@ -34,11 +37,11 @@
 * külső online szolgáltatás (Twitter, Facebook, Google Maps, Bing Maps, stb.) integrálása a szerveroldali alkalmazásba klienskönyvtárral (pl. HttpClient) vagy SDK-val **\[7-10\]**
   * egyszerű REST API, SDK használat nélkül, egyszerű API kulcs alapú authentikáció **7**
   * SDK-val / REST API-val, authentikációt (pl. OAuth) végrehajtva **10**
-* SignalR Core alkalmazása valós idejű, szerver felől érkező push jellegű kommunikációra **\[7\]** **(még csak rc!)**
+* SignalR Core alkalmazása valós idejű, szerver felől érkező push jellegű kommunikációra **\[7\]**
 * hosztolás külső szolgáltatónál **\[5-7\]**
-  * Windows Azure (ingyenes App Services - WebApp szolgáltatás pl. Microsoft Imagine programon keresztül) **\[7\]**
+  * Windows Azure (ingyenes App Services - WebApp szolgáltatás pl. Azure Dev Tools for Teaching programon keresztül) **\[7\]**
   * egyéb szolgáltató **\[5\]**
-* ~~WebHooks használata külső szolgáltatással (pl. github, slack) **\[7\]**~~  **(majd csak ASP.NET Core 2.1-től)**
+* ~~WebHook-ok használata külső szolgáltatással (pl. github, slack) **\[7\]**~~  **(egyelőre nincs hivatalos támogatás, csak Lab projekt)**
 
 ## Kommunikáció, hálózatkezelés
 * alacsony szintű kommunikáció (soros port, HTTP alatt, pl. kétirányú TCP) **\[10\]**
