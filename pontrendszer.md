@@ -45,6 +45,10 @@ Változások: lásd git history
 * hosztolás külső szolgáltatónál **\[5-7\]**
   * Windows Azure (ingyenes App Services - WebApp szolgáltatás pl. Azure Dev Tools for Teaching programon keresztül) **7**
   * egyéb szolgáltató **5**
+* hosztolás service-ben (Windows Service, Linux systemd) **\[7-10\]**
+  * Windows service **7**
+  * Linux systemd **10**
+* Publikálás docker konténerbe és futtatás konténerből **\[7\]**
 * ~~WebHook-ok használata külső szolgáltatással (pl. github, slack) **\[7\]**~~  **(egyelőre nincs hivatalos támogatás, csak Lab projekt)**
 
 ## Kommunikáció, hálózatkezelés
@@ -75,6 +79,7 @@ Változások: lásd git history
 * értékkonverter (value converter) alkalmazása EF Core leképezésben **\[3-5\]**
   * beépített value converter **3**
   * saját value converter **5**
+* DbContext health check a *Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore* NuGet csomag használatával **\[3\]**
   
 ## .NET Core részfunkciók alkalmazása
 * kifejezésfa (ExpressionTree) értelmezése és manipulálása **\[5-20\]**
