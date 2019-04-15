@@ -67,9 +67,13 @@
 * adatbázis index konfigurációja az EF modellben **\[3\]**
 * HiLo elsődleges kulcs alkalmazása **\[7\]**
 * birtokolt típus (owned type) használata **\[3\]**
-
+* adatbetöltés (seeding) migráció segítségével (HasData) **\[3\]**
+* értékkonverter (value converter) alkalmazása EF Core leképezésben **\[3-5\]**
+  * beépített value converter **\[3\]**
+  * saját value converter **\[5\]**
+  
 ## .NET Core részfunkciók alkalmazása
-* kifejezésfa (ExpressionTree) értelmezése és manipulálása **\[5 - 20\]**
+* kifejezésfa (ExpressionTree) értelmezése és manipulálása **\[5-20\]**
     * pl. szűrés dinamikusan, paraméterből érkező property neve alapján (pl. o => o.Prop == x) **5**
     * pl. keresés kapcsolódó kollekcióban dinamikusan (pl. o => o.Coll.Any(e => e.Prop == x)) **10**
     * saját LINQ provider **20**
@@ -79,12 +83,12 @@
   * minimum 10 függvényhez **5**
   * a unit tesztekben a mock objektumok injektálása **+3**
   * EF Core memória-adatbázis használata teszteléshez **+4**
-*   XML validálás, alkalmazkodás meglévő XML formátumhoz pl. publikus webes sémához (RSS, opml) **\[7\]**
+* XML validálás, alkalmazkodás meglévő XML formátumhoz pl. publikus webes sémához (RSS, opml) **\[7\]**
 * Optimista konkurenciakezelés **\[5-15\]**
   * ütközésdetektálás és automatikus ütközésfeloldás **5**
   * ütközésfeloldás a felhasználó döntése alapján: client wins vagy store wins feloldással. Ütközés esetén a felhasználótól megkérdezzük, hogy a két adatverzió közül melyik legyen mentve az adatbázisba: az aktuális felhasználóé, a másik felhasználóé. Bemutatáskor szemléltetés egy példán keresztül. **10**
   * a felhasználó az eredeti értéket is választhatja (a módosítások előtti érték visszaállítása) **+5**
-* pesszimista konkurenciakezelés (adatbázistáblák lock-olása) egy felületen. Bemutatáskor szemléltetés egy példán keresztül. **\[15\]**
+* pesszimista konkurenciakezelés (adatbázisobjektumok lock-olása) egy felületen. Bemutatáskor szemléltetés egy példán keresztül. **\[15\]**
 * diagnosztika beépített vagy külső komponens segítségével legalább két célba, amiből legalább egy perzisztens (pl. fájl vagy adatbázis) **\[5\]**
 * áthívás nem felügyelt környezetbe (pl. natív Win32, natív linux) **\[7 - 12\]**
     * legalább egy nem egyszerű típus átadása/átvétele paraméterként **7**
