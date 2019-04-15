@@ -13,7 +13,11 @@ Véglegesítés után csak a következő típusú változások lehetnek
   * ellentmondások feloldása
 Változások: lásd git history
 
-**Új jogcímek felvételéhez küldj pull request-et!**
+## Társadalmi munka
+* a véglegesített pontrendszer vagy gyakorlatjegyzet javítása, bővítése, módosítása pull request-tel **\[0-2, max. 5\]**
+    * Helyesírási hiba is lehet, de az oktatók döntenek, hogy hány pontot (0-2) ér a módosítás
+    * Többször is megszerezhető!
+    * A gyakorlatjegyzet repo-ja még nincs publikálva, szorgalmi időszak végén várható.
 
 ## ASP.NET Core
 *  teljes HATEOAS implementáció **\[10\]**
@@ -26,7 +30,7 @@ Változások: lásd git history
 * cache megvalósítása E-TAG használatával **\[3-8\]**
   * a kliens felüküldi az E-TAG-et, szerver összeveti az adatbázisból felolvasott verzióval **3**
   * a szerver is cache-ből olvassa ki az aktuális verziót **+5**
-* Az entitásmodell publikálása OData for ASP.NET Core segítségével (Microsoft.AspNetCore.OData csomag). Példahívás bemutatása a kliensben OData v4 protokollt használva.  **\[7-10\]**
+* Az entitásmodell publikálása OData for ASP.NET Core segítségével (*Microsoft.AspNetCore.OData* csomag). Példahívás bemutatása a kliensben OData v4 protokollt használva.  **\[7-10\]**
   * csak lekérdezés **7**
   * módosítás vagy hozzáadás is **+3**
 * Szerver oldali autentikáció **\[7-18\]**
@@ -65,7 +69,7 @@ Változások: lásd git history
 * MS SQL-től eltérő adatbáziskiszolgáló használata EF Core-ral (kivéve sqlite) **\[12\]**
 * ~~saját Code-First konvenció készítése **\[5\]**~~  **(EF Core jelenleg nem támogatja)**
 * saját szabályszerűség (konvenció) implementálása vagy meglevő felülbírálása reflexióval és/vagy Model API-val **\[5\]**
-* saját többesszámosító (IPluralizer) - nem kell nyelvtanilag helyesnek lennie **\[7\]**
+* saját többesszámosító (`IPluralizer`) - nem kell nyelvtanilag helyesnek lennie **\[7\]**
 * saját újrapróbálkozó (execution strategy) készítése és használata tranziens adatbázishibák (pl. connection timeout) ellen **\[7\]**
 * Table splitting **\[5\]**
 * ~~Entity splitting **\[5\]**~~  **(EF Core jelenleg nem támogatja)**
@@ -75,19 +79,19 @@ Változások: lásd git history
 * adatbázis index konfigurációja az EF modellben **\[3\]**
 * HiLo elsődleges kulcs alkalmazása **\[7\]**
 * birtokolt típus (owned type) használata **\[3\]**
-* adatbetöltés (seeding) migráció segítségével (HasData) **\[3\]**
+* adatbetöltés (seeding) migráció segítségével (`HasData`) **\[3\]**
 * értékkonverter (value converter) alkalmazása EF Core leképezésben **\[3-5\]**
   * beépített value converter **3**
   * saját value converter **5**
-* DbContext health check a *Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore* NuGet csomag használatával **\[3\]**
+* `DbContext` health check a *Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore* NuGet csomag használatával **\[3\]**
   
 ## .NET Core részfunkciók alkalmazása
 * kifejezésfa (ExpressionTree) értelmezése és manipulálása **\[5-20\]**
-    * pl. szűrés dinamikusan, paraméterből érkező property neve alapján (pl. o => o.Prop == x) **5**
-    * pl. keresés kapcsolódó kollekcióban dinamikusan (pl. o => o.Coll.Any(e => e.Prop == x)) **10**
+    * pl. szűrés dinamikusan, paraméterből érkező property neve alapján (pl. `o => o.Prop == x`) **5**
+    * pl. keresés kapcsolódó kollekcióban dinamikusan (pl. `o => o.Coll.Any(e => e.Prop == x)`) **10**
     * saját LINQ provider **20**
 * explicit kölcsönös kizárás helyett _ConcurretBag/ConcurrentQueue/ConcurrentStack/ConcurrentDictionary_ használata olyan rétegben, ahol párhuzamos hozzáférés valóban előfordul **\[5\]**
-* lock-free algoritmus implementálása és használata (könyvtári implementáció felhasználása nélkül, Interlocked függvények használatával) **\[10\]**
+* lock-free algoritmus implementálása és használata (könyvtári implementáció felhasználása nélkül, `Interlocked` függvények használatával) **\[10\]**
 * unit tesztek készítése  **\[5-12\]**
   * minimum 10 függvényhez **5**
   * a unit tesztekben a mock objektumok injektálása **+3**
@@ -118,12 +122,3 @@ Változások: lásd git history
 * NET Compiler platform (Roslyn) Diagnostic Analyzer **\[3-7\]**
   * egyszerű analyzer, pl. property név konvenciók ellenőrzése **3**
   * bonyolultabb analyzer és kód fix is, pl. kiemelés metódusba **7**
-  
-## Társadalmi munka
-* a véglegesített pontrendszer vagy gyakorlatjegyzet javítása, bővítése, módosítása pull request-tel **\[0-2, max. 5\]**
-    * Helyesírási hiba is lehet, de az oktatók döntenek, hogy hány pontot (0-2) ér a módosítás
-    * Többször is megszerezhető!
-    * A gyakorlatjegyzet repo-ja még nincs publikálva, szorgalmi időszak végén várható.
-    
-    
-
