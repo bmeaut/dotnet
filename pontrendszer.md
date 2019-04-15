@@ -1,15 +1,19 @@
 ## Pontszerzési szabályok
 
-* Egy jogcímen csak egyszer szerezhető pont (Pl.: nem lehet 3 külső osztálykönyvtárral 21 pontot összeszedni)
+* Egy jogcímen csak egyszer szerezhető pont (Pl.: nem lehet 3 külső osztálykönyvtárral 21 pontot összeszedni), kivéve ahol ezt külön jelezzük
 * Részpontszám nem adható, kivéve, ahol intervallum van megadva
 * Kliensoldali megoldásért nem adható pont
 * A szoftvernek egységes funkcióhalmazt kell nyújtania, különálló, egymáshoz nem kapcsolódó funkciókból álló szoftver nem elfogadható. Azaz különálló tutorialok összefércelését nem díjazzuk.
 
 ## Még nincs véglegesítve 2019. tavaszi félévre!
 
-**Véglegesítés után csak hallgatóknak előnyös módosítások lehetnek (pl. új jogcímek).** Változások: lásd git history
+Véglegesítés után csak a következő típusú változások lehetnek
+  * hallgatóknak kedvező változások (pl. új jogcímek)
+  * elírások, megfogalmazásbeli pontosítások javítása
+  * ellentmondások feloldása
+Változások: lásd git history
 
-Új jogcímek felvételéhez küldj pull request-et!
+**Új jogcímek felvételéhez küldj pull request-et!**
 
 ## ASP.NET Core
 *  teljes HATEOAS implementáció **\[10\]**
@@ -97,8 +101,8 @@
 * logikai törlés (soft delete) globális szűrőkkel (Global Query Filter) **\[5\]**
 
 ## Kiegészítő, kapcsolódó technológiák alkalmazása
-* Beépülőkkel bővíthető alkalmazás készítése [MEF](http://msdn.microsoft.com/en-us/library/dd460648.aspx) használatával, legalább 1 pluginnel **\[10\]**
-* [Rx](http://msdn.microsoft.com/en-us/data/gg577609) Framework használata **\[7-10\]**
+* Beépülőkkel bővíthető alkalmazás készítése [MEF](https://docs.microsoft.com/en-us/dotnet/framework/mef/index) használatával, legalább 1 pluginnel **\[10\]**
+* [Rx.NET](http://reactivex.io/, https://github.com/dotnet/reactive) használata **\[7-10\]**
     * néhány alap Rx operátor használata **7**
     * két külső adatforrás integrálása **10**
 * F# modul készítése és meghívása. Legalább az egyik legyen benne ezek közül: pattern matching, async, magasabb rendű függvény **\[7\]**
@@ -110,3 +114,12 @@
 * NET Compiler platform (Roslyn) Diagnostic Analyzer **\[3-7\]**
   * egyszerű analyzer, pl. property név konvenciók ellenőrzése **3**
   * bonyolultabb analyzer és kód fix is, pl. kiemelés metódusba **7**
+  
+## Társadalmi munka
+* A véglegesített pontrendszer vagy gyakorlatjegyzet javítása, bővítése, módosítása pull request-tel **\[0-2, max. 5\]**
+    * Helyesírási hiba is lehet, de az oktatók döntenek, hogy hány pontot (0-2) ér a módosítás
+    * Többször is megszerezhető!
+    * A gyakorlatjegyzet repo-ja még nincs publikálva, szorgalmi időszak végén várható.
+    
+    
+
