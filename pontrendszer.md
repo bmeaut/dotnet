@@ -27,7 +27,7 @@ Változások: lásd git history
   * a kliens felüküldi az E-TAG-et, szerver összeveti az adatbázisból felolvasott verzióval **3**
   * a szerver is cache-ből olvassa ki az aktuális verziót **+5**
 * Az entitásmodell publikálása OData for ASP.NET Core segítségével (Microsoft.AspNetCore.OData csomag). Példahívás bemutatása a kliensben OData v4 protokollt használva.  **\[7-10\]**
-  * csak lekérdezés **\[7\]**
+  * csak lekérdezés **7**
   * módosítás vagy hozzáadás is **+3**
 * Szerver oldali autentikáció **\[7-18\]**
   * ASP.NET Core Identity middleware-rel, süti alapú - csak webes kliens esetén! **7**
@@ -43,8 +43,8 @@ Változások: lásd git history
   * SDK-val / REST API-val, authentikációt (pl. OAuth) végrehajtva **10**
 * SignalR Core alkalmazása valós idejű, szerver felől érkező push jellegű kommunikációra **\[7\]**
 * hosztolás külső szolgáltatónál **\[5-7\]**
-  * Windows Azure (ingyenes App Services - WebApp szolgáltatás pl. Azure Dev Tools for Teaching programon keresztül) **\[7\]**
-  * egyéb szolgáltató **\[5\]**
+  * Windows Azure (ingyenes App Services - WebApp szolgáltatás pl. Azure Dev Tools for Teaching programon keresztül) **7**
+  * egyéb szolgáltató **5**
 * ~~WebHook-ok használata külső szolgáltatással (pl. github, slack) **\[7\]**~~  **(egyelőre nincs hivatalos támogatás, csak Lab projekt)**
 
 ## Kommunikáció, hálózatkezelés
@@ -73,8 +73,8 @@ Változások: lásd git history
 * birtokolt típus (owned type) használata **\[3\]**
 * adatbetöltés (seeding) migráció segítségével (HasData) **\[3\]**
 * értékkonverter (value converter) alkalmazása EF Core leképezésben **\[3-5\]**
-  * beépített value converter **\[3\]**
-  * saját value converter **\[5\]**
+  * beépített value converter **3**
+  * saját value converter **5**
   
 ## .NET Core részfunkciók alkalmazása
 * kifejezésfa (ExpressionTree) értelmezése és manipulálása **\[5-20\]**
@@ -110,7 +110,6 @@ Változások: lásd git history
 * platformfüggetlen kódbázisú szerveralkalmazás készítése és bemutatása legalább 2 operációs rendszeren az alábbiak közül: Windows, Linux, Mac, ARM alapú OS (Raspberry Pi). **\[7\]**
 
 ## Konkrét funkciók
-* meglévő, magasabb szintű hálózati protokoll implementációja (pl. BitTorrent, GNUtella) **\[20\]**
 * NET Compiler platform (Roslyn) Diagnostic Analyzer **\[3-7\]**
   * egyszerű analyzer, pl. property név konvenciók ellenőrzése **3**
   * bonyolultabb analyzer és kód fix is, pl. kiemelés metódusba **7**
