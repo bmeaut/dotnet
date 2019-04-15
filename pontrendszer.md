@@ -11,6 +11,7 @@ Véglegesítés után csak a következő típusú változások lehetnek
   * hallgatóknak kedvező változások (pl. új jogcímek)
   * elírások, megfogalmazásbeli pontosítások javítása
   * ellentmondások feloldása
+  
 Változások: lásd git history
 
 ## Társadalmi munka
