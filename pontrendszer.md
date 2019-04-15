@@ -102,7 +102,7 @@ Változások: lásd git history
 
 ## Kiegészítő, kapcsolódó technológiák alkalmazása
 * Beépülőkkel bővíthető alkalmazás készítése [MEF](https://docs.microsoft.com/en-us/dotnet/framework/mef/index) használatával, legalább 1 pluginnel **\[10\]**
-* [Rx.NET](http://reactivex.io/, https://github.com/dotnet/reactive) használata **\[7-10\]**
+* [Rx.NET](https://github.com/dotnet/reactive) használata ([dokumentáció](http://reactivex.io/)) **\[7-10\]**
     * néhány alap Rx operátor használata **7**
     * két külső adatforrás integrálása **10**
 * F# modul készítése és meghívása. Legalább az egyik legyen benne ezek közül: pattern matching, async, magasabb rendű függvény **\[7\]**
@@ -116,7 +116,7 @@ Változások: lásd git history
   * bonyolultabb analyzer és kód fix is, pl. kiemelés metódusba **7**
   
 ## Társadalmi munka
-* A véglegesített pontrendszer vagy gyakorlatjegyzet javítása, bővítése, módosítása pull request-tel **\[0-2, max. 5\]**
+* a véglegesített pontrendszer vagy gyakorlatjegyzet javítása, bővítése, módosítása pull request-tel **\[0-2, max. 5\]**
     * Helyesírási hiba is lehet, de az oktatók döntenek, hogy hány pontot (0-2) ér a módosítás
     * Többször is megszerezhető!
     * A gyakorlatjegyzet repo-ja még nincs publikálva, szorgalmi időszak végén várható.
