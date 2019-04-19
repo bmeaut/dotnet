@@ -136,7 +136,7 @@ modelBuilder.Entity<Product>().HasData(
     },
     new Product
     {
-        Id = 5, Name = "Whiskey", UnitPrice = 960, CategoryId = 1,
+        Id = 5, Name = "Rum", UnitPrice = 850, CategoryId = 1,
         ShipmentRegion = ShipmentRegion.EU | ShipmentRegion.NorthAmerica
     }
   );
