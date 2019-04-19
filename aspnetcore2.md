@@ -1,3 +1,6 @@
+# REST konvenciók
+https://www.restapitutorial.com/lessons/httpmethods.html
+
 # Product Post
 ## Header
 Content-Type: application/json
