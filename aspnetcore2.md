@@ -14,29 +14,16 @@ Content-Type: application/json
 }
 ```
 
-# MapperConfig.cs
+# AutoMapper config
 ```
-public class MapperConfig
+services.AddAutoMapper(cfg =>
 {
-    public static IMapper Configure()
-    {
-        var config = new MapperConfiguration(cfg =>
-        {
-            cfg.CreateMap<Product, Dtos.Product>()
-                .ForMember(dto => dto.Orders, opt => opt.Ignore())
-                .AfterMap((p, dto, ctx) => dto.Orders = p.ProductOrders.Select(po => ctx.Mapper.Map<Dtos.Order>(po.Order)).ToList());
-            cfg.CreateMap<Dtos.Product, Product>();
-
-            cfg.CreateMap<Order, Dtos.Order>();
-            cfg.CreateMap<Dtos.Order, Order>();
-
-            cfg.CreateMap<Category, Dtos.Category>();
-            cfg.CreateMap<Dtos.Category, Category>();
-        });
-
-        var mapper = config.CreateMapper();
-
-        return mapper;
-    }
-}
+    cfg.CreateMap<Entities.Product, Dtos.Product>()
+        .ForMember(dto => dto.Orders, opt => opt.Ignore())
+        .AfterMap((p, dto, ctx) =>
+            dto.Orders = p.ProductOrders.Select(po =>
+            ctx.Mapper.Map<Dtos.Order>(po.Order)).ToList()).ReverseMap();
+    cfg.CreateMap<Entities.Order, Dtos.Order>().ReverseMap();
+    cfg.CreateMap<Entities.Category, Dtos.Category>().ReverseMap();
+});
 ```
