@@ -5,7 +5,7 @@ https://www.restapitutorial.com/lessons/httpmethods.html
 ## Header
 Content-Type: application/json
 ## Body
-```csharp
+```javascript
 {
     "Name" : "Pálinka",
     "UnitPrice" : 4000,
