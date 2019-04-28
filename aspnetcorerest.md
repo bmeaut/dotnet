@@ -41,6 +41,7 @@ services.AddAutoMapper(cfg =>
 
 # NSwag Studio
 https://github.com/RicoSuter/NSwag/releases
+
 A zip változat-ot töltsük le és csomagoljuk ki. Ezután NSwagStudio.exe-vel indítható az alkalmazás.
 
 
