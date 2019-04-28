@@ -38,3 +38,9 @@ services.AddAutoMapper(cfg =>
 /// <returns>Returns a specific product with the given identifier</returns>
 /// <response code="200">Returns a specific product with the given identifier</response>
 ```
+
+# NSwag Studio
+https://github.com/RicoSuter/NSwag/releases
+A zip változat-ot töltsük le és csomagoljuk ki. Ezután NSwagStudio.exe-vel indítható az alkalmazás.
+
+
