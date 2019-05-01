@@ -100,7 +100,7 @@ public class ConcurrencyProblemDetails : StatusCodeProblemDetails
 }
 ```
 
-# UpdateProduct fixek
+# UpdateProduct fixek konkurenciakezeléshez
 
 ```csharp
 public void UpdateProduct(int productId, Product updatedProduct)
