@@ -51,3 +51,10 @@ A zip változat-ot töltsük le és csomagoljuk ki. Ezután NSwagStudio.exe-vel 
 Install-Package Hellang.Middleware.ProblemDetails
 ```
 
+# Product.RowVersion migráció
+
+```powershell
+Add-Migration ProductRowVersion -StartupProject WebApiLabor.Api
+Update-Database -StartupProject WebApiLabor.Api
+```
+
