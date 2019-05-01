@@ -99,3 +99,24 @@ public class ConcurrencyProblemDetails : StatusCodeProblemDetails
     }
 }
 ```
+
+# UpdateProduct fixek
+
+```csharp
+public void UpdateProduct(int productId, Product updatedProduct)
+{
+    updatedProduct.Id = productId;
+    var entry = _context.Attach(updatedProduct);
+    entry.State = EntityState.Modified;            
+    _context.SaveChanges();            
+}
+
+
+public async Task UpdateProductAsync(int productId, Product updatedProduct)
+{
+    updatedProduct.Id = productId;
+    var entry = _context.Attach(updatedProduct);
+    entry.State = EntityState.Modified;           
+    await _context.SaveChangesAsync();
+}
+```
