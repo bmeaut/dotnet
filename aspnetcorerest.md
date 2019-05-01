@@ -111,7 +111,6 @@ public void UpdateProduct(int productId, Product updatedProduct)
     _context.SaveChanges();            
 }
 
-
 public async Task UpdateProductAsync(int productId, Product updatedProduct)
 {
     updatedProduct.Id = productId;
