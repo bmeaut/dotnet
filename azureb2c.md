@@ -15,3 +15,15 @@
 
 # Vastagkliens (WPF) mintaprojekt
 - [Repo](https://github.com/bmeaut/active-directory-b2c-dotnet-desktop/tree/msalv3)
+
+# Ha nem működik a HTTPS
+```powershell
+dotnet dev-certs --clean
+dotnet dev-certs https --trust
+```
+
+# TLS beállítás
+```csharp
+System.Net.ServicePointManager.SecurityProtocol =
+                SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
+```
