@@ -6,6 +6,7 @@
 
 # Azure B2C tutorial-ok
 
+- [Azure előfizetések BME hallgatóknak](https://www.aut.bme.hu/Course/felho) - Azure erőforrások alcím
 - [Tenant létrehozás](https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant)
 - [Alkalmazás regisztráció](https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-register-applications)
 - [Folyamat létrehozás](https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-user-flows)
