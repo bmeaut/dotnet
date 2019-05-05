@@ -27,3 +27,29 @@ dotnet dev-certs https --trust
 System.Net.ServicePointManager.SecurityProtocol =
                 SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
 ```
+
+# Scope policy
+
+```csharp
+services.AddAuthorization(options =>
+{
+    options.AddPolicy("DemoRead", policy =>
+        policy.RequireClaim(
+            "http://schemas.microsoft.com/identity/claims/scope",
+            "demo.read"
+        )
+    );
+});
+```
+
+# Admin policy
+
+```csharp
+/*kóddarabka*/
+options.AddPolicy("Admin", policy =>
+    policy.RequireClaim(
+        "http://schemas.microsoft.com/identity/claims/objectidentifier"
+    //Vegyünk fel egy-két Object ID-t a regisztrált felhasználók közül
+        , "00000000-0000-0000-0000-000000000000"
+        , "00000000-0000-0000-0000-000000000000"));
+```
