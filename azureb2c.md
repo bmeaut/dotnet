@@ -6,11 +6,11 @@
 
 # Azure B2C tutorial-ok
 
-- [Azure előfizetések BME hallgatóknak](https://www.aut.bme.hu/Course/felho) - **Azure erőforrások** alcím
-- [Tenant létrehozás](https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant)
-- [Webalkalmazás regisztráció](https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-register-applications)
-- [Kliensalkalmazás regisztráció](https://docs.microsoft.com/hu-hu/azure/active-directory-b2c/add-native-application)
-- [Folyamat létrehozás](https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-user-flows#create-a-sign-up-and-sign-in-user-flow)
+1. [Azure előfizetések BME hallgatóknak](https://www.aut.bme.hu/Course/felho) - **Azure erőforrások** alcím
+2. [Tenant létrehozás](https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-tenant)
+3. [Webalkalmazás regisztráció](https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-register-applications)
+4. [Kliensalkalmazás regisztráció](https://docs.microsoft.com/hu-hu/azure/active-directory-b2c/add-native-application)
+5. [Folyamat létrehozás](https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-create-user-flows#create-a-sign-up-and-sign-in-user-flow)
 
 
 # Vastagkliens (WPF) mintaprojekt
