@@ -25,8 +25,9 @@ Változások: lásd git history
 *  Web API által alapból nem támogatott HTTP ige implementálása **\[5-10\]**
    * pl. GET-hez hasonló működés **5**
    * pl. OPTIONS RFC2616 szerint **10**
-* verziókezelt API **\[5-8\]**
-   * HTTP header alapján **+3**
+* verziókezelt API **\[7-10\]**
+   * nem HTTP header (pl. URL szegmens) alapján **7**
+   * HTTP header alapján **10**
 * API egy részének védése felhasználó által igényelhető API kulccsal **\[7\]**
 * cache megvalósítása E-TAG használatával **\[3-8\]**
   * a kliens felüküldi az E-TAG-et, szerver összeveti az adatbázisból felolvasott verzióval **3**
@@ -38,7 +39,7 @@ Változások: lásd git history
   * ASP.NET Core Identity middleware-rel, süti alapú - csak webes kliens esetén! **7**
   * token alapú, ASP.NET Core Identity + IdentityServer4 middleware-rel, nem-interaktív flow (pl. ROPG) **10**
   * token alapú, ASP.NET Core Identity + IdentityServer4 middleware-rel, interaktív flow **15**
-  * Azure AD B2C-re (ingyenes szint) építve **15**
+  * Azure AD B2C-re (ingyenes szint) építve **10**
   * legalább egy külső identity provider integrálása (Google login, Windows login, stb.)  **+3**
 * szerver oldali hozzáférés-szabályozás, az előbbi authentikációra építve  **\[2-6\]**
     * szerepkör alapú hozzáférés-szabályozás **2**
@@ -67,7 +68,7 @@ Változások: lásd git history
   * TPH, a diszkriminátor mező testreszabásával (saját mezőnév vagy saját értékek) **3**
   * ~~TPT-vel **5**~~ **(EF Core jelenleg nem támogatja)**
   * ~~TPC-vel **7**~~ **(EF Core jelenleg nem támogatja)**
-* MS SQL-től eltérő adatbáziskiszolgáló használata EF Core-ral (kivéve sqlite) **\[12\]**
+* MS SQL/LocalDB-től eltérő adatbáziskiszolgáló használata EF Core-ral (kivéve sqlite) **\[10\]**
 * ~~saját Code-First konvenció készítése **\[5\]**~~  **(EF Core jelenleg nem támogatja)**
 * saját szabályszerűség (konvenció) implementálása vagy meglevő felülbírálása reflexióval és/vagy Model API-val **\[5\]**
 * saját többesszámosító (`IPluralizer`) - nem kell nyelvtanilag helyesnek lennie **\[7\]**
