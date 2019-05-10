@@ -16,10 +16,6 @@
 # Vastagkliens (WPF) mintaprojekt
 - [Repo](https://github.com/bmeaut/active-directory-b2c-dotnet-desktop/tree/msalv3)
 
-ClientID: 3dcd6ad2-38c6-4387-a80d-85ed1043b7f0
-
-webapp id:  389591c5-e813-4b68-b132-c8dfde82d567
-
 # Ha nem működik a HTTPS
 ```powershell
 dotnet dev-certs https --clean
