@@ -22,7 +22,7 @@ webapp id:  389591c5-e813-4b68-b132-c8dfde82d567
 
 # Ha nem működik a HTTPS
 ```powershell
-dotnet dev-certs --clean
+dotnet dev-certs https --clean
 dotnet dev-certs https --trust
 ```
 
