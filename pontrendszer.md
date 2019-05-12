@@ -5,7 +5,7 @@
 * Kliensoldali megoldásért nem adható pont
 * A szoftvernek egységes funkcióhalmazt kell nyújtania, különálló, egymáshoz nem kapcsolódó funkciókból álló szoftver nem elfogadható. Azaz különálló tutorialok összefércelését nem díjazzuk.
 
-## Még nincs véglegesítve 2019. tavaszi félévre!
+## Véglegesítve 2019. tavaszi félévre 2019.05.12-én!
 
 Véglegesítés után csak a következő típusú változások lehetnek
   * hallgatóknak kedvező változások (pl. új jogcímek)
@@ -20,9 +20,9 @@ Változások: lásd git history
     * Többször is megszerezhető!
     * A gyakorlatjegyzet repo-ja még nincs publikálva, szorgalmi időszak végén várható.
 
-## ASP.NET Core
-*  teljes HATEOAS implementáció **\[10\]**
-*  Web API által alapból nem támogatott HTTP ige implementálása **\[5-10\]**
+## ASP.NET Core Web API
+*  teljes HATEOAS implementáció. A kliens csak egy alap URL-t ismer, de minden művelet dinamikusan felderíthető számára. **\[10\]**
+*  Web API Core által alapból nem támogatott HTTP ige implementálása **\[5-10\]**
    * pl. GET-hez hasonló működés **5**
    * pl. OPTIONS RFC2616 szerint **10**
 * verziókezelt API **\[7-10\]**
@@ -58,7 +58,7 @@ Változások: lásd git history
 * ~~WebHook-ok használata külső szolgáltatással (pl. github, slack) **\[7\]**~~  **(egyelőre nincs hivatalos támogatás, csak Lab projekt)**
 
 ## Kommunikáció, hálózatkezelés
-* alacsony szintű kommunikáció (soros port, HTTP alatt, pl. kétirányú TCP) **\[10\]**
+* alacsony szintű kommunikáció (soros port, HTTP alatti OSI réteg, pl. kétirányú TCP) **\[10\]**
 * HTTPS kommunikáció (self-signed tanúsítvánnyal) az ASP.NET Web API és a kliens között, hosztolás normál, nem fejlesztői webszerverben (pl. Kestrel, Apache, nginx, nem IIS Express), szemléltetés Fiddler-rel **\[7-12\]**
   * csak szerver oldali tanúsítvány **7**
   * kliens is azonosítja magát tanúsítvánnyal a szerver felé **+5**
