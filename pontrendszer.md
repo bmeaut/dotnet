@@ -18,7 +18,7 @@ Változások: lásd git history
 * a véglegesített pontrendszer vagy gyakorlatjegyzet javítása, bővítése, módosítása pull request-tel **\[0-2, max. 5\]**
     * Helyesírási hiba is lehet, de az oktatók döntenek, hogy hány pontot (0-2) ér a módosítás
     * Többször is megszerezhető!
-    * A gyakorlatjegyzet repo-ja még nincs publikálva, szorgalmi időszak végén várható.
+    * A gyakorlatjegyzet repo-ja: https://github.com/bmeaut/aspnetcorebook
 
 ## ASP.NET Core Web API
 *  teljes HATEOAS implementáció. A kliens csak egy alap URL-t ismer, de minden művelet dinamikusan felderíthető számára. **\[10\]**
