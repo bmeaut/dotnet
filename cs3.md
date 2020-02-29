@@ -38,3 +38,21 @@ public static class EnumerableExtensions
         => -source.Min(e => -valueSelector(e));
 }
 ```
+
+## Expression építés Expression API-val
+```csharp
+using Expression = System.Linq.Expressions.Expression;
+using System.Reflection; // A GetTypeInfo() bővítő metódus miatt.
+//...
+var param =              Expression.Parameter(typeof(Dog), "d");
+var name =               Expression.Property(param, "Name");
+var startsWithConstant = Expression.Constant(searchText);
+var startsWithArgument = Expression.Constant(StringComparison.OrdinalIgnoreCase);
+var methodCall =         Expression.Call(name, typeof(string).GetTypeInfo().
+                                GetMethod("StartsWith",
+                                    new[] { typeof(string),
+                                    typeof(StringComparison) }),
+                            startsWithConstant, startsWithArgument);
+var expression =         Expression.Lambda(methodCall, param);
+var predicate =          new Predicate<Dog>(expression.Compile() as Func<Dog, bool>);
+```
