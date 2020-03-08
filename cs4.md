@@ -86,34 +86,24 @@ struct PersonHandle
 
 
 
-## RandomOrderedList<> 
+## Kiértékelési érdekességek
 ```csharp
-public class RandomOrderedList<T> : IEnumerable<T>
+var i = 0;
+foreach (var n in numbers
+                    .Where(p => p.Value > 2)
+                    .Select(p => new { p, x = ++i }))
 {
-    public RandomOrderedList(IList<T> source) => Source = source;
-    private IList<T> Source { get; }
-    public IEnumerator<T> GetEnumerator() => new RandomEnumerator<T>(Source);
-    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+    Console.WriteLine($"{n} - {i}");
 }
-```
 
-## RandomEnumerator
-```csharp
-public class RandomEnumerator<T> : IEnumerator<T>
+Console.WriteLine();
+
+i = 0;
+foreach (var n in numbers
+                    .Where(p => p.Value > 2)
+                    .Select(p => new { p, x = ++i })
+                    .ToList())
 {
-    private IList<T> Source { get; }
-    private int[] indexes;
-    private int currentIndex;
-    public RandomEnumerator(IList<T> source)
-    {
-        Source = source;
-        Reset();
-    }
-    public T Current => Source[indexes[currentIndex]];
-    object IEnumerator.Current => Current;
-    public void Dispose() { }
-    public bool MoveNext() => ++currentIndex < Source.Count;
-    public void Reset() => indexes = Enumerable.Range(currentIndex = 0, Source.Count)
-                                               .OrderBy(i => Guid.NewGuid()).ToArray();
+    Console.WriteLine($"{n} - {i}");
 }
 ```
