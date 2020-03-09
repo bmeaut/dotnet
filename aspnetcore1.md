@@ -1,6 +1,8 @@
 ## Source of methods called by CreateHostBuilder
 https://github.com/dotnet/extensions/blob/v3.1.2/src/Hosting/Hosting/src/Host.cs
+
 https://github.com/dotnet/aspnetcore/blob/v3.1.2/src/DefaultBuilder/src/GenericHostBuilderExtensions.cs
+
 https://github.com/dotnet/aspnetcore/blob/v3.1.2/src/DefaultBuilder/src/WebHost.cs
 
 ## Appsetting.json w DummySettings
