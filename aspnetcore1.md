@@ -7,14 +7,16 @@ https://docs.microsoft.com/en-us/aspnet/core/fundamentals/host/generic-host?view
 {
   "Logging": {
     "LogLevel": {
-      "Default": "Warning"
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
     }
   },
   "AllowedHosts": "*",
   "DummySettings": {
     "DefaultString": "My Value",
     "DefaultInt": 23,
-    "SuperSecret":  "Spoiler Alert!!!"
+    "SuperSecret": "Spoiler Alert!!!"
   }
 }
 ```
