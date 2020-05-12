@@ -108,10 +108,10 @@ Változások: lásd git history
   * a felhasználó az eredeti értéket is választhatja (a módosítások előtti érték visszaállítása) **+5**
 * pesszimista konkurenciakezelés (adatbázisobjektumok zárolása) egy felületen. Bemutatáskor szemléltetés egy példán keresztül. **\[10\]**
 * diagnosztika beépített vagy külső komponens segítségével **\[5-9\]**
- * legalább két célba, amiből legalább egy perzisztens (pl. fájl vagy adatbázis vagy külső szolgáltatás) **5**
- * struktúrált naplózás (structured logging) **+2**
- * fájl cél esetén rolling log (minden napon/héten/10 MB-onként új logfájl) **+2**
- * az egyik cél egy külső naplózó szolgáltatás (pl. Azure Application Insights) **+2**
+  * legalább két célba, amiből legalább egy perzisztens (pl. fájl vagy adatbázis vagy külső szolgáltatás) **5**
+  * struktúrált naplózás (structured logging) **+2**
+  * fájl cél esetén rolling log (minden napon/héten/10 MB-onként új naplófájl) **+2**
+  * az egyik cél egy külső naplózó szolgáltatás (pl. Azure Application Insights) **+2**
 * áthívás nem felügyelt környezetbe (pl. natív Win32, natív linux) **\[7 - 12\]**
     * legalább egy nem egyszerű típus átadása/átvétele paraméterként **7**
     * saját natív kód használata, összetett típus átadásával **12**
@@ -119,7 +119,7 @@ Változások: lásd git history
 * logikai törlés (soft delete) globális szűrőkkel (Global Query Filter) **\[5\]**
 
 ## Kiegészítő, kapcsolódó technológiák alkalmazása
-* Beépülőkkel bővíthető alkalmazás készítése [MEF](https://docs.microsoft.com/en-us/dotnet/framework/mef/index) használatával, legalább 1 pluginnel **\[10\]**
+* Beépülőkkel bővíthető alkalmazás készítése MEF v2 használatával, legalább 1 pluginnel **\[10\]**
 * [Rx.NET](https://github.com/dotnet/reactive) használata ([dokumentáció](http://reactivex.io/)) **\[7-10\]**
     * néhány alap Rx operátor használata **7**
     * két külső adatforrás integrálása **10**
