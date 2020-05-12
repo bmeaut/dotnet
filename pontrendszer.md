@@ -36,7 +36,7 @@ Változások: lásd git history
   * csak lekérdezés **7**
   * módosítás vagy hozzáadás is **+3**
 * Szerver oldali autentikáció **\[7-15\]**
-  * ASP.NET Core Identity middleware-rel, süti alapú - csak webes kliens esetén! **7**
+  * ASP.NET Core Identity middleware-rel, süti alapú - csak böngészős/Postman kliens esetén! **7**
   * token alapú, ASP.NET Core Identity + IdentityServer4 middleware-rel, nem-interaktív flow (pl. ROPG) **10**
   * token alapú, ASP.NET Core Identity + IdentityServer4 middleware-rel, interaktív flow **12**
   * Azure AD B2C-re (ingyenes szint) építve **10**
