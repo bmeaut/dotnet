@@ -22,9 +22,9 @@ Változások: lásd git history
 
 ## ASP.NET Core Web API
 *  teljes HATEOAS implementáció. A kliens csak egy alap URL-t ismer, de minden művelet dinamikusan felderíthető számára. **\[10\]**
-*  Web API Core által alapból nem támogatott HTTP ige implementálása **\[5-10\]**
+*  Web API Core által alapból nem támogatott HTTP ige (verb) implementálása **\[5-10\]**
    * pl. GET-hez hasonló működés **5**
-   * pl. OPTIONS RFC2616 szerint **10**
+   * pl. OPTIONS ige RFC2616 szerint **10**
 * verziókezelt API **\[7-10\]**
    * nem HTTP header (pl. URL szegmens) alapján **7**
    * HTTP header alapján **10**
@@ -35,15 +35,16 @@ Változások: lásd git history
 * Az entitásmodell publikálása OData for ASP.NET Core segítségével (*Microsoft.AspNetCore.OData* csomag). Példahívás bemutatása a kliensben OData v4 protokollt használva.  **\[7-10\]**
   * csak lekérdezés **7**
   * módosítás vagy hozzáadás is **+3**
-* Szerver oldali autentikáció **\[7-18\]**
+* Szerver oldali autentikáció **\[7-15\]**
   * ASP.NET Core Identity middleware-rel, süti alapú - csak webes kliens esetén! **7**
   * token alapú, ASP.NET Core Identity + IdentityServer4 middleware-rel, nem-interaktív flow (pl. ROPG) **10**
-  * token alapú, ASP.NET Core Identity + IdentityServer4 middleware-rel, interaktív flow **15**
+  * token alapú, ASP.NET Core Identity + IdentityServer4 middleware-rel, interaktív flow **12**
   * Azure AD B2C-re (ingyenes szint) építve **10**
+  * más Identity-as-a-Service szolgáltatással (pl. Auth0) **7**
   * legalább egy külső identity provider integrálása (Google login, Windows login, stb.)  **+3**
-* szerver oldali hozzáférés-szabályozás, az előbbi authentikációra építve  **\[2-6\]**
+* szerver oldali hozzáférés-szabályozás, az előbbi authentikációra építve  **\[2-5\]**
     * szerepkör alapú hozzáférés-szabályozás **2**
-    * claim alapú hozzáférés-szabályozás **6**
+    * claim alapú hozzáférés-szabályozás **5**
 * külső online szolgáltatás (Twitter, Facebook, Google Maps, Bing Maps, stb.) integrálása a szerveroldali alkalmazásba klienskönyvtárral (pl. HttpClient) vagy SDK-val **\[7-10\]**
   * egyszerű REST API, SDK használat nélkül, egyszerű API kulcs alapú authentikáció **7**
   * SDK-val / REST API-val, authentikációt (pl. OAuth) végrehajtva **10**
@@ -72,7 +73,7 @@ Változások: lásd git history
 * ~~saját Code-First konvenció készítése **\[5\]**~~  **(EF Core jelenleg nem támogatja)**
 * saját szabályszerűség (konvenció) implementálása vagy meglevő felülbírálása reflexióval és/vagy Model API-val **\[5\]**
 * saját többesszámosító (`IPluralizer`) - nem kell nyelvtanilag helyesnek lennie **\[7\]**
-* saját újrapróbálkozó (execution strategy) készítése és használata tranziens adatbázishibák (pl. connection timeout) ellen **\[7\]**
+* újrapróbálkozás beállítása tranziens adatbázishibák (pl. connection timeout) ellen **\[2\]**
 * Table splitting **\[5\]**
 * ~~Entity splitting **\[5\]**~~  **(EF Core jelenleg nem támogatja)**
 * alternatív kulcs **\[3-5\]**
@@ -85,7 +86,7 @@ Változások: lásd git history
 * értékkonverter (value converter) alkalmazása EF Core leképezésben **\[3-5\]**
   * beépített value converter **3**
   * saját value converter **5**
-* `DbContext` health check a *Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore* NuGet csomag használatával **\[3\]**
+* `DbContext` health check végpont publikálása a *Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore* NuGet csomag használatával **\[3\]**
   
 ## .NET Core részfunkciók alkalmazása
 * kifejezésfa (ExpressionTree) értelmezése és manipulálása **\[5-20\]**
