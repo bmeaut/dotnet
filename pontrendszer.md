@@ -69,7 +69,9 @@ Változások: lásd git history
   * TPH, a diszkriminátor mező testreszabásával (saját mezőnév vagy saját értékek) **3**
   * ~~TPT-vel **5**~~ **(EF Core jelenleg nem támogatja)**
   * ~~TPC-vel **7**~~ **(EF Core jelenleg nem támogatja)**
-* MS SQL/LocalDB-től eltérő adatbáziskiszolgáló használata EF Core-ral (kivéve sqlite) **\[10\]**
+* MS SQL/LocalDB-től eltérő adatbáziskiszolgáló használata EF Core-ral (kivéve sqlite) **\[10-12\]**
+  * Azure Cosmos DB **12**
+  * egyéb, EF Core v3 támogatott adatbázis **10**  
 * ~~saját Code-First konvenció készítése **\[5\]**~~  **(EF Core jelenleg nem támogatja)**
 * saját szabályszerűség (konvenció) implementálása vagy meglevő felülbírálása reflexióval és/vagy Model API-val **\[5\]**
 * saját többesszámosító (`IPluralizer`) - nem kell nyelvtanilag helyesnek lennie **\[7\]**
@@ -98,14 +100,18 @@ Változások: lásd git history
 * unit tesztek készítése  **\[5-12\]**
   * minimum 10 függvényhez **5**
   * a unit tesztekben a mock objektumok injektálása **+3**
-  * EF Core memória-adatbázis használata teszteléshez **+4**
+  * EF Core memória-adatbázis vagy sqlite (vagy in-memory sqlite) használata teszteléshez **+4**
 * XML validálás, alkalmazkodás meglévő XML formátumhoz pl. publikus webes sémához (RSS, opml) **\[7\]**
 * Optimista konkurenciakezelés **\[5-15\]**
   * ütközésdetektálás és automatikus ütközésfeloldás **5**
   * ütközésfeloldás a felhasználó döntése alapján: client wins vagy store wins feloldással. Ütközés esetén a felhasználótól megkérdezzük, hogy a két adatverzió közül melyik legyen mentve az adatbázisba: az aktuális felhasználóé, a másik felhasználóé. Bemutatáskor szemléltetés egy példán keresztül. **10**
   * a felhasználó az eredeti értéket is választhatja (a módosítások előtti érték visszaállítása) **+5**
-* pesszimista konkurenciakezelés (adatbázisobjektumok zárolása) egy felületen. Bemutatáskor szemléltetés egy példán keresztül. **\[15\]**
-* diagnosztika beépített vagy külső komponens segítségével legalább két célba, amiből legalább egy perzisztens (pl. fájl vagy adatbázis) **\[5\]**
+* pesszimista konkurenciakezelés (adatbázisobjektumok zárolása) egy felületen. Bemutatáskor szemléltetés egy példán keresztül. **\[10\]**
+* diagnosztika beépített vagy külső komponens segítségével **\[5-9\]**
+ * legalább két célba, amiből legalább egy perzisztens (pl. fájl vagy adatbázis vagy külső szolgáltatás) **5**
+ * struktúrált naplózás (structured logging) **+2**
+ * fájl cél esetén rolling log (minden napon/héten/10 MB-onként új logfájl) **+2**
+ * az egyik cél egy külső naplózó szolgáltatás (pl. Azure Application Insights) **+2**
 * áthívás nem felügyelt környezetbe (pl. natív Win32, natív linux) **\[7 - 12\]**
     * legalább egy nem egyszerű típus átadása/átvétele paraméterként **7**
     * saját natív kód használata, összetett típus átadásával **12**
