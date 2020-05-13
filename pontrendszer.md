@@ -101,8 +101,8 @@ Változások: lásd git history
     * saját LINQ provider **20**
 * explicit kölcsönös kizárás helyett _ConcurretBag/ConcurrentQueue/ConcurrentStack/ConcurrentDictionary_ használata olyan rétegben, ahol párhuzamos hozzáférés valóban előfordul **\[5\]**
 * lock-free algoritmus implementálása és használata (könyvtári implementáció felhasználása nélkül, `Interlocked` függvények használatával) **\[10\]**
-* unit tesztek készítése  **\[5-12\]**
-  * minimum 10 függvényhez **5**
+* unit tesztek készítése  **\[7-14\]**
+  * minimum 10 függvényhez **7**
   * a unit tesztekben a mock objektumok injektálása **+3**
   * EF Core memória-adatbázis vagy sqlite (vagy in-memory sqlite) használata teszteléshez **+4**
 * XML validálás, alkalmazkodás meglévő XML formátumhoz pl. publikus webes sémához (RSS, opml) **\[7\]**
@@ -119,7 +119,7 @@ Változások: lásd git history
 * áthívás nem felügyelt környezetbe (pl. natív Win32, natív linux) **\[7 - 12\]**
     * legalább egy nem egyszerű típus átadása/átvétele paraméterként **7**
     * saját natív kód használata, összetett típus átadásával **12**
-* Object mapper (pl. [AutoMapper](http://automapper.org/), [QueryMutator](https://github.com/yugabe/QueryMutator)) használata DTO-k létrehozására **\[5\]**
+* Object mapper (pl. [AutoMapper](http://automapper.org/), [QueryMutator](https://github.com/yugabe/QueryMutator)) használata DTO-k létrehozására **\[3\]**
 * logikai törlés (soft delete) globális szűrőkkel (Global Query Filter) **\[5\]**
 
 ## Kiegészítő, kapcsolódó technológiák alkalmazása
