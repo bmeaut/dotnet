@@ -21,7 +21,7 @@ Változások: lásd git history
     * A gyakorlatjegyzet repo-ja: https://github.com/bmeaut/aspnetcorebook
 
 ## ASP.NET Core Web API
-*  teljes HATEOAS implementáció. A kliens csak egy alap URL-t ismer, de minden művelet dinamikusan felderíthető számára. **\[10\]**
+*  teljes HATEOAS implementáció. A kliens csak egy alap URL-t ismer, de minden művelet dinamikusan felderíthető számára **\[10\]**
 *  Web API Core által alapból nem támogatott HTTP ige (verb) implementálása **\[5-10\]**
    * pl. GET-hez hasonló működés **5**
    * pl. OPTIONS ige RFC2616 szerint **10**
@@ -83,7 +83,7 @@ Változások: lásd git history
 * Table splitting **\[5\]**
 * ~~Entity splitting **\[5\]**~~  **(EF Core jelenleg nem támogatja)**
 * alternatív kulcs **\[3-5\]**
-  * alternatív kulcs bevezetése valamelyik entitásban **\[3\]**      
+  * alternatív kulcs bevezetése valamelyik entitásban **3**      
   * más entitás kapcsolattal hivatkozik az alternatív kulcsra **+2**
 * adatbázis index konfigurációja az EF modellben **\[3\]**
 * HiLo elsődleges kulcs alkalmazása **\[7\]**
