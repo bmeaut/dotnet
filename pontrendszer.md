@@ -130,7 +130,7 @@ Változások: lásd git history
 * F# modul készítése és meghívása. Legalább az egyik legyen benne ezek közül: pattern matching, async, magasabb rendű függvény **\[7\]**
 * külső osztálykönyvtár használata (a külső komponensért további pontszám nem adható) szerver oldalon. Nem számít ide a projekt generálásakor bekerülő (pl. JSON.NET), illetve a Microsoft által készített, az alaptechnológiák függőségeit jelentő NuGet csomagok **\[7\]**
 * platformfüggetlen kódbázisú szerveralkalmazás készítése és bemutatása legalább 2 operációs rendszeren az alábbiak közül: Windows, Linux, Mac, ARM alapú OS (Raspberry Pi). **\[7\]**
-* gRPC szolgáltatás megvalósítása (a normál HTTP API mellett). Példahívás kliensből vagy gRPC teszteszközből (pl. [bloomrpc](https://github.com/uw-labs/bloomrpc)) ***Azure App Service-szel nem kompatibilis, böngészős klienssel korlátozottan kompatibilis!*** **\[7\]**
+* gRPC szolgáltatás megvalósítása (a normál HTTP API mellett). Példahívás kliensből vagy gRPC teszteszközből (pl. [bloomrpc](https://github.com/uw-labs/bloomrpc)) ***Azure App Service-szel, IIS-sel egyáltalán nem, böngészős klienssel korlátozottan kompatibilis!*** **\[7\]**
 
 ## Konkrét funkciók
 * NET Compiler platform (Roslyn) Diagnostic Analyzer **\[3-7\]**
