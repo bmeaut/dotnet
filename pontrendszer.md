@@ -37,7 +37,7 @@ Változások: lásd git history
   * módosítás vagy hozzáadás is **+3**
 * GraphQL szolgáltatás megvalósítása ASP.NET Core middleware segítségével (pl. [GraphQL.NET](https://graphql-dotnet.github.io/)) az EF entitásmodellre építve. Példahívás bemutatása a kliensből.  **\[7-10\]**
   * csak lekérdezés **7**
-  * módosítás vagy hozzáadás is **+3**
+  * módosítás vagy hozzáadás is (mutáció) **+3**
 * Szerver oldali autentikáció **\[7-15\]**
   * ASP.NET Core Identity middleware-rel, süti alapú - csak böngészős/Postman kliens esetén! **7**
   * token alapú, ASP.NET Core Identity + IdentityServer4 middleware-rel, nem-interaktív flow (pl. ROPG) **10**
@@ -53,7 +53,7 @@ Változások: lásd git history
   * SDK-val / REST API-val, authentikációt (pl. OAuth) végrehajtva **10**
 * SignalR Core alkalmazása valós idejű, szerver felől érkező push jellegű kommunikációra **\[7\]**
 * hosztolás külső szolgáltatónál **\[5-7\]**
-  * Windows Azure (ingyenes App Services - WebApp szolgáltatás pl. Azure Dev Tools for Teaching programon keresztül) **7**
+  * Azure (ingyenes App Services - WebApp szolgáltatás) **7**
   * egyéb szolgáltató **5**
 * hosztolás service-ben (Windows Service, Linux systemd) **\[7-10\]**
   * Windows service **7**
@@ -63,8 +63,9 @@ Változások: lásd git history
 
 ## Kommunikáció, hálózatkezelés
 * alacsony szintű kommunikáció (soros port, HTTP alatti OSI réteg, pl. kétirányú TCP) **\[10\]**
-* HTTPS kommunikáció (self-signed tanúsítvánnyal) az ASP.NET Web API és a kliens között, hosztolás normál, nem fejlesztői webszerverben (pl. Kestrel, Apache, nginx, nem IIS Express), szemléltetés Fiddler-rel **\[7-12\]**
-  * csak szerver oldali tanúsítvány **7**
+* HTTPS kommunikáció (self-signed tanúsítvánnyal) az ASP.NET Web API és a kliens között, hosztolás normál, nem fejlesztői webszerverben (pl. Kestrel, Apache, nginx, nem IIS Express), szemléltetés Fiddler-rel **\[3-12\]**
+  * csak szerver oldali tanúsítvány Kestrel-en **3**
+  * csak szerver oldali tanúsítvány nem Kestrel-en (Apache, stb.) **7**
   * kliens is azonosítja magát tanúsítvánnyal a szerver felé **+5**
 
 ## Entity Framework Core
@@ -95,8 +96,8 @@ Változások: lásd git history
   
 ## .NET Core részfunkciók alkalmazása
 * kifejezésfa (ExpressionTree) értelmezése és manipulálása **\[5-20\]**
-    * pl. szűrés dinamikusan, paraméterből érkező property neve alapján (pl. `o => o.Prop == x`) **5**
-    * pl. keresés kapcsolódó kollekcióban dinamikusan (pl. `o => o.Coll.Any(e => e.Prop == x)`) **10**
+    * pl. szűrés dinamikusan, paraméterből érkező property neve alapján (pl. `o => o.Prop == propNev`) **5**
+    * pl. keresés kapcsolódó kollekcióban dinamikusan (pl. `o => o.Coll.Any(e => e.Prop == propNev)`) **10**
     * saját LINQ provider **20**
 * explicit kölcsönös kizárás helyett _ConcurretBag/ConcurrentQueue/ConcurrentStack/ConcurrentDictionary_ használata olyan rétegben, ahol párhuzamos hozzáférés valóban előfordul **\[5\]**
 * lock-free algoritmus implementálása és használata (könyvtári implementáció felhasználása nélkül, `Interlocked` függvények használatával) **\[10\]**
@@ -129,6 +130,7 @@ Változások: lásd git history
 * F# modul készítése és meghívása. Legalább az egyik legyen benne ezek közül: pattern matching, async, magasabb rendű függvény **\[7\]**
 * külső osztálykönyvtár használata (a külső komponensért további pontszám nem adható) szerver oldalon. Nem számít ide a projekt generálásakor bekerülő (pl. JSON.NET), illetve a Microsoft által készített, az alaptechnológiák függőségeit jelentő NuGet csomagok **\[7\]**
 * platformfüggetlen kódbázisú szerveralkalmazás készítése és bemutatása legalább 2 operációs rendszeren az alábbiak közül: Windows, Linux, Mac, ARM alapú OS (Raspberry Pi). **\[7\]**
+* gRPC szolgáltatás megvalósítása (a normál HTTP API mellett). Példahívás kliensből vagy gRPC teszteszközből (pl. [bloomrpc](https://github.com/uw-labs/bloomrpc)) ***Azure App Service-szel nem kompatibilis, böngészős klienssel korlátozottan kompatibilis!*** **\[7\]**
 
 ## Konkrét funkciók
 * NET Compiler platform (Roslyn) Diagnostic Analyzer **\[3-7\]**
