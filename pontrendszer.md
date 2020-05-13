@@ -32,7 +32,10 @@ Változások: lásd git history
 * cache megvalósítása E-TAG használatával **\[3-8\]**
   * a kliens felüküldi az E-TAG-et, szerver összeveti az adatbázisból felolvasott verzióval **3**
   * a szerver is cache-ből olvassa ki az aktuális verziót **+5**
-* Az entitásmodell publikálása OData for ASP.NET Core segítségével (*Microsoft.AspNetCore.OData* csomag). Példahívás bemutatása a kliensben OData v4 protokollt használva.  **\[7-10\]**
+* OData szolgáltatás megvalósítása ASP.NET Core middleware segítségével (*Microsoft.AspNetCore.OData* csomag) az EF entitásmodellre építve. Példahívás bemutatása a kliensből OData v4 protokollt használva.  **\[7-10\]**
+  * csak lekérdezés **7**
+  * módosítás vagy hozzáadás is **+3**
+* GraphQL szolgáltatás megvalósítása ASP.NET Core middleware segítségével (pl. [GraphQL.NET](https://graphql-dotnet.github.io/)) az EF entitásmodellre építve. Példahívás bemutatása a kliensből.  **\[7-10\]**
   * csak lekérdezés **7**
   * módosítás vagy hozzáadás is **+3**
 * Szerver oldali autentikáció **\[7-15\]**
