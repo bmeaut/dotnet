@@ -24,7 +24,7 @@ Változások: lásd git history
 *  teljes HATEOAS implementáció. A kliens csak egy alap URL-t ismer, de minden művelet dinamikusan felderíthető számára **\[10\]**
 *  Web API Core által alapból nem támogatott HTTP ige (verb) implementálása **\[5-10\]**
    * pl. GET-hez hasonló működés **5**
-   * pl. OPTIONS ige RFC2616 szerint **10**
+   * pl. OPTIONS ige RFC2616 szerint **10** TODO: nehéz ellenőrizni
 * verziókezelt API **\[7-10\]**
    * nem HTTP header (pl. URL szegmens) alapján **7**
    * HTTP header alapján **10**
@@ -45,6 +45,7 @@ Változások: lásd git history
   * Azure AD B2C-re (ingyenes szint) építve **10**
   * más Identity-as-a-Service szolgáltatással (pl. Auth0) **7**
   * legalább egy külső identity provider integrálása (Google login, Windows login, stb.)  **+3**
+  ** TODO: tisztázni a kézi token készítést
 * szerver oldali hozzáférés-szabályozás, az előbbi authentikációra építve  **\[2-5\]**
     * szerepkör alapú hozzáférés-szabályozás **2**
     * claim alapú hozzáférés-szabályozás **5**
@@ -98,7 +99,8 @@ Változások: lásd git history
 * kifejezésfa (ExpressionTree) értelmezése és manipulálása **\[5-20\]**
     * pl. szűrés dinamikusan, paraméterből érkező property neve alapján (pl. `o => o.Prop == propNev`) **5**
     * pl. keresés kapcsolódó kollekcióban dinamikusan (pl. `o => o.Coll.Any(e => e.Prop == propNev)`) **10**
-    * saját LINQ provider **20**
+    * saját LINQ provider **20** TODO: egyeztetni kelljen
+    * TODO: LINQ használat nem elfogadható
 * explicit kölcsönös kizárás helyett _ConcurretBag/ConcurrentQueue/ConcurrentStack/ConcurrentDictionary_ használata olyan rétegben, ahol párhuzamos hozzáférés valóban előfordul **\[5\]**
 * lock-free algoritmus implementálása és használata (könyvtári implementáció felhasználása nélkül, `Interlocked` függvények használatával) **\[10\]**
 * unit tesztek készítése  **\[7-14\]**
