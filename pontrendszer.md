@@ -5,7 +5,7 @@
 * Kliensoldali megoldásért nem adható pont
 * A szoftvernek egységes funkcióhalmazt kell nyújtania, különálló, egymáshoz nem kapcsolódó funkciókból álló szoftver nem elfogadható. Azaz különálló tutorialok összefércelését nem díjazzuk.
 
-## Véglegesítve 2020. tavaszi félévre a 2020.05.13-i állapottal
+## Még nincs véglegesítve 2021. tavaszi félévre!
 
 Véglegesítés után csak a következő típusú változások lehetnek
   * hallgatóknak kedvező változások (pl. új jogcímek)
