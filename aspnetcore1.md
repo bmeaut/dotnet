@@ -1,5 +1,5 @@
-## Source of CreateDefaultBuilder
-https://github.com/aspnet/AspNetCore/blob/v2.2.3/src/DefaultBuilder/src/WebHost.cs#L148
+## Default Builder Settings of Generic Host
+https://docs.microsoft.com/en-us/aspnet/core/fundamentals/host/generic-host?view=aspnetcore-3.1#default-builder-settings
 
 ## Appsetting.json w DummySettings
 
@@ -7,14 +7,16 @@ https://github.com/aspnet/AspNetCore/blob/v2.2.3/src/DefaultBuilder/src/WebHost.
 {
   "Logging": {
     "LogLevel": {
-      "Default": "Warning"
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
     }
   },
   "AllowedHosts": "*",
   "DummySettings": {
     "DefaultString": "My Value",
     "DefaultInt": 23,
-    "SuperSecret":  "Spoiler Alert!!!"
+    "SuperSecret": "Spoiler Alert!!!"
   }
 }
 ```
