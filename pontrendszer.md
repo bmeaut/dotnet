@@ -124,6 +124,7 @@ Változások: lásd git history
    * Object mapper, pl. [AutoMapper](http://automapper.org/), [QueryMutator](https://github.com/yugabe/QueryMutator) **3**
    * Explicit kódgeneráló, pl. [MappingGenerator](https://github.com/cezarypiatek/MappingGenerator) **3**
 * logikai törlés (soft delete) globális szűrőkkel (Global Query Filter) **\[5\]**
+* háttérművelet(ek) megvalósítása háttérfolyamat kezelő ASP.NET Core middleware komponenssel, pl. Quartz.NET, Hangfire **\[7\]**
 
 ## Kiegészítő, kapcsolódó technológiák alkalmazása
 * Beépülőkkel bővíthető alkalmazás készítése MEF v2 használatával, legalább 1 pluginnel **\[10\]**
