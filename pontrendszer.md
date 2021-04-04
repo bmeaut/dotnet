@@ -125,7 +125,7 @@ Változások: lásd git history
 * Külső komponens használata DTO-k inicializálására **\[3\]**
    * Object mapper, pl. [AutoMapper](http://automapper.org/), [QueryMutator](https://github.com/yugabe/QueryMutator) **3**
    * Explicit kódgeneráló, pl. [MappingGenerator](https://github.com/cezarypiatek/MappingGenerator) **3**
-* logikai törlés (soft delete) globális szűrőkkel (Global Query Filter) **\[5\]**
+* logikai törlés (soft delete) megvalósítása. A logikailag törölt elemek alapértelmezésben nem lekérdezhetőek - ezen szűrés megvalósítása globális szűrőkkel (Global Query Filter) **\[5\]**
 * háttérművelet(ek) megvalósítása háttérfolyamat kezelő ASP.NET Core middleware komponenssel, pl. Quartz.NET, Hangfire **\[7\]**
 
 ## Kiegészítő, kapcsolódó technológiák alkalmazása
