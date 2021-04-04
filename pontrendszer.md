@@ -33,12 +33,6 @@ Változások: lásd git history
 * cache megvalósítása E-TAG használatával **\[3-8\]**
   * a kliens felüküldi az E-TAG-et, szerver összeveti az adatbázisból felolvasott verzióval **3**
   * a szerver is cache-ből olvassa ki az aktuális verziót **+5**
-* OData szolgáltatás megvalósítása ASP.NET Core middleware segítségével (*Microsoft.AspNetCore.OData* csomag) az EF entitásmodellre építve. Példahívás bemutatása a kliensből OData v4 protokollt használva.  **\[7-10\]**
-  * csak lekérdezés **7**
-  * módosítás vagy hozzáadás is **+3**
-* GraphQL szolgáltatás megvalósítása ASP.NET Core middleware segítségével (pl. [GraphQL.NET](https://graphql-dotnet.github.io/) vagy [Hot Chocolate](https://chillicream.com/docs/hotchocolate)) az EF entitásmodellre építve. Példahívás bemutatása a kliensből.  **\[7-10\]**
-  * csak lekérdezés **7**
-  * módosítás vagy hozzáadás is (mutáció) **+3**
 * Szerver oldali autentikáció. Saját token provider készítése, használata esetén nem jár pont. **\[7-15\]**
   * ASP.NET Core Identity middleware-rel, süti alapú - csak böngészős/Postman kliens esetén! **7**
   * token alapú, ASP.NET Core Identity + IdentityServer4/IdentityServer5/OpenIddict middleware-rel, nem-interaktív flow (pl. ROPG) **10**
@@ -68,6 +62,14 @@ Változások: lásd git history
   * csak szerver oldali tanúsítvány Kestrel-en **3**
   * csak szerver oldali tanúsítvány nem Kestrel-en (Apache, nginx, stb.) **7**
   * kliens is azonosítja magát tanúsítvánnyal a szerver felé **+5**
+* az API funkciók egy részének elérhetővé tétele GraphQL hívásokon keresztül, ASP.NET Core middleware segítségével (pl. [GraphQL.NET](https://graphql-dotnet.github.io/) vagy [Hot Chocolate](https://chillicream.com/docs/hotchocolate)) az EF entitásmodellre építve. zemléltetés példahívásokkal a kliensből. **\[7-10\]**
+  * csak lekérdezés **7**
+  * módosítás vagy hozzáadás is (mutáció) **+3**
+* az API funkciók egy részének elérhetővé tétele gRPC HTTP/2 vagy gRPC-Web hívásokon keresztül. Szemléltetés példahívásokkal kliensből vagy gRPC teszteszközből (pl. [bloomrpc](https://github.com/uw-labs/bloomrpc)) ***Azure App Service-szel, IIS-sel, böngészős klienssel korlátozottan [kompatibilis](https://docs.microsoft.com/en-us/aspnet/core/grpc/supported-platforms)!*** **\[7\]**
+* az EF adatmodell kiajánlása OData szolgáltatás segítségével (*Microsoft.AspNetCore.OData* csomag). Példahívás bemutatása a kliensből OData v4 protokollt használva.  **\[7-10\]**
+  * csak lekérdezés **7**
+  * módosítás vagy hozzáadás is **+3**
+
 
 ## Entity Framework Core
 * leszármazási hierarchia leképezése Entity Framework-kel (legalább kétszintű, legalább 3 tagú hierarchia) **\[3-7\]**
@@ -95,11 +97,11 @@ Változások: lásd git history
   * saját value converter **5**
   
 ## .NET Core részfunkciók alkalmazása
-* az EF Core `DbContext` működőképességét jelző health check végpont publikálása a *Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore* NuGet csomag használatával **\[3\]**
+* az EF Core működőképességét jelző health check végpont publikálása a *Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore* NuGet csomag használatával **\[3\]**
 * kifejezésfa (ExpressionTree) értelmezése/ksézítése/módosítása az [Expression API](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/expression-trees/#creating-expression-trees-by-using-the-api) használatával **\[5-20\]**
     * pl. szűrés dinamikusan, paraméterből érkező property neve alapján (pl. `o => o.Prop == propNev`) **5**
     * pl. keresés kapcsolódó kollekcióban dinamikusan (pl. `o => o.Coll.Any(e => e.Prop == propNev)`) **10**
-    * saját LINQ provider **Előzetes egyeztetés szükséges!** **20**
+    * saját LINQ provider - **előzetes egyeztetés szükséges!** **20**
 * explicit kölcsönös kizárás helyett _ConcurretBag/ConcurrentQueue/ConcurrentStack/ConcurrentDictionary_ használata olyan rétegben, ahol párhuzamos hozzáférés valóban előfordul **\[5\]**
 * lock-free algoritmus implementálása és használata (könyvtári implementáció felhasználása nélkül, `Interlocked` függvények használatával) **\[10\]**
 * unit tesztek készítése  **\[7-14\]**
@@ -131,9 +133,8 @@ Változások: lásd git history
     * néhány alap Rx operátor használata **7**
     * két külső adatforrás integrálása **10**
 * F# modul készítése és meghívása. Legalább az egyik legyen benne ezek közül: pattern matching, async, magasabb rendű függvény **\[7\]**
-* külső osztálykönyvtár használata (a külső komponensért további pontszám nem adható) szerver oldalon. Nem számít ide a projekt generálásakor bekerülő (pl. JSON.NET), illetve a Microsoft által készített, az alaptechnológiák függőségeit jelentő NuGet csomagok **\[7\]**
+* külső osztálykönyvtár használata szerver oldalon. A külső komponens által megvalósított funkcionalitásért, képességért további pontszám nem adható. Nem számít ide a projekt generálásakor automatikusan bekerülő, illetve a Microsoft által készített, az alaptechnológiák függőségeit jelentő NuGet csomagok **\[7\]**
 * platformfüggetlen kódbázisú szerveralkalmazás készítése és bemutatása legalább 2 operációs rendszeren az alábbiak közül: Windows, Linux, Mac, ARM alapú OS (Raspberry Pi). **\[7\]**
-* gRPC HTTP/2 vagy gRPC-Web szolgáltatás megvalósítása (a normál HTTP API mellett). Példahívás kliensből vagy gRPC teszteszközből (pl. [bloomrpc](https://github.com/uw-labs/bloomrpc)) ***Azure App Service-szel, IIS-sel, böngészős klienssel korlátozottan [kompatibilis](https://docs.microsoft.com/en-us/aspnet/core/grpc/supported-platforms)!*** **\[7\]**
 
 ## Konkrét funkciók
 * NET Compiler platform (Roslyn) Diagnostic Analyzer **\[3-7\]**
