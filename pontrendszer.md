@@ -99,7 +99,7 @@ Változások: lásd git history
 * kifejezésfa (ExpressionTree) értelmezése/ksézítése/módosítása az [Expression API](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/expression-trees/#creating-expression-trees-by-using-the-api) használatával **\[5-20\]**
     * pl. szűrés dinamikusan, paraméterből érkező property neve alapján (pl. `o => o.Prop == propNev`) **5**
     * pl. keresés kapcsolódó kollekcióban dinamikusan (pl. `o => o.Coll.Any(e => e.Prop == propNev)`) **10**
-    * saját LINQ provider **20**
+    * saját LINQ provider **Előzetes egyeztetés szükséges!** **20**
 * explicit kölcsönös kizárás helyett _ConcurretBag/ConcurrentQueue/ConcurrentStack/ConcurrentDictionary_ használata olyan rétegben, ahol párhuzamos hozzáférés valóban előfordul **\[5\]**
 * lock-free algoritmus implementálása és használata (könyvtári implementáció felhasználása nélkül, `Interlocked` függvények használatával) **\[10\]**
 * unit tesztek készítése  **\[7-14\]**
@@ -127,7 +127,6 @@ Változások: lásd git history
 * háttérművelet(ek) megvalósítása háttérfolyamat kezelő ASP.NET Core middleware komponenssel, pl. Quartz.NET, Hangfire **\[7\]**
 
 ## Kiegészítő, kapcsolódó technológiák alkalmazása
-* Beépülőkkel bővíthető alkalmazás készítése MEF v2 használatával, legalább 1 pluginnel **\[10\]**
 * [Rx.NET](https://github.com/dotnet/reactive) használata ([dokumentáció](http://reactivex.io/)) **\[7-10\]**
     * néhány alap Rx operátor használata **7**
     * két külső adatforrás integrálása **10**
