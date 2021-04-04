@@ -21,27 +21,28 @@ Változások: lásd git history
     * A gyakorlatjegyzet repo-ja: https://github.com/bmeaut/aspnetcorebook
 
 ## ASP.NET Core Web API
-*  teljes HATEOAS implementáció. A kliens csak egy alap URL-t ismer, de minden művelet dinamikusan felderíthető számára **\[10\]**
-*  Web API Core által alapból nem támogatott HTTP ige (verb) implementálása **\[5-10\]**
+*  [HATEOAS](https://en.wikipedia.org/wiki/HATEOAS) linkek generálása a válaszban **\[7\]**
+*  Web API Core által alapból nem támogatott HTTP ige (verb) implementálása **\[5-7\]**
    * pl. GET-hez hasonló működés **5**
-   * pl. OPTIONS ige RFC2616 szerint **10**
-* verziókezelt API **\[7-10\]**
+   * pl. PATCH ige részleges módosításhoz **7**
+   * pl. OPTIONS ige az erőforrás által támogatott igék lekérdezéséhez **7**
+* verziókezelt API. Szemléltetés két különböző verziós API egyidejű kiszolgálásával. **\[7-10\]**
    * nem HTTP header (pl. URL szegmens) alapján **7**
    * HTTP header alapján **10**
-* API egy részének védése felhasználó által igényelhető API kulccsal **\[7\]**
+* API (egy részének) védése felhasználó által igényelhető API kulccsal **\[7\]**
 * cache megvalósítása E-TAG használatával **\[3-8\]**
   * a kliens felüküldi az E-TAG-et, szerver összeveti az adatbázisból felolvasott verzióval **3**
   * a szerver is cache-ből olvassa ki az aktuális verziót **+5**
 * OData szolgáltatás megvalósítása ASP.NET Core middleware segítségével (*Microsoft.AspNetCore.OData* csomag) az EF entitásmodellre építve. Példahívás bemutatása a kliensből OData v4 protokollt használva.  **\[7-10\]**
   * csak lekérdezés **7**
   * módosítás vagy hozzáadás is **+3**
-* GraphQL szolgáltatás megvalósítása ASP.NET Core middleware segítségével (pl. [GraphQL.NET](https://graphql-dotnet.github.io/)) az EF entitásmodellre építve. Példahívás bemutatása a kliensből.  **\[7-10\]**
+* GraphQL szolgáltatás megvalósítása ASP.NET Core middleware segítségével (pl. [GraphQL.NET](https://graphql-dotnet.github.io/) vagy [Hot Chocolate](https://chillicream.com/docs/hotchocolate)) az EF entitásmodellre építve. Példahívás bemutatása a kliensből.  **\[7-10\]**
   * csak lekérdezés **7**
   * módosítás vagy hozzáadás is (mutáció) **+3**
-* Szerver oldali autentikáció **\[7-15\]**
+* Szerver oldali autentikáció. Saját token provider készítése, használata esetén nem jár pont. **\[7-15\]**
   * ASP.NET Core Identity middleware-rel, süti alapú - csak böngészős/Postman kliens esetén! **7**
-  * token alapú, ASP.NET Core Identity + IdentityServer4 middleware-rel, nem-interaktív flow (pl. ROPG) **10**
-  * token alapú, ASP.NET Core Identity + IdentityServer4 middleware-rel, interaktív flow **12**
+  * token alapú, ASP.NET Core Identity + IdentityServer4/IdentityServer5/OpenIddict middleware-rel, nem-interaktív flow (pl. ROPG) **10**
+  * token alapú, ASP.NET Core Identity + IdentityServer4/IdentityServer5/OpenIddict middleware-rel, interaktív flow **12**
   * Azure AD B2C-re (ingyenes szint) építve **10**
   * más Identity-as-a-Service szolgáltatással (pl. Auth0) **7**
   * legalább egy külső identity provider integrálása (Google login, Windows login, stb.)  **+3**
@@ -50,10 +51,10 @@ Változások: lásd git history
     * claim alapú hozzáférés-szabályozás **5**
 * külső online szolgáltatás (Twitter, Facebook, Google Maps, Bing Maps, stb.) integrálása a szerveroldali alkalmazásba klienskönyvtárral (pl. HttpClient) vagy SDK-val **\[7-10\]**
   * egyszerű REST API, SDK használat nélkül, egyszerű API kulcs alapú authentikáció **7**
-  * SDK-val / REST API-val, authentikációt (pl. OAuth) végrehajtva **10**
+  * SDK-val / REST API-val, authentikációt (pl. OIDC) végrehajtva **10**
 * SignalR Core alkalmazása valós idejű, szerver felől érkező push jellegű kommunikációra **\[7\]**
 * hosztolás külső szolgáltatónál **\[5-7\]**
-  * Azure (ingyenes App Services - WebApp szolgáltatás) **7**
+  * Azure (ingyenes [App Services - WebApp szolgáltatás](https://docs.microsoft.com/en-us/azure/app-service/quickstart-dotnetcore)) **7**
   * egyéb szolgáltató **5**
 * hosztolás service-ben (Windows Service, Linux systemd) **\[7-10\]**
   * Windows service **7**
