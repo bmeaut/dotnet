@@ -66,21 +66,21 @@ Változások: lásd git history
 * alacsony szintű kommunikáció (soros port, HTTP alatti OSI réteg, pl. kétirányú TCP) **\[10\]**
 * HTTPS kommunikáció (self-signed tanúsítvánnyal) az ASP.NET Web API és a kliens között, hosztolás normál, nem fejlesztői webszerverben (pl. Kestrel, Apache, nginx, nem IIS Express), szemléltetés Fiddler-rel **\[3-12\]**
   * csak szerver oldali tanúsítvány Kestrel-en **3**
-  * csak szerver oldali tanúsítvány nem Kestrel-en (Apache, stb.) **7**
+  * csak szerver oldali tanúsítvány nem Kestrel-en (Apache, nginx, stb.) **7**
   * kliens is azonosítja magát tanúsítvánnyal a szerver felé **+5**
 
 ## Entity Framework Core
 * leszármazási hierarchia leképezése Entity Framework-kel (legalább kétszintű, legalább 3 tagú hierarchia) **\[3-7\]**
   * TPH, a diszkriminátor mező testreszabásával (saját mezőnév vagy saját értékek) **3**
-  * ~~TPT-vel **5**~~ **(EF Core jelenleg nem támogatja)**
+  * TPT-vel **5**
   * ~~TPC-vel **7**~~ **(EF Core jelenleg nem támogatja)**
 * MS SQL/LocalDB-től eltérő adatbáziskiszolgáló használata EF Core-ral (kivéve sqlite) **\[10-12\]**
   * Azure Cosmos DB **12**
-  * egyéb, EF Core v3 támogatott adatbázis **10**  
+  * egyéb, EF Core v5 támogatott adatbázis **10**  
 * ~~saját Code-First konvenció készítése **\[5\]**~~  **(EF Core jelenleg nem támogatja)**
 * saját szabályszerűség (konvenció) implementálása vagy meglevő felülbírálása reflexióval és/vagy Model API-val **\[5\]**
 * saját többesszámosító (`IPluralizer`) - nem kell nyelvtanilag helyesnek lennie **\[7\]**
-* újrapróbálkozás beállítása tranziens adatbázishibák (pl. connection timeout) ellen **\[2\]**
+* automatikus újrapróbálkozás beállítása tranziens adatbázishibák (pl. connection timeout) ellen **\[2\]**
 * Table splitting **\[5\]**
 * ~~Entity splitting **\[5\]**~~  **(EF Core jelenleg nem támogatja)**
 * alternatív kulcs **\[3-5\]**
@@ -91,12 +91,12 @@ Változások: lásd git history
 * birtokolt típus (owned type) használata **\[3\]**
 * adatbetöltés (seeding) migráció segítségével (`HasData`) **\[3\]**
 * értékkonverter (value converter) alkalmazása EF Core leképezésben **\[3-5\]**
-  * beépített value converter **3**
+  * beépített, vagy külső komponensből származó value converter **3**
   * saját value converter **5**
-* `DbContext` health check végpont publikálása a *Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore* NuGet csomag használatával **\[3\]**
   
 ## .NET Core részfunkciók alkalmazása
-* kifejezésfa (ExpressionTree) értelmezése és manipulálása **\[5-20\]**
+* az EF Core `DbContext` működőképességét jelző health check végpont publikálása a *Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore* NuGet csomag használatával **\[3\]**
+* kifejezésfa (ExpressionTree) értelmezése/ksézítése/módosítása az [Expression API](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/expression-trees/#creating-expression-trees-by-using-the-api) használatával **\[5-20\]**
     * pl. szűrés dinamikusan, paraméterből érkező property neve alapján (pl. `o => o.Prop == propNev`) **5**
     * pl. keresés kapcsolódó kollekcióban dinamikusan (pl. `o => o.Coll.Any(e => e.Prop == propNev)`) **10**
     * saját LINQ provider **20**
@@ -109,9 +109,9 @@ Változások: lásd git history
 * XML validálás, alkalmazkodás meglévő XML formátumhoz pl. publikus webes sémához (RSS, opml) **\[7\]**
 * Optimista konkurenciakezelés **\[5-15\]**
   * ütközésdetektálás és automatikus ütközésfeloldás **5**
-  * ütközésfeloldás a felhasználó döntése alapján: client wins vagy store wins feloldással. Ütközés esetén a felhasználótól megkérdezzük, hogy a két adatverzió közül melyik legyen mentve az adatbázisba: az aktuális felhasználóé, a másik felhasználóé. Bemutatáskor szemléltetés egy példán keresztül. **10**
+  * ütközésfeloldás a felhasználó döntése alapján: _client wins_ vagy _store wins_ feloldással. Ütközés esetén a felhasználótól megkérdezzük, hogy a két adatverzió közül melyik legyen mentve az adatbázisba: az aktuális felhasználóé, a másik felhasználóé. Bemutatáskor szemléltetés egy példán keresztül. **10**
   * a felhasználó az eredeti értéket is választhatja (a módosítások előtti érték visszaállítása) **+5**
-* pesszimista konkurenciakezelés (adatbázisobjektumok zárolása) egy felületen. Bemutatáskor szemléltetés egy példán keresztül. **\[10\]**
+* pesszimista konkurenciakezelés (adatbázisobjektumok zárolása) bizonyos entitások/funkciók esetén, nem kell a teljes alkalmazásban alkalmazni. Bemutatáskor szemléltetés egy példán keresztül. **\[10\]**
 * diagnosztika beépített vagy külső komponens segítségével **\[5-9\]**
   * legalább két célba, amiből legalább egy perzisztens (pl. fájl vagy adatbázis vagy külső szolgáltatás) **5**
   * struktúrált naplózás (structured logging) **+2**
@@ -120,7 +120,9 @@ Változások: lásd git history
 * áthívás nem felügyelt környezetbe (pl. natív Win32, natív linux) **\[7 - 12\]**
     * legalább egy nem egyszerű típus átadása/átvétele paraméterként **7**
     * saját natív kód használata, összetett típus átadásával **12**
-* Object mapper (pl. [AutoMapper](http://automapper.org/), [QueryMutator](https://github.com/yugabe/QueryMutator)) használata DTO-k létrehozására **\[3\]**
+* Külső komponens használata DTO-k inicializálására **\[3\]**
+   * Object mapper, pl. [AutoMapper](http://automapper.org/), [QueryMutator](https://github.com/yugabe/QueryMutator) **3**
+   * Explicit kódgeneráló, pl. [MappingGenerator](https://github.com/cezarypiatek/MappingGenerator) **3**
 * logikai törlés (soft delete) globális szűrőkkel (Global Query Filter) **\[5\]**
 
 ## Kiegészítő, kapcsolódó technológiák alkalmazása
@@ -131,7 +133,7 @@ Változások: lásd git history
 * F# modul készítése és meghívása. Legalább az egyik legyen benne ezek közül: pattern matching, async, magasabb rendű függvény **\[7\]**
 * külső osztálykönyvtár használata (a külső komponensért további pontszám nem adható) szerver oldalon. Nem számít ide a projekt generálásakor bekerülő (pl. JSON.NET), illetve a Microsoft által készített, az alaptechnológiák függőségeit jelentő NuGet csomagok **\[7\]**
 * platformfüggetlen kódbázisú szerveralkalmazás készítése és bemutatása legalább 2 operációs rendszeren az alábbiak közül: Windows, Linux, Mac, ARM alapú OS (Raspberry Pi). **\[7\]**
-* gRPC szolgáltatás megvalósítása (a normál HTTP API mellett). Példahívás kliensből vagy gRPC teszteszközből (pl. [bloomrpc](https://github.com/uw-labs/bloomrpc)) ***Azure App Service-szel, IIS-sel egyáltalán nem, böngészős klienssel korlátozottan kompatibilis!*** **\[7\]**
+* gRPC HTTP/2 vagy gRPC-Web szolgáltatás megvalósítása (a normál HTTP API mellett). Példahívás kliensből vagy gRPC teszteszközből (pl. [bloomrpc](https://github.com/uw-labs/bloomrpc)) ***Azure App Service-szel, IIS-sel, böngészős klienssel korlátozottan [kompatibilis](https://docs.microsoft.com/en-us/aspnet/core/grpc/supported-platforms)!*** **\[7\]**
 
 ## Konkrét funkciók
 * NET Compiler platform (Roslyn) Diagnostic Analyzer **\[3-7\]**
