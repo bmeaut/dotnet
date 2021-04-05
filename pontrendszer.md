@@ -54,6 +54,9 @@ Változások: lásd git history
   * Windows service **7**
   * Linux systemd **10**
 * Publikálás docker konténerbe és futtatás konténerből **\[7\]**
+* OpenAPI leíró (swagger) alapú dokumentáció **\[3-5\]**
+  * minden végpont kliens szempontjából releváns működése dokumentált, minden lehetséges válaszkóddal együtt **3**
+  * az API-nak egyidejűleg több támogatott verziója van, mindegyik dokumentált és mindegyik támogatott verzió dokumentációja elérhető  **+2**
 * ~~WebHook-ok használata külső szolgáltatással (pl. github, slack) **\[7\]**~~  **(egyelőre nincs hivatalos támogatás, csak Lab projekt)**
 
 ## Kommunikáció, hálózatkezelés
@@ -122,7 +125,7 @@ Változások: lásd git history
 * áthívás nem felügyelt környezetbe (pl. natív Win32, natív linux) **\[7 - 12\]**
     * legalább egy nem egyszerű típus átadása/átvétele paraméterként **7**
     * saját natív kód használata, összetett típus átadásával **12**
-* Külső komponens használata DTO-k inicializálására **\[3\]**
+* külső komponens használata DTO-k inicializálására **\[3\]**
    * Object mapper, pl. [AutoMapper](http://automapper.org/), [QueryMutator](https://github.com/yugabe/QueryMutator) **3**
    * Explicit kódgeneráló, pl. [MappingGenerator](https://github.com/cezarypiatek/MappingGenerator) **3**
 * logikai törlés (soft delete) megvalósítása. A logikailag törölt elemek alapértelmezésben nem lekérdezhetőek - ezen szűrés megvalósítása globális szűrőkkel (Global Query Filter) **\[5\]**
