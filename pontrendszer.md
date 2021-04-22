@@ -5,7 +5,7 @@
 * Kliensoldali megoldásért nem adható pont
 * A szoftvernek egységes funkcióhalmazt kell nyújtania, különálló, egymáshoz nem kapcsolódó funkciókból álló szoftver nem elfogadható. Azaz különálló tutorialok összefércelését nem díjazzuk.
 
-## Még nincs véglegesítve 2021. tavaszi félévre!
+## Véglegesítve 2021. tavaszi félévre (2021.04.22.)!
 
 Véglegesítés után csak a következő típusú változások lehetnek
   * hallgatóknak kedvező változások (pl. új jogcímek)
@@ -71,7 +71,7 @@ Változások: lásd git history
 * az API funkciók egy részének elérhetővé tétele gRPC HTTP/2 vagy gRPC-Web hívásokon keresztül. Szemléltetés példahívásokkal kliensből vagy gRPC teszteszközből (pl. [bloomrpc](https://github.com/uw-labs/bloomrpc)) ***Azure App Service-szel, IIS-sel, böngészős klienssel korlátozottan [kompatibilis](https://docs.microsoft.com/en-us/aspnet/core/grpc/supported-platforms)!*** **\[7\]**
 * az EF adatmodell kiajánlása OData szolgáltatás segítségével (*Microsoft.AspNetCore.OData* csomag). Példahívás bemutatása a kliensből OData v4 protokollt használva.  **\[7-10\]**
   * csak lekérdezés **7**
-  * módosítás vagy hozzáadás is **+3**
+  * módosítás vagy hozzáadás vagy törlés is **+3**
 
 
 ## Entity Framework Core
