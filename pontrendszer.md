@@ -79,7 +79,7 @@ Változások: lásd git history
   * TPH, a diszkriminátor mező testreszabásával (saját mezőnév vagy saját értékek) **3**
   * TPT-vel **5**
   * ~~TPC-vel **7**~~ **(EF Core jelenleg nem támogatja)**
-* MS SQL/LocalDB-től eltérő adatbáziskiszolgáló használata EF Core-ral (kivéve sqlite) **\[10-12\]**
+* MS SQL/LocalDB-től eltérő adatbáziskiszolgáló használata EF Core-ral (kivéve sqlite) **\[10-12\]** TODO: Azure SQL
   * Azure Cosmos DB **12**
   * egyéb, EF Core v5 támogatott adatbázis **10**  
 * ~~saját Code-First konvenció készítése **\[5\]**~~  **(EF Core jelenleg nem támogatja)**
