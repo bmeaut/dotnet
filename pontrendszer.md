@@ -36,7 +36,7 @@ Változások: lásd git history
 * Szerver oldali autentikáció. Saját token provider készítése, használata esetén nem jár pont. **\[7-15\]**
   * ASP.NET Core Identity middleware-rel, süti alapú - csak böngészős/Postman kliens esetén! **7**
   * token alapú, ASP.NET Core Identity + IdentityServer4/IdentityServer5/OpenIddict middleware-rel, nem-interaktív flow (pl. ROPG) **10**
-  * token alapú, ASP.NET Core Identity + IdentityServer4/IdentityServer5/OpenIddict middleware-rel, interaktív flow **12**
+  * token alapú, ASP.NET Core Identity + IdentityServer4/IdentityServer5/OpenIddict middleware-rel, interaktív flow **12** TODO: angular-osoknak túl könnyű
   * Azure AD B2C-re (ingyenes szint) építve **10**
   * más Identity-as-a-Service szolgáltatással (pl. Auth0) **7**
   * legalább egy külső identity provider integrálása (Google login, Windows login, stb.)  **+3**
