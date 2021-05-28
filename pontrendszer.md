@@ -24,7 +24,7 @@ Változások: lásd git history
 *  [HATEOAS](https://en.wikipedia.org/wiki/HATEOAS) linkek generálása a válaszban **\[7\]**
 *  Web API Core által alapból nem támogatott HTTP ige (verb) implementálása **\[5-7\]**
    * pl. GET-hez hasonló működés **5**
-   * pl. PATCH ige részleges módosításhoz **7**
+   * pl. PATCH ige részleges módosításhoz **7** TODO: json patch dokumentummal
    * pl. OPTIONS ige az erőforrás által támogatott igék lekérdezéséhez **7**
 * verziókezelt API. Szemléltetés két különböző verziós API egyidejű kiszolgálásával. **\[7-10\]**
    * nem HTTP header (pl. URL szegmens) alapján **7**
