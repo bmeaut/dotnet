@@ -80,7 +80,7 @@ Változások: lásd git history
   * TPT-vel **5**
   * ~~TPC-vel **7**~~ **(EF Core jelenleg nem támogatja)**
 * MS SQL/LocalDB-től eltérő adatbáziskiszolgáló használata EF Core-ral (kivéve sqlite) **\[10-12\]** TODO: Azure SQL
-  * Azure Cosmos DB **12**
+  * Azure Cosmos DB **12** TODO: Azure SQL
   * egyéb, EF Core v5 támogatott adatbázis **10**  
 * ~~saját Code-First konvenció készítése **\[5\]**~~  **(EF Core jelenleg nem támogatja)**
 * saját szabályszerűség (konvenció) implementálása vagy meglevő felülbírálása reflexióval és/vagy Model API-val **\[5\]**
