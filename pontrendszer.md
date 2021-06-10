@@ -53,7 +53,7 @@ Változások: lásd git history
 * hosztolás service-ben (Windows Service, Linux systemd) **\[7-10\]**
   * Windows service **7**
   * Linux systemd **10**
-* Publikálás docker konténerbe és futtatás konténerből **\[7\]**
+* Publikálás docker konténerbe és futtatás konténerből **\[7\]** TODO: kizárni vagy összevonni a többplatformossággal
 * OpenAPI leíró (swagger) alapú dokumentáció **\[3-5\]**
   * minden végpont kliens szempontjából releváns működése dokumentált, minden lehetséges válaszkóddal együtt **3**
   * az API-nak egyidejűleg több támogatott verziója van, mindegyik dokumentált és mindegyik támogatott verzió dokumentációja elérhető  **+2**
