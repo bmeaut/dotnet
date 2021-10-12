@@ -13,7 +13,7 @@ Van ugyan egy localhost-os tanúsítvány a _CurrentUser\My store_-ban, ami nem 
 
 ### Megoldás
 
-Törölni *minden* localhost-os tanusítványt a _CurrentUser\My_ store-ból, pl. powershell-el (GUI sokszor le van tiltva vagy, ha el is indul, nem enged törölni).
+Törölni **minden** localhost-os tanusítványt a _CurrentUser\My_ store-ból, pl. powershell-el (GUI sokszor le van tiltva vagy, ha el is indul, nem enged törölni).
 
 ```powershell
 ls Cert:\CurrentUser\My
