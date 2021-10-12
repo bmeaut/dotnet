@@ -25,4 +25,5 @@ Lehet ez is megy, nem teszteltem
 
 ```powershell
 Get-ChildItem Cert:\CurrentUser\My | Where-Object { $_.Subject -match 'localhost' } | Remove-Item
+dotnet dev-certs https -t
 ```
