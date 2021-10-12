@@ -20,3 +20,9 @@ ls Cert:\CurrentUser\My
 Remove-Item <localhost-os cert thumbprint>
 dotnet dev-certs https -t
 ```
+
+Lehet ez is megy, nem teszteltem
+
+```powershell
+Get-ChildItem Cert:\CurrentUser\My | Where-Object { $_.Subject -match 'localhost' } | Remove-Item
+```
