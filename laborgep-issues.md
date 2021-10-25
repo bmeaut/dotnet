@@ -16,7 +16,7 @@ Van ugyan egy localhost-os tanúsítvány a _CurrentUser\My store_-ban, ami nem 
 Törölni **minden** localhost-os tanúsítványt a _CurrentUser\My_ store-ból, pl. PowerShell-lel (GUI sokszor le van tiltva vagy, ha el is indul, nem enged törölni).
 
 ```powershell
-ls Cert:\CurrentUser\My
+cd Cert:\CurrentUser\My
 Remove-Item <localhost-os cert thumbprint>
 dotnet dev-certs https -t
 ```
