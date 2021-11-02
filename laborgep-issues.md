@@ -13,15 +13,7 @@ Van ugyan egy localhost-os tanúsítvány a _CurrentUser\My store_-ban, ami nem 
 
 ### Megoldás
 
-Törölni **minden** localhost-os tanúsítványt a _CurrentUser\My_ store-ból, pl. PowerShell-lel (GUI sokszor le van tiltva vagy, ha el is indul, nem enged törölni).
-
-```powershell
-cd Cert:\CurrentUser\My
-Remove-Item <localhost-os cert thumbprint>
-dotnet dev-certs https -t
-```
-
-Lehet ez is megy, nem teszteltem
+Törölni **minden** localhost-os tanúsítványt a _CurrentUser\My_ store-ból, pl. PowerShell-lel (GUI sokszor le van tiltva vagy, ha el is indul, nem enged törölni). Ezután újragenerálhatjuk a tanúsítványt.
 
 ```powershell
 Get-ChildItem Cert:\CurrentUser\My | Where-Object { $_.Subject -match 'localhost' } | Remove-Item
