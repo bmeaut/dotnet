@@ -1,5 +1,7 @@
 ﻿
 using HelloLinq;
+using System;
+using System.Collections.Generic;
 
 static List<Dog> ListDogsByNamePrefix(IEnumerable<Dog> dogs,
     string prefix)
