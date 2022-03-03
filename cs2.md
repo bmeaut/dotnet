@@ -15,7 +15,7 @@ public class Dog
 
 ## Dictionary
 ```csharp
-public Dictionary<string, object> Metadata { get; } = new (); ①
+public Dictionary<string, object> Metadata { get; } = new ();
 public object this[string key]
 {
     get { return Metadata[key]; }
