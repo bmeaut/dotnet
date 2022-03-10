@@ -162,10 +162,10 @@ struct PersonHandle
 ## Tuple, lokális függvények, Dispose
 
 ```csharp
-(long Current, long Previous) Fib(long i) //<1> 
+(long Current, long Previous) Fib(long i)
 {
     if (i == 0) return (1, 0);
-    var (curr, prev) = Fib(i - 1); //<2>
+    var (curr, prev) = Fib(i - 1);
     Thread.Sleep(100); //<3>
     return (curr + prev, curr);
 }
