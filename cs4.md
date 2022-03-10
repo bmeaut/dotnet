@@ -158,3 +158,63 @@ struct PersonHandle
     public Person person;        // 5 ok: too common
 }
 ```
+
+## Tuple, lokális függvények, Dispose
+
+```csharp
+(long Current, long Previous) Fib(long i) //<1> 
+{
+    if (i == 0) return (1, 0);
+    var (curr, prev) = Fib(i - 1); //<2>
+    Thread.Sleep(100); //<3>
+    return (curr + prev, curr);
+}
+
+return x < 0
+    ? throw new ArgumentException("Less negativity please!", nameof(x))
+    : Fib(x).Current;
+```
+
+```csharp
+var sw = Stopwatch.StartNew();
+foreach (var n in Enumerable.Range(1, 15))
+{
+  Console.WriteLine($"{n}: {Fibonacci(n)}");
+}
+sw.Stop();
+Console.WriteLine($"Elapsed: {sw.ElapsedMilliseconds}");
+Console.ReadKey()
+```
+
+```csharp
+public class StopwatchWrapper : IDisposable
+{
+    public Stopwatch Stopwatch { get; }
+
+    public string Title { get; }
+
+    public StopwatchWrapper(string? title = default)
+    {
+        Title = title ?? Guid.NewGuid().ToString();
+        Console.WriteLine($"Task {title} starting at {DateTime.Now}.");
+        Stopwatch = Stopwatch.StartNew();
+    }
+}
+```
+
+```csharp
+using (new StopwatchWrapper("Fib 1-15"))
+{
+    foreach (var n in Enumerable.Range(1, 15))
+    {
+        Console.WriteLine($"{n}: {Fibonacci(n)}");
+    }
+} 
+```
+
+```csharp
+public void Snapshot(string text) =>
+    Console.WriteLine(
+        $"Task {Title} snapshot {text}: {Stopwatch.ElapsedMilliseconds} ms"
+    );
+```
