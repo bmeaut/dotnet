@@ -1,3 +1,78 @@
+## Kollekció bejárás
+
+```csharp
+var numbers = Enumerable.Range(1, 8).ToList();
+foreach (var p in numbers)
+{
+    if (p % 2 == 0)
+    {
+        numbers.Remove(p);
+    }
+}
+numbers.ForEach(Console.WriteLine);
+```
+
+```csharp
+var i = 0;
+foreach (var n in numbers
+                    .Where(p => p > 2)
+                    .Select(p => new { p, x = ++i }))
+{
+    Console.WriteLine($"{n} - {i}");
+}
+
+Console.WriteLine();
+
+i = 0;
+foreach (var n in numbers
+                    .Where(p => p > 2)
+                    .Select(p => new { p, x = ++i })
+                    .ToList())
+{
+    Console.WriteLine($"{n} - {i}");
+}
+```
+
+## Async-await
+
+```csharp
+LoadWebPageAsync();
+Console.WriteLine("Ez a vége");
+Console.ReadKey();
+
+static async void LoadWebPageAsync()
+{
+    using (var client = new HttpClient())
+    {
+        var response = await client.GetAsync(new Uri("http://www.bing.com"));
+        Console.WriteLine(response.StatusCode.ToString());
+
+        var content = await response.Content.ReadAsStringAsync();
+        Console.WriteLine(content.Take(1000).ToArray());
+    }
+}
+```
+
+```csharp
+var content = await LoadWebPageAsync();
+Console.WriteLine(content);
+
+Console.WriteLine("Ez a vége");
+Console.ReadKey();
+
+static async Task<string> LoadWebPageAsync() //generikus paraméter
+{
+    using (var client = new HttpClient())
+    {
+        var response = await client.GetAsync(new Uri("http://www.bing.com"));
+        Console.WriteLine(response.StatusCode.ToString());
+
+        var content = await response.Content.ReadAsStringAsync();
+        return new string(content.Take(1000).ToArray());
+    }
+}
+```
+
 ## Non-nullable ref types
 Source: https://devblogs.microsoft.com/dotnet/nullable-reference-types-in-csharp/
 
@@ -81,29 +156,5 @@ void M(Person p)
 struct PersonHandle
 {
     public Person person;        // 5 ok: too common
-}
-```
-
-
-
-## Kiértékelési érdekességek
-```csharp
-var i = 0;
-foreach (var n in numbers
-                    .Where(p => p.Value > 2)
-                    .Select(p => new { p, x = ++i }))
-{
-    Console.WriteLine($"{n} - {i}");
-}
-
-Console.WriteLine();
-
-i = 0;
-foreach (var n in numbers
-                    .Where(p => p.Value > 2)
-                    .Select(p => new { p, x = ++i })
-                    .ToList())
-{
-    Console.WriteLine($"{n} - {i}");
 }
 ```
