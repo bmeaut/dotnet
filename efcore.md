@@ -194,6 +194,103 @@ foreach (Product p in products)
 }
 ```
 
+# Related data w Include, ThenInclude
+
+```csharp
+var products = ctx.Products
+    .Include(p => p.Category)
+    .Include(p => p.ProductOrders)
+    .ThenInclude(po => po.Order);
+
+foreach (var p in products)
+{
+    Console.WriteLine($"{p.Name} ({p.Category.Name})");
+    foreach (var po in p.ProductOrders)
+    {
+        Console.WriteLine($"\tRendelés: {po.Order.OrderDate}");
+    }
+}
+```
+
+## Query result shaping
+
+```csharp
+var products = ctx.Products.Select(p=> new
+    {
+        ProductName=p.Name,
+        CategoryName=p.Category.Name,
+        OrderDates= p.ProductOrders
+                     .Select(po=>po.Order.OrderDate)
+                     .ToArray()
+    }
+);
+
+foreach (var p in products)
+{
+    Console.WriteLine($"{p.ProductName} ({p.CategoryName})");
+    foreach (var po in p.OrderDates)
+    {
+        Console.WriteLine($"\tRendelés: {po}");
+    }
+}
+```
+
+# NxN direct navigation
+
+```csharp
+modelBuilder.Entity<Product>()
+.HasMany(p => p.Orders)
+.WithMany(o => o.Products)
+.UsingEntity<OrderItem>(
+    j => j
+        .HasOne(oi => oi.Order)
+        .WithMany(o => o.OrderItems)
+        .HasForeignKey(oi => oi.OrderId),
+    j => j
+        .HasOne(oi => oi.Product)
+        .WithMany(p => p.ProductOrders)
+        .HasForeignKey(oi => oi.ProductId),
+    j =>
+    {
+        j.HasKey(oi => oi.Id);
+    });
+```
+
+# Update
+
+```csharp
+var pFirst = ctx.Products.Find(1);
+if (pFirst != null)
+{
+    Console.WriteLine(ctx.Entry(pFirst).State);
+    pFirst.UnitPrice *= 2;
+    Console.WriteLine(ctx.Entry(pFirst).State);
+    ctx.SaveChanges();
+    Console.WriteLine(ctx.Entry(pFirst).State);
+}
+```
+
+# Delete
+
+```csharp
+var orderToRemove = ctx.Orders.OrderBy(o=>o.OrderDate).First();  
+
+ctx.Orders.Remove(orderToRemove);
+ctx.SaveChanges();
+```
+
+# Order seeding
+
+```csharp
+modelBuilder.Entity<Order>().HasData(
+     new Order {Id = 1, OrderDate = new DateTime(2019, 02, 01)}
+);
+
+modelBuilder.Entity<OrderItem>().HasData(
+    new OrderItem { Id = 1, OrderId = 1, ProductId = 1 },
+    new OrderItem { Id = 2, OrderId = 1, ProductId = 2 }
+);
+```
 
 # ShipmentRegion
 
@@ -208,25 +305,53 @@ public enum ShipmentRegion
 }
 ```
 
-# Seeding more products w HasData
+# Seeding more products w enum
 ```csharp
-modelBuilder.Entity<Product>().HasData(
-    new Product
+,new Product("Whiskey")
+ {
+     Id = 4,
+     UnitPrice = 960,
+     CategoryId = 1,
+     ShipmentRegion = ShipmentRegion.Australia
+ },
+ new Product("Rum")
+ {
+     Id = 5,
+     UnitPrice = 960,
+     CategoryId = 1,
+     ShipmentRegion = ShipmentRegion.EU | ShipmentRegion.NorthAmerica
+ }
+```
+
+# Enum conversion
+
+```csharp
+modelBuilder
+    .Entity<Product>()
+    .Property(e => e.ShipmentRegion)
+    .HasConversion<string>();
+```
+
+# Transactions
+
+```csharp
+int cid = ctx.Categories.First().Id;
+try
+{    
+    using (var transaction = ctx.Database.BeginTransaction())
     {
-         Id =1, Name = "Sör", UnitPrice = 50, CategoryId = 1,
-         ShipmentRegion = ShipmentRegion.Asia
-    },
-    new Product { Id=2, Name = "Bor", UnitPrice = 550, CategoryId = 1 },
-    new Product { Id=3, Name = "Tej", UnitPrice = 260, CategoryId = 1 },
-    new Product
-    {
-        Id = 4, Name = "Whiskey", UnitPrice = 960, CategoryId = 1,
-        ShipmentRegion = ShipmentRegion.Australia
-    },
-    new Product
-    {
-        Id = 5, Name = "Rum", UnitPrice = 850, CategoryId = 1,
-        ShipmentRegion = ShipmentRegion.EU | ShipmentRegion.NorthAmerica
+       ctx.Products.Add(new Product("Coca Cola")
+       {
+           CategoryId = cid,
+       });
+       ctx.SaveChanges();
+       ctx.Products.Add(new Product("Pepsi")
+       {
+           CategoryId = cid,
+       });
+       ctx.SaveChanges();
+       transaction.Commit();
     }
-  );
+}
+catch (Exception){}
 ```
