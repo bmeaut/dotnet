@@ -1,3 +1,8 @@
+# VS file scoped namespaces - default
+
+https://stackoverflow.com/a/70361341/472575
+
+
 # HTTPS tanúsítvány gondok
 
 ## A Kestrel nem talál jó tanúsítványt
