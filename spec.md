@@ -18,8 +18,8 @@ Egy olyan alkalmazás készítése, mely törzsanyagokból disszertációt áll�
 - forráshivatkozás
 
 ## Alkalmazott alaptechnológiák [a szerver oldal mindenkinek ugyanez lesz, kliensoldal választható]
-- adatelérés: Entity Framework Core v5
-- kommunikáció, szerveroldal: ASP.NET Core v5
+- adatelérés: Entity Framework Core v6
+- kommunikáció, szerveroldal: ASP.NET Core v6
 - kliensoldal: Postman
 
 ## Továbbfejlesztési tervek [opcionális, a pontrendszerből érdemes válogatni]
