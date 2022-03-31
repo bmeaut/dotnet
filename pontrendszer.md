@@ -33,7 +33,7 @@ Változások: lásd git history
 * cache megvalósítása E-TAG használatával **\[3-8\]**
   * a kliens felüküldi az E-TAG-et, szerver összeveti az adatbázisból felolvasott verzióval **3**
   * a szerver is cache-ből olvassa ki az aktuális verziót **+5**
-* Szerver oldali autentikáció. Saját token provider készítése, használata esetén nem jár pont. **\[7-15\]**
+* Szerver oldali autentikáció. Saját token provider készítése, használata esetén nem jár pont. **\[7-15\]** TODO: LDAP
   * ASP.NET Core Identity middleware-rel, süti alapú - csak böngészős/Postman kliens esetén! **7**
   * token alapú, ASP.NET Core Identity + IdentityServer4/IdentityServer5/OpenIddict middleware-rel, nem-interaktív flow (pl. ROPG) **10**
   * token alapú, ASP.NET Core Identity + IdentityServer4/IdentityServer5/OpenIddict middleware-rel, interaktív flow **12** TODO: angular-osoknak túl könnyű
