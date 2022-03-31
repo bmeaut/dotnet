@@ -1,5 +1,17 @@
-## Default Builder Settings of Generic Host
-https://docs.microsoft.com/en-us/aspnet/core/fundamentals/host/generic-host?view=aspnetcore-3.1#default-builder-settings
+## Default Builder Settings of Web Host
+ https://docs.microsoft.com/en-us/aspnet/core/fundamentals/host/web-host
+
+## Appsetting.json
+```javascript
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Debug",
+      "Microsoft.AspNetCore": "Debug"
+    }
+  }
+}
+```
 
 ## Appsetting.json w DummySettings
 
@@ -12,26 +24,36 @@ https://docs.microsoft.com/en-us/aspnet/core/fundamentals/host/generic-host?view
       "Microsoft.Hosting.Lifetime": "Information"
     }
   },
-  "AllowedHosts": "*",
-  "DummySettings": {
-    "DefaultString": "My Value",
-    "DefaultInt": 23,
-    "SuperSecret": "Spoiler Alert!!!"
-  }
+ "AllowedHosts": "*", // a sor végére bekerült egy vessző
+ "DummySettings": {
+   "DefaultString": "My Value",
+   "DefaultInt": 23,
+   "SuperSecret":  "Spoiler Alert!!!"
+ }
 }
 ```
+
 ## DummySettings class
 
 ```csharp
 public class DummySettings
 {
-    public string DefaultString { get; set; }
+    public string? DefaultString { get; set; }
 
     public int DefaultInt { get; set; }
 
-    public string SuperSecret { get; set; }
+    public string? SuperSecret { get; set; }
 }
 ```
+
+
+## DummySettings config
+
+```csharp
+    builder.Services.Configure<DummySettings>(
+        builder.Configuration.GetSection(nameof(DummySettings)));
+``` 
+
 ## Get DummySettings injected into DummyController
 ```csharp
 private DummySettings options;
@@ -47,10 +69,9 @@ public DummyController(IOptions<DummySettings> options)
 [HttpGet("{id}", Name = "Get")]
 public string Get(int id)
 {
-    return id % 2 == 0 ? options.DefaultString : options.DefaultInt.ToString();
+    return id % 2 == 0 ? (options.DefaultString ?? "value") : options.DefaultInt.ToString();
 }
 ```
-
 
 ## secrets.json
 ```javascript
