@@ -9,22 +9,15 @@ dotnet aspnet-codegenerator controller -m WebApiLab.Dal.Entities.Product -dc Web
 
 # IDesignTimeDbContextFactory, ha nem működne a scaffolding
 
-Néha előforduló hiba, hogy nem működik a scaffolding. Erre egy megoldás, hogy felveszünk `IDesignTimeDbContextFactory<TContext>` interfészt megvalósító osztályrat. Ezt vegyünk fel `AppDbContextDesignTimeFactory` néven a DAL projektbe, az implementációban csak vissza kell adnunk egy DbContext példányt. Itt összerakunk egy config rendszert, amiből a connection stringet kiolvassuk.
+Néha előforduló hiba, hogy nem működik a scaffolding. Erre egy megoldás, hogy felveszünk `IDesignTimeDbContextFactory<TContext>` interfészt megvalósító osztályrat. Ezt vegyünk fel `AppDbContextDesignTimeFactory` néven a DAL projektbe, az implementációban csak vissza kell adnunk egy DbContext példányt. Conn stringnek elég ha valamilyen dummy értéket felveszünk. Viszont ezután a migrációk esetében a conn stringet paraméterként át kell adnink a CLI parancsnak.
 
 ```cs
 public class AppDbContextFactory : IDesignTimeDbContextFactory<AppDbContext>
 {
-    public AcmeShopContext CreateDbContext(string[] args)
+    public AppDbContext CreateDbContext(string[] args)
     {
-        var config = new ConfigurationBuilder()
-               .AddJsonFile("appsettings.json", optional: false)
-               .AddJsonFile("appsettings.Development.json", optional: false)
-               .AddUserSecrets<AppDbContextFactory>()
-               .AddEnvironmentVariables()
-               .Build();
-
         var builder = new DbContextOptionsBuilder<AppDbContext>();
-        builder.UseSqlServer(config.GetConnectionString("DefaultConnection"));
+        builder.UseSqlServer("dummy");
         return new AppDbContext(builder.Options);
     }
 }
