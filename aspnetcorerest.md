@@ -1,6 +1,34 @@
 # REST konvenciók
 https://www.restapitutorial.com/lessons/httpmethods.html
 
+# Scaffold parancs
+
+```ps
+dotnet aspnet-codegenerator controller -m WebApiLab.Dal.Entities.Product -dc WebApiLab.Dal.AppDbContext -outDir Controllers -name EFProductController -namespace WebApiLab.Api.Controllers -api
+```
+
+# IDesignTimeDbContextFactory, ha nem működne a scaffolding
+
+Néha előforduló hiba, hogy nem működik a scaffolding. Erre egy megoldás, hogy felveszünk `IDesignTimeDbContextFactory<TContext>` interfészt megvalósító osztályrat. Ezt vegyünk fel `AppDbContextDesignTimeFactory` néven a DAL projektbe, az implementációban csak vissza kell adnunk egy DbContext példányt. Itt összerakunk egy config rendszert, amiből a connection stringet kiolvassuk.
+
+```cs
+public class AppDbContextFactory : IDesignTimeDbContextFactory<AppDbContext>
+{
+    public AcmeShopContext CreateDbContext(string[] args)
+    {
+        var config = new ConfigurationBuilder()
+               .AddJsonFile("appsettings.json", optional: false)
+               .AddUserSecrets<AppDbContextFactory>()
+               .AddEnvironmentVariables()
+               .Build();
+
+        var builder = new DbContextOptionsBuilder<AppDbContext>();
+        builder.UseSqlServer(config.GetConnectionString("DefaultConnection"));
+        return new AppDbContext(builder.Options);
+    }
+}
+```
+
 # Product Post
 ## Header
 Content-Type: application/json
@@ -16,16 +44,19 @@ Content-Type: application/json
 
 # AutoMapper config
 ```csharp
-services.AddAutoMapper(cfg =>
+public class WebApiProfile : Profile
 {
-    cfg.CreateMap<Entities.Product, Dtos.Product>()
-        .ForMember(dto => dto.Orders, opt => opt.Ignore())
-        .AfterMap((p, dto, ctx) =>
-            dto.Orders = p.ProductOrders.Select(po =>
-            ctx.Mapper.Map<Dtos.Order>(po.Order)).ToList()).ReverseMap();
-    cfg.CreateMap<Entities.Order, Dtos.Order>().ReverseMap();
-    cfg.CreateMap<Entities.Category, Dtos.Category>().ReverseMap();
-});
+    public WebApiProfile()
+    {
+        CreateMap<Dal.Entities.Product, Product>()
+            .ForMember(
+                p => p.Orders,
+                opt => opt.MapFrom(x => x.ProductOrders.Select(po => po.Order)))
+            .ReverseMap();
+        CreateMap<Dal.Entities.Order, Order>().ReverseMap();
+        CreateMap<Dal.Entities.Category, Category>().ReverseMap();
+    }
+}
 ```
 
 # GetProduct by id XML comment
