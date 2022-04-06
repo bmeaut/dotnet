@@ -38,6 +38,9 @@ dotnet tool install -g dotnet-aspnet-codegenerator
 
 cd .\WebApiLab.Api
 
+```
+
+```ps
 dotnet aspnet-codegenerator controller -m WebApiLab.Dal.Entities.Product -dc WebApiLab.Dal.AppDbContext -outDir Controllers -name EFProductController -namespace WebApiLab.Api.Controllers -api
 ```
 
