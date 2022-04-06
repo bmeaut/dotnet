@@ -153,11 +153,11 @@ public void DeleteProduct(int productId)
 }
 ```
 
-```
-
 # Product Post
+
 ## Header
 Content-Type: application/json
+
 ## Body
 ```javascript
 {
