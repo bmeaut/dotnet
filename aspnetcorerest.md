@@ -1,9 +1,43 @@
 # REST konvenciók
 https://www.restapitutorial.com/lessons/httpmethods.html
 
+# AddDbContext
+
+```cs
+builder.Services.AddDbContext<AppDbContext>(o =>
+    o.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+```
+
+# DbContext ctor
+
+```cs
+public AppDbContext(DbContextOptions<AppDbContext> options)
+    : base(options) {}
+```
+
+# appsettings.Development.json
+
+```json
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Information",
+    }
+  },
+  "ConnectionStrings": {
+     "DefaultConnection": "<connection string>"
+  }
+}
+```
+
 # Scaffold parancs
 
 ```ps
+dotnet tool install -g dotnet-aspnet-codegenerator
+
+cd .\WebApiLab.Api
+
 dotnet aspnet-codegenerator controller -m WebApiLab.Dal.Entities.Product -dc WebApiLab.Dal.AppDbContext -outDir Controllers -name EFProductController -namespace WebApiLab.Api.Controllers -api
 ```
 
@@ -23,6 +57,101 @@ public class AppDbContextFactory : IDesignTimeDbContextFactory<AppDbContext>
 }
 ```
 
+# ProductService v1
+
+```cs
+public class ProductService : IProductService
+{
+    private readonly AppDbContext _context;
+
+    public ProductService(AppDbContext context)
+    {
+        _context = context;
+    }       
+
+    public IEnumerable<Product> GetProducts()
+    {
+        var products = _context.Products
+            .Include(p => p.Category)
+            .Include(p => p.ProductOrders)
+                .ThenInclude(po => po.Order)
+            .ToList();
+
+        return products;
+    }
+    /*Többi függvény generált implementációja*/
+}
+```
+# AutoMapper profil
+
+```cs
+using AutoMapper;
+
+namespace WebApiLab.Bll.Dtos;
+
+public class WebApiProfile : Profile
+{
+    public WebApiProfile()
+    {
+        CreateMap<Dal.Entities.Product, Product>().ReverseMap();
+        CreateMap<Dal.Entities.Order, Order>().ReverseMap();
+        CreateMap<Dal.Entities.Category, Category>().ReverseMap();
+    }
+}
+```
+
+# ProductService w mapping
+
+```cs
+public IEnumerable<Product> GetProducts()
+{
+    var products = _context.Products
+        .ProjectTo<Product>(_mapper.ConfigurationProvider)
+        .AsEnumerable();
+    return products;
+}
+```
+
+```cs
+public Product GetProduct(int productId)
+{
+    return _context.Products
+        .ProjectTo<Product>(_mapper.ConfigurationProvider)
+        .SingleOrDefault(p => p.Id == productId)
+        ?? throw new EntityNotFoundException("Nem található a termék");
+}
+```
+
+```cs
+public Product InsertProduct(Product newProduct)
+{
+    var efProduct = _mapper.Map<Dal.Entities.Product>(newProduct);
+    _context.Products.Add(efProduct);
+    _context.SaveChanges();
+    return GetProduct(efProduct.Id);
+}
+```
+
+```cs
+public void UpdateProduct(int productId, Product updatedProduct)
+{
+    var efProduct = _mapper.Map<Dal.Entities.Product>(updatedProduct);
+    efProduct.Id = productId;
+    _context.Entry(efProduct).State = EntityState.Modified;
+    _context.SaveChanges();
+}
+```
+
+```cs
+public void DeleteProduct(int productId)
+{
+    _context.Products.Remove(new Dal.Entities.Product { Id = productId });
+    _context.SaveChanges();
+}
+```
+
+```
+
 # Product Post
 ## Header
 Content-Type: application/json
@@ -33,23 +162,6 @@ Content-Type: application/json
     "UnitPrice" : 4000,
     "ShipmentRegion" : 1,
     "CategoryId" : 1
-}
-```
-
-# AutoMapper config
-```csharp
-public class WebApiProfile : Profile
-{
-    public WebApiProfile()
-    {
-        CreateMap<Dal.Entities.Product, Product>()
-            .ForMember(
-                p => p.Orders,
-                opt => opt.MapFrom(x => x.ProductOrders.Select(po => po.Order)))
-            .ReverseMap();
-        CreateMap<Dal.Entities.Order, Order>().ReverseMap();
-        CreateMap<Dal.Entities.Category, Category>().ReverseMap();
-    }
 }
 ```
 
