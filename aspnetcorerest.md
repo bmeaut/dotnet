@@ -18,6 +18,7 @@ public class AppDbContextFactory : IDesignTimeDbContextFactory<AppDbContext>
     {
         var config = new ConfigurationBuilder()
                .AddJsonFile("appsettings.json", optional: false)
+               .AddJsonFile("appsettings.Development.json", optional: false)
                .AddUserSecrets<AppDbContextFactory>()
                .AddEnvironmentVariables()
                .Build();
