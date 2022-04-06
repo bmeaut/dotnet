@@ -145,7 +145,7 @@ public void UpdateProduct(int productId, Product updatedProduct)
 ```cs
 public void DeleteProduct(int productId)
 {
-    _context.Products.Remove(new Dal.Entities.Product { Id = productId });
+    _context.Products.Remove(new Dal.Entities.Product(null!) { Id = productId });
     _context.SaveChanges();
 }
 ```
