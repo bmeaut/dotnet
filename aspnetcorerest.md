@@ -1,7 +1,7 @@
 # Kiinduló projekt
 
-https://github.com/bmeaut/WebApiLab
-https://github.com/bmeaut/WebApiLab/archive/refs/heads/master.zip
+- https://github.com/bmeaut/WebApiLab
+- https://github.com/bmeaut/WebApiLab/archive/refs/heads/master.zip
 
 # NuGet csomagok
 
