@@ -1,3 +1,7 @@
+# Kiinduló projekt
+
+https://github.com/bmeaut/WebApiLab
+
 # NuGet csomagok
 
 - Microsoft.EntityFrameworkCore.Tools
