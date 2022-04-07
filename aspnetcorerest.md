@@ -1,8 +1,8 @@
 # NuGet csomagok
 
-Microsoft.EntityFrameworkCore.Tools
-Microsoft.VisualStudio.Web.CodeGeneration.Design
-Hellang.Middleware.ProblemDetails
+- Microsoft.EntityFrameworkCore.Tools
+- Microsoft.VisualStudio.Web.CodeGeneration.Design
+- Hellang.Middleware.ProblemDetails
 
 # REST konvenciók
 https://www.restapitutorial.com/lessons/httpmethods.html
