@@ -136,7 +136,7 @@ Változások: lásd git history
    * Explicit kódgeneráló, pl. [MappingGenerator (ingyenes változat)](https://marketplace.visualstudio.com/items?itemName=54748ff9-45fc-43c2-8ec5-cf7912bc3b84.mappinggenerator) **3**
 * logikai törlés (soft delete) megvalósítása. A logikailag törölt elemek alapértelmezésben nem lekérdezhetőek - ezen szűrés megvalósítása globális szűrőkkel (Global Query Filter) **\[5\]**
 * háttérművelet(ek) megvalósítása háttérfolyamat kezelő ASP.NET Core middleware komponenssel, pl. Quartz.NET, Hangfire **\[7\]**
-* Nem nullozható referencia típusok (NRT) kényszerítése minden projektre a nullable context bekapcsolásával minden projektre **és** minden nullable context sértés figyelmeztetés hibaként kezelése. Nullable context kikapcsolása projekten belül csak indokolt esetekben. **\[3\]**
+* nem nullozható referencia típusok (NRT) kényszerítése minden projektre a nullable context bekapcsolásával minden projektre **és** minden nullable context sértés figyelmeztetés hibaként kezelése. Nullable context kikapcsolása projekten belül csak indokolt esetekben. **\[3\]**
 
 ## Kiegészítő, kapcsolódó technológiák alkalmazása
 * [Rx.NET](https://github.com/dotnet/reactive) használata ([dokumentáció](http://reactivex.io/)) **\[7-10\]**
