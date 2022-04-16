@@ -102,8 +102,8 @@ Változások: lásd git history
 * értékkonverter (value converter) alkalmazása EF Core leképezésben **\[3-5\]**
   * beépített, vagy külső komponensből származó value converter **3**
   * saját value converter **5**
-* Térbeli (_spatial_) adatok kezelése EF Core és **NetTopologySuite** segítségével. Legalább egy spatial oszlop kezelése és legalább egy spatial művelet (pl. `Contains`) alkalmazása. Nem minden provider támogaja!  **7**
-* Időkezelt (_temporal_) táblák kezelése EF Core segítségével. Legalább egy időkezelt tábla használata és historikus adatának felhasználása. Csak SQL Server/LocalDB/Azure SQL provider támogatja! **7**
+* Térbeli (_spatial_) adatok kezelése EF Core és **NetTopologySuite** segítségével. Legalább egy spatial oszlop kezelése és legalább egy spatial művelet (pl. `Contains`) alkalmazása. Nem minden provider támogaja!  **\[7\]**
+* Időkezelt (_temporal_) táblák kezelése EF Core segítségével. Legalább egy időkezelt tábla használata és historikus adatának felhasználása. Csak SQL Server/LocalDB/Azure SQL provider támogatja! **\[7\]**
   
 ## .NET Core részfunkciók alkalmazása
 * az EF Core működőképességét jelző health check végpont publikálása a *Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore* NuGet csomag használatával **\[3\]**
@@ -136,6 +136,7 @@ Változások: lásd git history
    * Explicit kódgeneráló, pl. [MappingGenerator (ingyenes változat)](https://marketplace.visualstudio.com/items?itemName=54748ff9-45fc-43c2-8ec5-cf7912bc3b84.mappinggenerator) **3**
 * logikai törlés (soft delete) megvalósítása. A logikailag törölt elemek alapértelmezésben nem lekérdezhetőek - ezen szűrés megvalósítása globális szűrőkkel (Global Query Filter) **\[5\]**
 * háttérművelet(ek) megvalósítása háttérfolyamat kezelő ASP.NET Core middleware komponenssel, pl. Quartz.NET, Hangfire **\[7\]**
+* Nem nullozható referencia típusok (NRT) kényszerítése minden projektre a nullable context bekapcsolásával minden projektre **és** minden nullable context sértés figyelmeztetés hibaként kezelése. Nullable context kikapcsolása projekten belül csak indokolt esetekben. **\[3\]**
 
 ## Kiegészítő, kapcsolódó technológiák alkalmazása
 * [Rx.NET](https://github.com/dotnet/reactive) használata ([dokumentáció](http://reactivex.io/)) **\[7-10\]**
