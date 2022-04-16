@@ -102,8 +102,8 @@ Változások: lásd git history
 * értékkonverter (value converter) alkalmazása EF Core leképezésben **\[3-5\]**
   * beépített, vagy külső komponensből származó value converter **3**
   * saját value converter **5**
-* Térbeli (_spatial_) adatok kezelése EF Core és **NetTopologySuite** segítségével. Legalább egy spatial oszlop kezelése és legalább egy spatial művelet (pl. `Contains`) alkalmazása. Nem minden provider támogaja!  **\[7\]**
-* Időkezelt (_temporal_) táblák kezelése EF Core segítségével. Legalább egy időkezelt tábla használata és historikus adatának felhasználása. Csak SQL Server/LocalDB/Azure SQL provider támogatja! **\[7\]**
+* térbeli (_spatial_) adatok kezelése EF Core és **NetTopologySuite** segítségével. Legalább egy spatial oszlop kezelése és legalább egy spatial művelet (pl. `Contains`) alkalmazása. Nem minden provider támogaja!  **\[7\]**
+* időkezelt (_temporal_) táblák kezelése EF Core segítségével. Legalább egy időkezelt tábla használata és historikus adatának felhasználása. Csak SQL Server/LocalDB/Azure SQL provider támogatja! **\[7\]**
   
 ## .NET Core részfunkciók alkalmazása
 * az EF Core működőképességét jelző health check végpont publikálása a *Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore* NuGet csomag használatával **\[3\]**
