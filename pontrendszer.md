@@ -69,7 +69,7 @@ Változások: lásd git history
   * csak szerver oldali tanúsítvány Kestrel-en **3**
   * csak szerver oldali tanúsítvány nem Kestrel-en (Apache, nginx, stb.) **7**
   * kliens is azonosítja magát tanúsítvánnyal a szerver felé **+5**
-* az API funkciók egy részének elérhetővé tétele GraphQL hívásokon keresztül, ASP.NET Core middleware segítségével (pl. [GraphQL.NET](https://graphql-dotnet.github.io/) vagy [Hot Chocolate](https://chillicream.com/docs/hotchocolate)) az EF entitásmodellre építve. zemléltetés példahívásokkal a kliensből. **\[7-10\]**
+* az API funkciók egy részének elérhetővé tétele GraphQL hívásokon keresztül, ASP.NET Core middleware segítségével (pl. [GraphQL.NET](https://graphql-dotnet.github.io/) vagy [Hot Chocolate](https://chillicream.com/docs/hotchocolate)) az EF entitásmodellre építve. Szemléltetés példahívásokkal a kliensből. **\[7-10\]**
   * csak lekérdezés **7**
   * módosítás vagy hozzáadás is (mutáció) **+3**
 * az API funkciók egy részének elérhetővé tétele gRPC HTTP/2 vagy gRPC-Web hívásokon keresztül. Szemléltetés példahívásokkal kliensből vagy gRPC teszteszközből (pl. [bloomrpc](https://github.com/uw-labs/bloomrpc)) ***Azure App Service-szel, IIS-sel, böngészős klienssel korlátozottan [kompatibilis](https://docs.microsoft.com/en-us/aspnet/core/grpc/supported-platforms)!*** **\[7\]**
@@ -82,16 +82,16 @@ Változások: lásd git history
 * leszármazási hierarchia leképezése Entity Framework-kel (legalább kétszintű, legalább 3 tagú hierarchia) **\[3-7\]**
   * TPH, a diszkriminátor mező testreszabásával (saját mezőnév vagy saját értékek) **3**
   * TPT-vel **5**
-  * ~~TPC-vel **7**~~ **(EF Core jelenleg nem támogatja)**
+  * ~~TPC-vel **7**~~ **(EF Core jelenleg [nem támogatja](https://github.com/dotnet/efcore/issues/3170))**
 * MS SQL/Azure SQL/LocalDB-től eltérő adatbáziskiszolgáló használata EF Core-ral (kivéve még: sqlite) **\[10-12\]**
   * Azure Cosmos DB (**NoSQL!**) **10**
   * egyéb, EF Core v6 támogatott adatbázis **5**  
-* ~~saját Code-First konvenció készítése **\[5\]**~~  **(EF Core jelenleg nem támogatja)**
+* ~~saját Code-First konvenció készítése **\[5\]**~~  **(EF Core jelenleg [nem támogatja](https://github.com/dotnet/efcore/issues/214))**
 * saját szabályszerűség (konvenció) implementálása vagy meglevő felülbírálása reflexióval és/vagy Model API-val **\[5\]**
 * saját többesszámosító (`IPluralizer`) - nem kell nyelvtanilag helyesnek lennie **\[7\]**
 * automatikus újrapróbálkozás beállítása tranziens adatbázishibák (pl. connection timeout) ellen **\[2\]**
 * Table splitting **\[5\]**
-* ~~Entity splitting **\[5\]**~~  **(EF Core jelenleg nem támogatja)**
+* ~~Entity splitting **\[5\]**~~  **(EF Core jelenleg [nem támogatja](https://github.com/dotnet/efcore/issues/620))**
 * alternatív kulcs **\[3-5\]**
   * alternatív kulcs bevezetése valamelyik entitásban **3**      
   * más entitás kapcsolattal hivatkozik az alternatív kulcsra **+2**
@@ -131,7 +131,7 @@ Változások: lásd git history
     * saját natív kód használata, összetett típus átadásával **12**
 * külső komponens használata DTO-k inicializálására **\[3\]**
    * Object mapper, pl. [AutoMapper](http://automapper.org/), [QueryMutator](https://github.com/yugabe/QueryMutator) **3**
-   * Explicit kódgeneráló, pl. [MappingGenerator](https://github.com/cezarypiatek/MappingGenerator) **3**
+   * Explicit kódgeneráló, pl. [MappingGenerator (ingyenes változat)](https://marketplace.visualstudio.com/items?itemName=54748ff9-45fc-43c2-8ec5-cf7912bc3b84.mappinggenerator) **3**
 * logikai törlés (soft delete) megvalósítása. A logikailag törölt elemek alapértelmezésben nem lekérdezhetőek - ezen szűrés megvalósítása globális szűrőkkel (Global Query Filter) **\[5\]**
 * háttérművelet(ek) megvalósítása háttérfolyamat kezelő ASP.NET Core middleware komponenssel, pl. Quartz.NET, Hangfire **\[7\]**
 
@@ -141,7 +141,7 @@ Változások: lásd git history
     * két külső adatforrás integrálása **10**
 * F# modul készítése és meghívása. Legalább az egyik legyen benne ezek közül: pattern matching, async, magasabb rendű függvény **\[7\]**
 * külső osztálykönyvtár használata szerver oldalon. A külső komponens által megvalósított funkcionalitásért, képességért további pontszám nem adható. Nem számít ide a projekt generálásakor automatikusan bekerülő, illetve a Microsoft által készített, az alaptechnológiák függőségeit jelentő NuGet csomagok **\[7\]**
-* platformfüggetlen kódbázisú szerveralkalmazás készítése és bemutatása legalább 2 operációs rendszeren az alábbiak közül: Windows, Linux, Mac, ARM alapú OS (Raspberry Pi). **\[7\]**
+* platformfüggetlen kódbázisú szerveralkalmazás készítése és bemutatása legalább 2 operációs rendszeren az alábbiak közül: Windows, Linux, Mac, ARM alapú OS (pl. Raspberry Pi OS). Közvetlen futtatás fogadható csak el, pl. konténerből való futtatás nem (arra van külön jogcím). **\[7\]**
 
 ## Konkrét funkciók
 * NET Compiler platform (Roslyn) Diagnostic Analyzer **\[3-7\]**
