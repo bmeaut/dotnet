@@ -24,7 +24,7 @@ Változások: lásd git history
 *  [HATEOAS](https://en.wikipedia.org/wiki/HATEOAS) linkek generálása a válaszban **\[7\]**
 *  Web API Core által alapból nem támogatott HTTP ige (verb) implementálása **\[5-7\]**
    * pl. GET-hez hasonló működés **5**
-   * pl. PATCH ige részleges módosításhoz **7**
+   * pl. PATCH ige részleges módosításhoz JSON Patch dokumentumok [felküldésével](https://docs.microsoft.com/en-us/aspnet/core/web-api/jsonpatch?view=aspnetcore-6.0) **7**
    * pl. OPTIONS ige az erőforrás által támogatott igék lekérdezéséhez **7**
 * verziókezelt API. Szemléltetés két különböző verziós API egyidejű kiszolgálásával. **\[7-10\]**
    * nem HTTP header (pl. URL szegmens) alapján **7**
@@ -35,9 +35,13 @@ Változások: lásd git history
   * a szerver is cache-ből olvassa ki az aktuális verziót **+5**
 * Szerver oldali autentikáció. Saját token provider készítése, használata esetén nem jár pont. **\[7-15\]**
   * ASP.NET Core Identity middleware-rel, süti alapú - csak böngészős/Postman kliens esetén! **7**
-  * token alapú, ASP.NET Core Identity + IdentityServer4/IdentityServer5/OpenIddict middleware-rel, nem-interaktív flow (pl. ROPG) **10**
-  * token alapú, ASP.NET Core Identity + IdentityServer4/IdentityServer5/OpenIddict middleware-rel, interaktív flow **12**
+  * token alapú, ASP.NET Core Identity + Duende Server/IdentityServer5/OpenIddict middleware-rel, nem-interaktív flow (pl. ROPG) **10**
+  * token alapú, ASP.NET Core Identity + Duende Server/IdentityServer5/OpenIddict middleware-rel, interaktív flow
+    * angular, react kliens esetén **7**
+    * Blazor WebAssembly kliens esetén **10**
+    * egyéb kliens esetén **12**
   * Azure AD B2C-re (ingyenes szint) építve **10**
+  * LDAP alapú szolgáltatásra építve **10**
   * más Identity-as-a-Service szolgáltatással (pl. Auth0) **7**
   * legalább egy külső identity provider integrálása (Google login, Windows login, stb.)  **+3**
 * szerver oldali hozzáférés-szabályozás, az előbbi authentikációra építve  **\[2-5\]**
@@ -47,7 +51,7 @@ Változások: lásd git history
   * egyszerű REST API, SDK használat nélkül, egyszerű API kulcs alapú authentikáció **7**
   * SDK-val / REST API-val, authentikációt (pl. OIDC) végrehajtva **10**
 * SignalR Core alkalmazása valós idejű, szerver felől érkező push jellegű kommunikációra **\[7\]**
-* hosztolás külső szolgáltatónál **\[5-7\]**
+* teljes szerveroldal hosztolása külső szolgáltatónál **\[5-7\]**
   * Azure (ingyenes [App Services - WebApp szolgáltatás](https://docs.microsoft.com/en-us/azure/app-service/quickstart-dotnetcore)) **7**
   * egyéb szolgáltató **5**
 * hosztolás service-ben (Windows Service, Linux systemd) **\[7-10\]**
@@ -79,9 +83,9 @@ Változások: lásd git history
   * TPH, a diszkriminátor mező testreszabásával (saját mezőnév vagy saját értékek) **3**
   * TPT-vel **5**
   * ~~TPC-vel **7**~~ **(EF Core jelenleg nem támogatja)**
-* MS SQL/LocalDB-től eltérő adatbáziskiszolgáló használata EF Core-ral (kivéve sqlite) **\[10-12\]**
-  * Azure Cosmos DB **12**
-  * egyéb, EF Core v5 támogatott adatbázis **10**  
+* MS SQL/Azure SQL/LocalDB-től eltérő adatbáziskiszolgáló használata EF Core-ral (kivéve még: sqlite) **\[10-12\]**
+  * Azure Cosmos DB (**NoSQL!**) **10**
+  * egyéb, EF Core v6 támogatott adatbázis **5**  
 * ~~saját Code-First konvenció készítése **\[5\]**~~  **(EF Core jelenleg nem támogatja)**
 * saját szabályszerűség (konvenció) implementálása vagy meglevő felülbírálása reflexióval és/vagy Model API-val **\[5\]**
 * saját többesszámosító (`IPluralizer`) - nem kell nyelvtanilag helyesnek lennie **\[7\]**
