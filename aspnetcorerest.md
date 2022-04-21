@@ -179,6 +179,78 @@ Content-Type: application/json
 }
 ```
 
+# ProblemDetails in catch
+
+```csharp
+ProblemDetails details= new ProblemDetails
+{
+    Title = "Invalid ID",
+    Status = StatusCodes.Status404NotFound,
+    Detail = $"No product with ID {id}"
+};
+return NotFound(details); //ProblemDetails átadása
+```
+
+# ProblemDetails by MW
+
+```csharp
+builder.Services.AddProblemDetails(options =>
+{
+    options.IncludeExceptionDetails = (ctx,ex) => false;
+    options.MapToStatusCode<EntityNotFoundException>(StatusCodes.Status404NotFound);
+});
+```
+
+# UpdateProduct Exception => ProblemDetails
+
+```csharp
+try
+{
+     _context.SaveChanges();
+}
+catch (DbUpdateConcurrencyException)
+{
+    if (_context.Products.SingleOrDefault(p => p.Id == productId) == null)
+        throw new EntityNotFoundException("Nem található a termék");
+    else
+        throw;
+}
+```
+
+# DeleteProduct Exception => ProblemDetails
+
+```csharp
+try
+{
+    _context.SaveChanges();
+}
+catch (DbUpdateConcurrencyException)
+{
+    if (_context.Products.SingleOrDefault(p => p.Id == productId) == null)
+        throw new EntityNotFoundException("Nem található a termék");
+    else
+        throw;
+}
+```
+
+# Custom mapping Exception => ProblemDetails
+
+```csharp
+services.AddProblemDetails(options =>
+{
+    options.IncludeExceptionDetails = (ctx, ex) => false;
+    options.Map<EntityNotFoundException>(
+        (ctx, ex) =>
+        {
+            var pd=StatusCodeProblemDetails.Create(StatusCodes.Status404NotFound);
+            pd.Title = ex.Message;
+            return pd;
+        }
+    );
+});
+```
+
+
 # GetProduct by id XML comment
 
 ```csharp
