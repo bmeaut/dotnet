@@ -61,6 +61,7 @@ Változások: lásd git history
 * OpenAPI leíró (swagger) alapú dokumentáció **\[3-5\]**
   * minden végpont kliens szempontjából releváns működése dokumentált, minden lehetséges válaszkóddal együtt **3**
   * az API-nak egyidejűleg több támogatott verziója van, mindegyik dokumentált és mindegyik támogatott verzió dokumentációja elérhető  **+2**
+* Adatbázis entitás elsődéeges kulcs elrejtése a kliens elől véletlenszerűen generált, nem növekvő sorrendben kiosztott kulcsokkal. A kliens nem ismeri az adatbázis entitás kulcs értékét, helyette egy generált kulcsot lát csak. Az adatbázis **nem** tárolja a generált kulcsot. Megvalósítható kétirányú szám <-> generált azonosító függvények [segítségével](https://hashids.org/net/). **\[7\]**
 * ~~WebHook-ok használata külső szolgáltatással (pl. github, slack) **\[7\]**~~  **(egyelőre nincs hivatalos támogatás, csak Lab projekt)**
 
 ## Kommunikáció, hálózatkezelés
@@ -76,7 +77,6 @@ Változások: lásd git history
 * az EF adatmodell kiajánlása OData szolgáltatás segítségével (*Microsoft.AspNetCore.OData* csomag). Példahívás bemutatása a kliensből OData v4 protokollt használva.  **\[7-10\]**
   * csak lekérdezés **7**
   * módosítás vagy hozzáadás vagy törlés is **+3**
-
 
 ## Entity Framework Core
 * leszármazási hierarchia leképezése Entity Framework-kel (legalább kétszintű, legalább 3 tagú hierarchia) **\[3-7\]**
@@ -137,6 +137,7 @@ Változások: lásd git history
 * logikai törlés (soft delete) megvalósítása. A logikailag törölt elemek alapértelmezésben nem lekérdezhetőek - ezen szűrés megvalósítása globális szűrőkkel (Global Query Filter) **\[5\]**
 * háttérművelet(ek) megvalósítása háttérfolyamat kezelő ASP.NET Core middleware komponenssel, pl. Quartz.NET, Hangfire **\[7\]**
 * nem nullozható referencia típusok (NRT) kényszerítése a _nullable context_ bekapcsolásával minden projektre **és** minden nullable context sértés figyelmeztetés hibaként kezelése. Nullable context kikapcsolása projekten belül csak indokolt esetekben. **\[3\]**
+* Entitás specifikus elsődleges kulcs típusok használata (`entityA.Id = entityB.Id` fordítási hiba, ha a két entiás típusa eltér). A kliens oldalon, illetve a kontroller függvények fejlécében (pl. bemenetként) nem kell, hogy megjelenjenek ezek a típusok, csak a kontroller rétegtől lefelé (EF szinten is). [Segédkönyvtár](https://github.com/andrewlock/StronglyTypedId). **\[10\]**
 
 ## Kiegészítő, kapcsolódó technológiák alkalmazása
 * [Rx.NET](https://github.com/dotnet/reactive) használata ([dokumentáció](http://reactivex.io/)) **\[7-10\]**
