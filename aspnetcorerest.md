@@ -11,6 +11,7 @@
 
 # REST konvenciók
 https://www.restapitutorial.com/lessons/httpmethods.html
+https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design
 
 # AddDbContext
 
@@ -249,6 +250,12 @@ services.AddProblemDetails(options =>
     );
 });
 ```
+
+# Clinet - kiinduló
+https://github.com/bmeaut/WebApiLab/tree/net6-client-init
+
+# NSwag
+https://github.com/RicoSuter/NSwag/releases/latest
 
 # NET 6 client
 
