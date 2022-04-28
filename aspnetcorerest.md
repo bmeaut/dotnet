@@ -251,7 +251,7 @@ services.AddProblemDetails(options =>
 });
 ```
 
-# Clinet - kiinduló
+# Client - kiinduló
 https://github.com/bmeaut/WebApiLab/tree/net6-client-init
 
 # NSwag
