@@ -350,11 +350,7 @@ Update-Database
 # ConcurrencyProblemDetails
 
 ```csharp
-public class Conflict
-{
-    public object CurrentValue { get; set; }
-    public object SentValue { get; set; }
-}
+public record Conflict(object? CurrentValue, object? SentValue);
 
 public class ConcurrencyProblemDetails : StatusCodeProblemDetails
 {
@@ -370,41 +366,90 @@ public class ConcurrencyProblemDetails : StatusCodeProblemDetails
         var currentValues = props.ToDictionary(
             p => p.Metadata.Name, p => p.CurrentValue);
 
-        //with DB values
         entry.Reload();
 
         foreach (var property in props)
         {
-            if (!currentValues[property.Metadata.Name].
-                Equals(property.CurrentValue))
+            if (!Equals(currentValues[property.Metadata.Name], property.CurrentValue))
             {
                 Conflicts[property.Metadata.Name] = new Conflict
-                {
-                    CurrentValue = property.CurrentValue,
-                    SentValue = currentValues[property.Metadata.Name]
-                };
+                (
+                    property.CurrentValue,
+                    currentValues[property.Metadata.Name]
+                );
             }
         }
     }
 }
 ```
 
-# UpdateProduct fixek konkurenciakezeléshez
+# DbUpdateConcurrencyException mapping
 
 ```csharp
-public void UpdateProduct(int productId, Product updatedProduct)
-{
-    updatedProduct.Id = productId;
-    var entry = _context.Attach(updatedProduct);
-    entry.State = EntityState.Modified;            
-    _context.SaveChanges();            
-}
-
-public async Task UpdateProductAsync(int productId, Product updatedProduct)
-{
-    updatedProduct.Id = productId;
-    var entry = _context.Attach(updatedProduct);
-    entry.State = EntityState.Modified;           
-    await _context.SaveChangesAsync();
-}
+ options.Map<DbUpdateConcurrencyException>(
+            ex => new ConcurrencyProblemDetails(ex));
 ```
+
+# Postman visualization - Test
+
+```js
+var template = `
+    <table bgcolor="#FFFFFF">
+        <tr>
+            <th>Name</th>
+            <th>Unit price</th>
+            <th>[Hidden]Concurrency token</th>
+        </tr>
+
+        {{#each response}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{unitPrice}}</td>
+                <td>{{rowVersion}}</td>
+            </tr>
+        {{/each}}
+    </table>
+`;
+var respJson = pm.response.json();
+pm.visualizer.set(template, {
+    response: respJson
+});
+```
+
+# GetAllProds response save to variable - Test
+
+```js
+pm.collectionVariables.set("u1_allprods",  JSON.stringify(respJson));
+```
+
+# GetDetails - PRS
+
+```js
+var allProds= JSON.parse(pm.collectionVariables.get("u1_allprods"));
+var tejid=allProds.find(({ name }) => name.startsWith('Tej')).id;
+pm.collectionVariables.set("u1_tejid",tejid);
+```
+
+# GetDetails - Test
+
+```js
+pm.collectionVariables.set("u1_tej",  pm.response.text());
+```
+
+# Update - PRS
+
+```js
+var tej= JSON.parse(pm.collectionVariables.get("u1_tej"));
+tej.unitPrice++;
+pm.collectionVariables.set("u1_tej_deluxe",JSON.stringify(tej));
+```
+
+# Update for User2
+
+```js
+tej.name='Tej ' +new Date().getTime();
+```
+
+# Final postman collection
+
+https://www.getpostman.com/collections/bf6157ad59c75b592f20
