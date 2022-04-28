@@ -7,7 +7,8 @@
 
 - Microsoft.EntityFrameworkCore.Tools
 - Microsoft.VisualStudio.Web.CodeGeneration.Design
-- Hellang.Middleware.ProblemDetails
+- Hellang.Middleware.ProblemDetails3
+- NSwag.AspNetCore
 
 # REST konvenciók
 https://www.restapitutorial.com/lessons/httpmethods.html
