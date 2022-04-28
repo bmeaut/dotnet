@@ -250,6 +250,30 @@ services.AddProblemDetails(options =>
 });
 ```
 
+# NET 6 client
+
+```csharp
+Console.Write("ProductId: ");
+var id = Console.ReadLine();
+if(id != null)
+    await GetProductAsync(int.Parse(id));
+
+Console.ReadKey();
+
+static async Task GetProductAsync(int id)
+{
+    using var client = new HttpClient();
+
+    /*A portot írjuk át a szervernek megfelelően*/
+    var response = await client.GetAsync(new Uri($"http://localhost:5184/api/Product/{id}"));
+    response.EnsureSuccessStatusCode();
+    var jsonStream = await response.Content.ReadAsStreamAsync();
+    var json = await JsonDocument.ParseAsync(jsonStream);
+    Console.WriteLine($"{json.RootElement.GetProperty("name")}:" +
+        $"{json.RootElement.GetProperty("unitPrice")}.-");
+}
+```
+
 
 # GetProduct by id XML comment
 
@@ -259,7 +283,29 @@ services.AddProblemDetails(options =>
 /// </summary>
 /// <param name="id">Product's identifier</param>
 /// <returns>Returns a specific product with the given identifier</returns>
-/// <response code="200">Returns a specific product with the given identifier</response>
+/// <response code="200">Listing successful</response>
+```
+
+
+# PostProduct by id XML comment
+
+```csharp
+/// <summary>
+/// Creates a new product
+/// </summary>
+/// <param name="product">The product to create</param>
+/// <returns>Returns the product inserted</returns>
+/// <response code="201">Insert successful</response>
+```
+
+# Enum as string
+
+```csharp
+.AddJsonOptions(opts =>
+{
+    //opts.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
+    opts.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+});
 ```
 
 # NSwag Studio
@@ -268,17 +314,37 @@ https://github.com/RicoSuter/NSwag/releases
 
 A zip változat-ot töltsük le és csomagoljuk ki. Ezután NSwagStudio.exe-vel indítható az alkalmazás.
 
-# Hellang.Middleware.ProblemDetails
+# GetProducts2Async
 
-```powershell
-Install-Package Hellang.Middleware.ProblemDetails
+```csharp
+/**/if (id != null)
+    {
+        //await GetProductAsync(int.Parse(id));
+        var p = await GetProduct2Async(int.Parse(id));
+        Console.WriteLine($"{p.Name}: {p.UnitPrice}");
+    }
+
+static async Task<Product> GetProduct2Async(int id)
+{
+    using var httpClient = new HttpClient() 
+        { BaseAddress = new Uri("http://localhost:5000/") };
+    var client = new ProductClient(httpClient);
+    return await client.GetAsync(id);
+}
+```
+# RowVersion model config
+
+```csharp
+modelBuilder.Entity<Product>()
+    .Property(p => p.RowVersion)
+    .IsRowVersion();
 ```
 
 # Product.RowVersion migráció
 
 ```powershell
-Add-Migration ProductRowVersion -StartupProject WebApiLabor.Api
-Update-Database -StartupProject WebApiLabor.Api
+Add-Migration ProductRowVersion
+Update-Database
 ```
 
 # ConcurrencyProblemDetails
