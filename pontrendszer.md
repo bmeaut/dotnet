@@ -35,7 +35,6 @@ Változások: lásd git history
   * a szerver is cache-ből olvassa ki az aktuális verziót **+5**
 * Szerver oldali autentikáció. Saját token provider készítése, használata esetén nem jár pont. **\[7-15\]**
   * ASP.NET Core Identity middleware-rel, süti alapú - csak böngészős/Postman kliens esetén! **7**
-  * token alapú, ASP.NET Core Identity + Duende Server/IdentityServer5/OpenIddict middleware-rel, nem-interaktív flow (pl. ROPG) **10**
   * token alapú, ASP.NET Core Identity + Duende Server/IdentityServer5/OpenIddict middleware-rel, interaktív flow
     * angular, react kliens esetén **7**
     * Blazor WebAssembly kliens esetén **10**
@@ -46,7 +45,7 @@ Változások: lásd git history
   * legalább egy külső identity provider integrálása (Google login, Windows login, stb.)  **+3**
 * szerver oldali hozzáférés-szabályozás, az előbbi authentikációra építve  **\[2-5\]**
     * szerepkör alapú hozzáférés-szabályozás **2**
-    * claim alapú hozzáférés-szabályozás **5**
+    * policy alapú hozzáférés-szabályozás (pl.: Claim alapon) **5**
 * külső online szolgáltatás (Twitter, Facebook, Google Maps, Bing Maps, stb.) integrálása a szerveroldali alkalmazásba klienskönyvtárral (pl. HttpClient) vagy SDK-val **\[7-10\]**
   * egyszerű REST API, SDK használat nélkül, egyszerű API kulcs alapú authentikáció **7**
   * SDK-val / REST API-val, authentikációt (pl. OIDC) végrehajtva **10**
@@ -66,7 +65,7 @@ Változások: lásd git history
 
 ## Kommunikáció, hálózatkezelés
 * alacsony szintű kommunikáció (soros port, HTTP alatti OSI réteg, pl. kétirányú TCP) **\[10\]**
-* HTTPS kommunikáció (self-signed tanúsítvánnyal) az ASP.NET Web API és a kliens között, hosztolás normál, nem fejlesztői webszerverben (pl. Kestrel, Apache, nginx, nem IIS Express), szemléltetés Fiddler-rel **\[3-12\]**
+* HTTPS kommunikáció (self-signed tanúsítvánnyal, nem dev cert) az ASP.NET Web API és a kliens között, hosztolás normál, nem fejlesztői webszerverben (pl. Kestrel, Apache, nginx, nem IIS Express), szemléltetés Fiddler-rel **\[3-12\]**
   * csak szerver oldali tanúsítvány Kestrel-en **3**
   * csak szerver oldali tanúsítvány nem Kestrel-en (Apache, nginx, stb.) **7**
   * kliens is azonosítja magát tanúsítvánnyal a szerver felé **+5**
@@ -113,8 +112,8 @@ Változások: lásd git history
     * saját LINQ provider - **előzetes egyeztetés szükséges!** **20**
 * explicit kölcsönös kizárás helyett _ConcurretBag/ConcurrentQueue/ConcurrentStack/ConcurrentDictionary_ használata olyan rétegben, ahol párhuzamos hozzáférés valóban előfordul **\[5\]**
 * lock-free algoritmus implementálása és használata (könyvtári implementáció felhasználása nélkül, `Interlocked` függvények használatával) **\[10\]**
-* unit tesztek készítése  **\[7-14\]**
-  * minimum 10 függvényhez **7**
+* automatizált (unit vagy integrációs) tesztek készítése  **\[7-14\]**
+  * minimum 10 függvényhez/végponthoz **7**
   * a unit tesztekben a mock objektumok injektálása **+3**
   * EF Core memória-adatbázis vagy sqlite (vagy in-memory sqlite) használata teszteléshez **+4**
 * XML validálás, alkalmazkodás meglévő XML formátumhoz pl. publikus webes sémához (RSS, opml) **\[7\]**
@@ -146,8 +145,10 @@ Változások: lásd git history
 * F# modul készítése és meghívása. Legalább az egyik legyen benne ezek közül: pattern matching, async, magasabb rendű függvény **\[7\]**
 * külső osztálykönyvtár használata szerver oldalon. A külső komponens által megvalósított funkcionalitásért, képességért további pontszám nem adható. Nem számít ide a projekt generálásakor automatikusan bekerülő, illetve a Microsoft által készített, az alaptechnológiák függőségeit jelentő NuGet csomagok **\[7\]**
 * platformfüggetlen kódbázisú szerveralkalmazás készítése és bemutatása legalább 2 operációs rendszeren az alábbiak közül: Windows, Linux, Mac, ARM alapú OS (pl. Raspberry Pi OS). Közvetlen futtatás fogadható csak el, pl. konténerből való futtatás nem (arra van külön jogcím). **\[7\]**
-
-## Konkrét funkciók
 * NET Compiler platform (Roslyn) Diagnostic Analyzer **\[3-7\]**
   * egyszerű analyzer, pl. property név konvenciók ellenőrzése **3**
   * bonyolultabb analyzer és kód fix is, pl. kiemelés metódusba **7**
+* CQRS és Mediátor tervezési minta használata a teljes alkalmazásban (MediatR) **\[5-11\]**
+ * Commandok és Queryk szétválasztása és lazán csatolása mediátorral **\[5\]**
+ * Domain események használata **\[3\]**
+ * MediatR behavior pipeline kiterjesztése  **\[3\]**
