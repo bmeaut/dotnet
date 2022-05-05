@@ -65,7 +65,7 @@ Változások: lásd git history
 
 ## Kommunikáció, hálózatkezelés
 * alacsony szintű kommunikáció (soros port, HTTP alatti OSI réteg, pl. kétirányú TCP) **\[10\]**
-* HTTPS kommunikáció (self-signed tanúsítvánnyal) az ASP.NET Web API és a kliens között, hosztolás normál, nem fejlesztői webszerverben (pl. Apache, nginx, nem IIS Express) és nem Kestrel-en, szemléltetés Fiddler-rel **\[5-10\]**
+* HTTPS kommunikáció (self-signed tanúsítvánnyal) az ASP.NET Web API és a kliens között, hosztolás normál, nem fejlesztői webszerverben (pl. Apache, nginx, nem IIS Express) és nem Kestrel-en, szemléltetés Fiddler-rel/Postman-nel **\[5-10\]**
   * csak szerver oldali tanúsítvány **5**
   * kliens is azonosítja magát tanúsítvánnyal a szerver felé **+5**
 * az API funkciók egy részének elérhetővé tétele GraphQL hívásokon keresztül, ASP.NET Core middleware segítségével (pl. [GraphQL.NET](https://graphql-dotnet.github.io/) vagy [Hot Chocolate](https://chillicream.com/docs/hotchocolate)) az EF entitásmodellre építve. Szemléltetés példahívásokkal a kliensből. **\[7-10\]**
