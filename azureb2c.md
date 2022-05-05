@@ -3,6 +3,7 @@
 - [OAuth flow-k](https://medium.com/@darutk/diagrams-and-movies-of-all-the-oauth-2-0-flows-194f3c3ade85)
 - [OpenID specifikációk](https://openid.net/developers/specs/)
 - [Duende IdentityServer](https://docs.duendesoftware.com/identityserver/v6)
+- [Authorization code flow - MIP](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow)
 - [Azure előfizetések BME hallgatóknak](https://www.aut.bme.hu/Course/felho) - **Azure erőforrások** alcím
 
 # WebAssembly w Azure B2C
