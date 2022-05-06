@@ -60,7 +60,7 @@ Változások: lásd git history
 * OpenAPI leíró (swagger) alapú dokumentáció **\[3-5\]**
   * minden végpont kliens szempontjából releváns működése dokumentált, minden lehetséges válaszkóddal együtt **3**
   * az API-nak egyidejűleg több támogatott verziója van, mindegyik dokumentált és mindegyik támogatott verzió dokumentációja elérhető  **+2**
-* Adatbázis entitás elsődéeges kulcs elrejtése a kliens elől véletlenszerűen generált, nem növekvő sorrendben kiosztott kulcsokkal. A kliens nem ismeri az adatbázis entitás kulcs értékét, helyette egy generált kulcsot lát csak. Az adatbázis **nem** tárolja a generált kulcsot. Megvalósítható kétirányú szám <-> generált azonosító függvények [segítségével](https://hashids.org/net/). **\[7\]**
+* Adatbázis entitás elsődleges kulcs elrejtése a kliens elől véletlenszerűen generált, nem növekvő sorrendben kiosztott kulcsokkal. A kliens nem ismeri az adatbázis entitás kulcs értékét, helyette egy generált kulcsot lát csak. Az adatbázis **nem** tárolja a generált kulcsot. Megvalósítható kétirányú szám <-> generált azonosító függvények [segítségével](https://hashids.org/net/). **\[7\]**
 * ~~WebHook-ok használata külső szolgáltatással (pl. github, slack) **\[7\]**~~  **(egyelőre nincs hivatalos támogatás, csak Lab projekt)**
 
 ## Kommunikáció, hálózatkezelés
