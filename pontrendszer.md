@@ -148,6 +148,6 @@ Változások: lásd git history
   * egyszerű analyzer, pl. property név konvenciók ellenőrzése **3**
   * bonyolultabb analyzer és kód fix is, pl. kiemelés metódusba **7**
 * CQRS és Mediátor tervezési minta használata a teljes alkalmazásban (MediatR) **\[5-11\]**
-  * Commandok és Queryk szétválasztása és lazán csatolása mediátorral **\[5\]**
-  * Domain események használata **\[3\]**
-  * MediatR behavior pipeline kiterjesztése  **\[3\]**
+  * Commandok és Queryk szétválasztása és lazán csatolása mediátorral **5**
+  * Domain események használata **+3**
+  * MediatR behavior pipeline kiterjesztése  **+3**
