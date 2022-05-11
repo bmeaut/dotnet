@@ -208,7 +208,7 @@ var p = await response.Content
             .ReadFromJsonAsync<ValidationProblemDetails>(_serializerOptions);
 ```
 
-# Assert
+## Assert
 
 ```csharp
 // Assert
