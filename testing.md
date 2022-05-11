@@ -135,7 +135,7 @@ var client = _appFactory.CreateClient();
 var dto = _dtoFaker.Generate();
 ```
 
-# Act
+## Act
 
 ```csharp
 // Act
@@ -143,7 +143,7 @@ var response = await client.PostAsJsonAsync("/api/product", dto, _serializerOpti
 var p = await response.Content.ReadFromJsonAsync<Product>(_serializerOptions);
 ```
 
-# Assert
+## Assert
 
 ```csharp
 // Assert
@@ -200,7 +200,7 @@ var client = _appFactory.CreateClient();
 var dto = _dtoFaker.RuleFor(x => x.Name, name).Generate();
 ```
 
-# Act
+## Act
 
 ```csharp
 var response = await client.PostAsJsonAsync("/api/product", dto, _serializerOptions);
