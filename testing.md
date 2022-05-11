@@ -111,7 +111,9 @@ public partial class ProductControllerTests
 }
 ```
 
-# Test method #1 v0
+# Test method #1
+
+## v0
 
 ```csharp
 [Fact]
@@ -125,7 +127,7 @@ public async Task Should_Succeded_With_Created()
 }
 ```
 
-# Test method Arrange
+## Arrange
 
 ```csharp
 // Arrange
@@ -133,7 +135,7 @@ var client = _appFactory.CreateClient();
 var dto = _dtoFaker.Generate();
 ```
 
-# Test method Act
+# Act
 
 ```csharp
 // Act
@@ -141,7 +143,7 @@ var response = await client.PostAsJsonAsync("/api/product", dto, _serializerOpti
 var p = await response.Content.ReadFromJsonAsync<Product>(_serializerOptions);
 ```
 
-# Test method Assert
+# Assert
 
 ```csharp
 // Assert
@@ -164,13 +166,56 @@ p.Id.Should().BeGreaterThan(0);
 p.RowVersion.Should().NotBeEmpty();
 ```
 
-# Test method prevent mutation
+## prevent mutation
 
 ```csharp
 // Arrange
 _appFactory.Server.PreserveExecutionContext = true;
 using var tran = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled);
+```
 
+# Test method #2
+
+## v0
+
+```csharp
+[Theory]
+[InlineData("", "Product name is required.")]
+[InlineData(null, "Product name is required.")]
+public async Task Should_Fail_When_Name_Is_Invalid(string name, string expectedError)
+{
+    // Arrange
+
+    // Act
+
+    // Assert
+}
+```
+
+## Arrange
+
+```csharp
+// Arrange
 var client = _appFactory.CreateClient();
-var dto = _dtoFaker.Generate();
+var dto = _dtoFaker.RuleFor(x => x.Name, name).Generate();
+```
+
+# Act
+
+```csharp
+var response = await client.PostAsJsonAsync("/api/product", dto, _serializerOptions);
+var p = await response.Content
+            .ReadFromJsonAsync<ValidationProblemDetails>(_serializerOptions);
+```
+
+# Assert
+
+```csharp
+// Assert
+response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
+
+p.Status.Should().Be(400);
+p.Errors.Should().HaveCount(1);
+p.Errors.Should().ContainKey(nameof(Product.Name));
+p.Errors[nameof(Product.Name)].Should().ContainSingle(expectedError);
 ```
