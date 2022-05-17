@@ -11,8 +11,8 @@
 - NSwag.AspNetCore
 
 # REST konvenciók
-https://www.restapitutorial.com/lessons/httpmethods.html
-https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design
+- https://www.restapitutorial.com/lessons/httpmethods.html
+- https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design
 
 # AddDbContext
 
