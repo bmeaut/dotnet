@@ -94,7 +94,7 @@ Változások: lásd git history
   * alternatív kulcs bevezetése valamelyik entitásban **3**      
   * más entitás kapcsolattal hivatkozik az alternatív kulcsra **+2**
 * adatbázis index konfigurációja az EF modellben **\[3\]**
-* HiLo elsődleges kulcs alkalmazása **\[7\]**
+* HiLo elsődleges kulcs alkalmazása **\[7\]** TODO: csökkenteni? 1 sor kb.
 * birtokolt típus (owned type) használata **\[3\]**
 * adatbetöltés (seeding) migráció segítségével (`HasData`) **\[3\]**
 * értékkonverter (value converter) alkalmazása EF Core leképezésben **\[3-5\]**
