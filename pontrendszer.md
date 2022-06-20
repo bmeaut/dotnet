@@ -28,7 +28,7 @@ Változások: lásd git history
    * pl. OPTIONS ige az erőforrás által támogatott igék lekérdezéséhez **7**
 * verziókezelt API. Szemléltetés két különböző verziós API egyidejű kiszolgálásával. **\[7-10\]**
    * nem HTTP header (pl. URL szegmens) alapján **7**
-   * HTTP header alapján **10**
+   * HTTP header alapján **10** TODO: ez is lehetne 7
 * API (egy részének) védése felhasználó által igényelhető API kulccsal **\[7\]**
 * cache megvalósítása E-TAG használatával **\[3-8\]**
   * a kliens felüküldi az E-TAG-et, szerver összeveti az adatbázisból felolvasott verzióval **3**
@@ -104,7 +104,7 @@ Változások: lásd git history
 * időkezelt (_temporal_) táblák kezelése EF Core segítségével. Legalább egy időkezelt tábla használata és historikus adatának felhasználása. Csak SQL Server/LocalDB/Azure SQL provider támogatja! **\[7\]**
   
 ## .NET Core részfunkciók alkalmazása
-* az EF Core működőképességét jelző health check végpont publikálása a *Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore* NuGet csomag használatával **\[3\]**
+* az EF Core működőképességét jelző health check végpont publikálása a *Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore* NuGet csomag használatával **\[3\]** TODO: DB elérhetőség ellenőrzése
 * kifejezésfa (ExpressionTree) értelmezése/ksézítése/módosítása az [Expression API](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/expression-trees/#creating-expression-trees-by-using-the-api) használatával **\[5-20\]**
     * pl. szűrés dinamikusan, paraméterből érkező property neve alapján (pl. `o => o.Prop == propNev`) **5**
     * pl. keresés kapcsolódó kollekcióban dinamikusan (pl. `o => o.Coll.Any(e => e.Prop == propNev)`) **10**
