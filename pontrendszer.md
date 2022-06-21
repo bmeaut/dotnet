@@ -41,7 +41,7 @@ Változások: lásd git history
     * egyéb kliens esetén **12**
   * Azure AD B2C-re (ingyenes szint) építve **10**
   * LDAP alapú szolgáltatásra építve **10**
-  * más Identity-as-a-Service szolgáltatással (pl. Auth0) **7**
+  * más Identity-as-a-Service szolgáltatással (pl. Auth0) **7** TODO: sima Azure AD ide?
   * legalább egy külső identity provider integrálása (Google login, Windows login, stb.)  **+3**
 * szerver oldali hozzáférés-szabályozás, az előbbi authentikációra építve  **\[2-5\]**
     * szerepkör alapú hozzáférés-szabályozás **2**
