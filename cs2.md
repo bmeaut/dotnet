@@ -96,3 +96,22 @@ public record class DogRec(
     Dictionary<string, object> Metadata=null
 );
 ```
+
+## Rekord - normál megadás
+```csharp
+public record DogRecExt
+{
+    public string Name { get; init; }
+    public Guid Id { get; } = Guid.Empty;
+    public DateTime? DateOfBirth { get; set; }
+    public Dictionary<string, object> Metadata { get; } = new();
+    private int? AgeInDays => (-DateOfBirth?.Subtract(DateTime.Now))?.Days;
+    public int? Age => AgeInDays / 365;
+    public int? AgeInDogYears => AgeInDays * 7 / 365;
+    public object this[string key]
+    {
+        get { return Metadata[key]; }
+        set { Metadata[key] = value; }
+    }
+}
+```
