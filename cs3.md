@@ -132,6 +132,12 @@ foreach (var meta in query)
 }
 ```
 
+## Expression
+```csharp
+Func<int, int> f = x => x + 1;
+Expression<Func<int, int>> e = x => x + 1;
+```
+
 ## Expression építés Expression API-val
 ```csharp
 using Expression = System.Linq.Expressions.Expression;
