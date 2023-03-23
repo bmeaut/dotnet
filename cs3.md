@@ -132,7 +132,7 @@ foreach (var meta in query)
 }
 ```
 
-## Expression
+## Expressions
 ```csharp
 Func<int, int> f = x => x + 1;
 Expression<Func<int, int>> e = x => x + 1;
