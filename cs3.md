@@ -113,6 +113,7 @@ foreach (var text in Dogs
     .Select(d => $"{d.Name} ({d.Age}))"))
 {
     Console.WriteLine(text);
+}
 ```
 
 ```csharp
