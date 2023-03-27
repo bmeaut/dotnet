@@ -26,9 +26,7 @@ Változások: lásd git history
    * pl. GET-hez hasonló működés **5**
    * pl. PATCH ige részleges módosításhoz JSON Patch dokumentumok [felküldésével](https://docs.microsoft.com/en-us/aspnet/core/web-api/jsonpatch?view=aspnetcore-6.0) **7**
    * pl. OPTIONS ige az erőforrás által támogatott igék lekérdezéséhez **7**
-* verziókezelt API. Szemléltetés két különböző verziós API egyidejű kiszolgálásával. **\[7-10\]**
-   * nem HTTP header (pl. URL szegmens) alapján **7**
-   * HTTP header alapján **10**
+* verziókezelt API. Szemléltetés két különböző verziós API egyidejű kiszolgálásával. A kívánt verziót HTTP fejléc vagy például URL szegmens alapján választhatja meg a kliens. **\[7\]**   
 * API (egy részének) védése felhasználó által igényelhető API kulccsal **\[7\]**
 * cache megvalósítása E-TAG használatával **\[3-8\]**
   * a kliens felüküldi az E-TAG-et, szerver összeveti az adatbázisból felolvasott verzióval **3**
@@ -40,6 +38,7 @@ Változások: lásd git history
     * Blazor WebAssembly kliens esetén **10**
     * egyéb kliens esetén **12**
   * Azure AD B2C-re (ingyenes szint) építve **10**
+  * normál Azure AD (nem B2C) **7**
   * LDAP alapú szolgáltatásra építve **10**
   * más Identity-as-a-Service szolgáltatással (pl. Auth0) **7**
   * legalább egy külső identity provider integrálása (Google login, Windows login, stb.)  **+3**
