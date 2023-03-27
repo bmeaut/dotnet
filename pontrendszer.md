@@ -93,7 +93,7 @@ Változások: lásd git history
   * alternatív kulcs bevezetése valamelyik entitásban **3**      
   * más entitás kapcsolattal hivatkozik az alternatív kulcsra **+2**
 * adatbázis index konfigurációja az EF modellben **\[3\]**
-* HiLo elsődleges kulcs alkalmazása **\[7\]**
+* HiLo elsődleges kulcs alkalmazása **\[3\]**
 * birtokolt típus (owned type) használata **\[3\]**
 * adatbetöltés (seeding) migráció segítségével (`HasData`) **\[3\]**
 * értékkonverter (value converter) alkalmazása EF Core leképezésben **\[3-5\]**
@@ -103,7 +103,7 @@ Változások: lásd git history
 * időkezelt (_temporal_) táblák kezelése EF Core segítségével. Legalább egy időkezelt tábla használata és historikus adatának felhasználása. Csak SQL Server/LocalDB/Azure SQL provider támogatja! **\[7\]**
   
 ## .NET Core részfunkciók alkalmazása
-* az EF Core működőképességét jelző health check végpont publikálása a *Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore* NuGet csomag használatával **\[3\]**
+* az EF Core működőképességét, az adatbázis elérhetőségét jelző health check végpont publikálása a *Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore* NuGet csomag használatával **\[3\]**
 * kifejezésfa (ExpressionTree) értelmezése/ksézítése/módosítása az [Expression API](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/expression-trees/#creating-expression-trees-by-using-the-api) használatával **\[5-20\]**
     * pl. szűrés dinamikusan, paraméterből érkező property neve alapján (pl. `o => o.Prop == propNev`) **5**
     * pl. keresés kapcsolódó kollekcióban dinamikusan (pl. `o => o.Coll.Any(e => e.Prop == propNev)`) **10**
