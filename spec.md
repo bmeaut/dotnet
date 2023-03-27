@@ -17,12 +17,12 @@ Egy olyan alkalmazás készítése, mely törzsanyagokból disszertációt áll�
 - dolgozat
 - forráshivatkozás
 
-## Alkalmazott alaptechnológiák [a szerver oldal mindenkinek ugyanez lesz, kliensoldal választható]
+## Alkalmazott alaptechnológiák [a szerver oldal mindenkinek ugyanez lesz, kliensoldal választható. Verziószámok lehtnek nagyobbak, mint a lentiek]
 - adatelérés: Entity Framework Core v6
 - kommunikáció, szerveroldal: ASP.NET Core v6
 - kliensoldal: Blazor WebAssembly
 
-## Továbbfejlesztési tervek [opcionális, a pontrendszerből érdemes válogatni]
+## Továbbfejlesztési tervek [opcionális, a pontrendszerből érdemes válogatni. Célja, hogy KHF bemutatáskor a felmerülő kérdéseket megbeszélhessük]
 - hosztolás Azure-ban
 - HiLo elsődleges kulcs alkalmazása
 - logikai törlés (soft delete) globális szűrőkkel
