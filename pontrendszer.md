@@ -79,7 +79,7 @@ Változások: lásd git history
 * leszármazási hierarchia leképezése Entity Framework-kel (legalább kétszintű, legalább 3 tagú hierarchia) **\[3-7\]**
   * TPH, a diszkriminátor mező testreszabásával (saját mezőnév vagy saját értékek) **3**
   * TPT-vel **5**
-  * ~~TPC-vel **7**~~ **(EF Core jelenleg [nem támogatja](https://github.com/dotnet/efcore/issues/3170))**
+  * ~~TPC-vel **7**~~ **(EF Core v6 még [nem támogatja](https://github.com/dotnet/efcore/issues/3170))**
 * MS SQL/Azure SQL/LocalDB-től eltérő adatbáziskiszolgáló használata EF Core-ral (kivéve még: sqlite) **\[10-12\]**
   * Azure Cosmos DB (**NoSQL!**) **10**
   * egyéb, EF Core v6 támogatott adatbázis **5**  
@@ -88,7 +88,7 @@ Változások: lásd git history
 * saját többesszámosító (`IPluralizer`) - nem kell nyelvtanilag helyesnek lennie **\[7\]**
 * automatikus újrapróbálkozás beállítása tranziens adatbázishibák (pl. connection timeout) ellen **\[2\]**
 * Table splitting **\[5\]**
-* ~~Entity splitting **\[5\]**~~  **(EF Core jelenleg [nem támogatja](https://github.com/dotnet/efcore/issues/620))**
+* ~~Entity splitting **\[5\]**~~  **(EF Core v6 még [nem támogatja](https://github.com/dotnet/efcore/issues/620))**
 * alternatív kulcs **\[3-5\]**
   * alternatív kulcs bevezetése valamelyik entitásban **3**      
   * más entitás kapcsolattal hivatkozik az alternatív kulcsra **+2**
