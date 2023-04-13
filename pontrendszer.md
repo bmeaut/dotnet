@@ -125,14 +125,14 @@ Változások: lásd git history
   * struktúrált naplózás (structured logging) **+2**
   * fájl cél esetén rolling log (minden napon/héten/10 MB-onként új naplófájl) **+2**
   * az egyik cél egy külső naplózó szolgáltatás (pl. Azure Application Insights) **+2**
-* áthívás nem felügyelt környezetbe (pl. natív Win32, natív linux) **\[7 - 12\]**
+* áthívás nem felügyelt környezetbe (pl. natív Win32, natív linux) **\[7-12\]**
     * legalább egy nem egyszerű típus átadása/átvétele paraméterként **7**
     * saját natív kód használata, összetett típus átadásával **12**
 * külső komponens használata DTO-k inicializálására **\[3\]**
    * Object mapper, pl. [AutoMapper](http://automapper.org/), [QueryMutator](https://github.com/yugabe/QueryMutator) **3**
    * Explicit kódgeneráló, pl. [MappingGenerator (ingyenes változat)](https://marketplace.visualstudio.com/items?itemName=54748ff9-45fc-43c2-8ec5-cf7912bc3b84.mappinggenerator) **3**
 * logikai törlés (soft delete) megvalósítása. A logikailag törölt elemek alapértelmezésben nem lekérdezhetőek - ezen szűrés megvalósítása globális szűrőkkel (Global Query Filter) **\[5\]**
-* Háttérművelet(ek) megvalósítása **\[5 - 7\]**
+* Háttérművelet(ek) megvalósítása **\[5-7\]**
   * `IHostedService` / `BackgroundService` használatával **\[5\]**
   * nem beépített, külső háttérfolyamat komponenssel, pl. Quartz.NET, Hangfire **\[7\]**
 * nem nullozható referencia típusok (NRT) kényszerítése a _nullable context_ bekapcsolásával minden projektre **és** minden nullable context sértés figyelmeztetés hibaként kezelése. Nullable context kikapcsolása projekten belül csak indokolt esetekben. **\[3\]**
