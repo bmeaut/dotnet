@@ -135,7 +135,7 @@ Változások: lásd git history
 * háttérművelet(ek) megvalósítása **\[5-7\]**
   * `IHostedService` / `BackgroundService` használatával **\[5\]**
   * nem beépített, külső háttérfolyamat komponenssel, pl. Quartz.NET, Hangfire **\[7\]**
-* nem nullozható referencia típusok (NRT) kényszerítése a _nullable context_ bekapcsolásával minden projektre **és** minden nullable context sértés figyelmeztetés hibaként kezelése. Nullable context kikapcsolása projekten belül csak indokolt esetekben. **\[3\]**
+* nem nullozható referencia típusok (NRT) kényszerítése a _nullable context_ bekapcsolásával minden szerveroldali projektre **és** minden nullable context sértés figyelmeztetés hibaként kezelése. Nullable context kikapcsolása projekten belül csak indokolt esetekben. **\[3\]**
 * Entitás specifikus elsődleges kulcs típusok használata (`entityA.Id = entityB.Id` fordítási hiba, ha a két entiás típusa eltér). A kliens oldalon, illetve a kontroller függvények fejlécében (pl. bemenetként) nem kell, hogy megjelenjenek ezek a típusok, csak a kontroller rétegtől lefelé (EF szinten is). [Segédkönyvtár](https://github.com/andrewlock/StronglyTypedId). **\[10\]**
 
 ## Kiegészítő, kapcsolódó technológiák alkalmazása
