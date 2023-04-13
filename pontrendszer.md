@@ -83,7 +83,7 @@ Változások: lásd git history
 * MS SQL/Azure SQL/LocalDB-től eltérő adatbáziskiszolgáló használata EF Core-ral (kivéve még: sqlite) **\[10-12\]**
   * Azure Cosmos DB (**NoSQL!**) **10**
   * egyéb, EF Core v6 támogatott adatbázis **5**  
-* ~~saját Code-First konvenció készítése **\[5\]**~~  **(EF Core jelenleg [nem támogatja](https://github.com/dotnet/efcore/issues/214))**
+* ~~saját Code-First konvenció készítése **\[5\]**~~  **(EF Core v6 még [nem támogatja](https://github.com/dotnet/efcore/issues/214))**
 * saját szabályszerűség (konvenció) implementálása vagy meglevő felülbírálása reflexióval és/vagy Model API-val **\[5\]**
 * saját többesszámosító (`IPluralizer`) - nem kell nyelvtanilag helyesnek lennie **\[7\]**
 * automatikus újrapróbálkozás beállítása tranziens adatbázishibák (pl. connection timeout) ellen **\[2\]**
