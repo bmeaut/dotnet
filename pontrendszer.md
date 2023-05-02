@@ -5,7 +5,7 @@
 * Kliensoldali megoldásért nem adható pont
 * A szoftvernek egységes funkcióhalmazt kell nyújtania, különálló, egymáshoz nem kapcsolódó funkciókból álló szoftver nem elfogadható. Azaz különálló tutorialok összefércelését nem díjazzuk.
 
-## Még nincs véglegesítve 2023. tavaszi félévre!
+## Véglegesítve 2023. tavaszi félévre 2023. május 2-án!
 
 Véglegesítés után csak a következő típusú változások lehetnek
   * hallgatóknak kedvező változások (pl. új jogcímek)
