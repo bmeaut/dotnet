@@ -25,7 +25,7 @@ Változások: lásd git history
 *  Web API Core által alapból nem támogatott HTTP ige (verb) implementálása **\[5-7\]**
    * pl. GET-hez hasonló működés **5**
    * pl. PATCH ige részleges módosításhoz JSON Patch dokumentumok [felküldésével](https://docs.microsoft.com/en-us/aspnet/core/web-api/jsonpatch?view=aspnetcore-6.0) **7**
-   * pl. OPTIONS ige az erőforrás által támogatott igék lekérdezéséhez **7**
+   * pl. OPTIONS ige az erőforrás által támogatott igék lekérdezéséhez **7** TODO: nem beégetve
 * verziókezelt API. Szemléltetés két különböző verziós API egyidejű kiszolgálásával. A kívánt verziót HTTP fejléc vagy például URL szegmens alapján választhatja meg a kliens. **\[7\]**   
 * API (egy részének) védése felhasználó által igényelhető API kulccsal **\[7\]**
 * cache megvalósítása E-TAG használatával **\[3-8\]**
@@ -103,7 +103,7 @@ Változások: lásd git history
 * időkezelt (_temporal_) táblák kezelése EF Core segítségével. Legalább egy időkezelt tábla használata és historikus adatának felhasználása. Csak SQL Server/LocalDB/Azure SQL provider támogatja! **\[7\]**
   
 ## .NET Core részfunkciók alkalmazása
-* az EF Core működőképességét, az adatbázis elérhetőségét jelző health check végpont publikálása a *Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore* NuGet csomag használatával **\[3\]**
+* az EF Core működőképességét, az adatbázis elérhetőségét jelző health check végpont publikálása a *Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore* NuGet csomag használatával **\[3\]** TODO: szemléltetés
 * kifejezésfa (ExpressionTree) értelmezése/ksézítése/módosítása az [Expression API](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/expression-trees/#creating-expression-trees-by-using-the-api) használatával **\[5-20\]**
     * pl. szűrés dinamikusan, paraméterből érkező property neve alapján (pl. `o => o.Prop == propNev`) **5**
     * pl. keresés kapcsolódó kollekcióban dinamikusan (pl. `o => o.Coll.Any(e => e.Prop == propNev)`) **10**
